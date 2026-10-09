@@ -57,3 +57,11 @@ Use a Code Block with HTML display enabled. Keep the source collection published
 The pre-refinement UI is preserved on branch `backup/pre-ux-refinement-2026-10-09` at commit `39ed9c1a9bb225749ccd428a31cc41cbd690ac93`. To undo only this design update, restore `index.html`, `styles.css`, and `app.js` from that branch to main and commit. Leave catalog files and the refresh workflow unchanged so newer sermons are retained. Cloudflare will deploy the restoration automatically.
 
 Add `?embed=1` to the iframe URL to hide the app title and introduction when the surrounding church page supplies them. Existing embed URLs continue to work. The fixed iframe height remains unchanged; automatic height adjustment and a persistent player are separate enhancements.
+
+## Historical audio priority
+
+The daily refresh reads http://www.hinsonchurch.net/ and pairs the Subject and Date columns. It uses displayed dates, verifies MP3 availability, and overrides audio only for a unique exact catalog date. Repeated MP3 links and ambiguous dates are skipped. The original catalog metadata and sermon details links remain from hinsonchurch.org. The original HTTPS audio URL is retained in `originalAudio`.
+
+`archive-audio.json` caches verified matches. Previously verified links survive temporary archive lookup failures. Reports list skipped unavailable dates. The HTTPS Worker streams only allowlisted recordings from this archive, supports byte ranges for seeking, and strips upstream cookies. When playback fails, an available original HTTPS recording is used as a fallback.
+
+`wrangler.jsonc` adds the audio streaming route alongside the existing static assets. Run `python test_archive_audio.py` and `node test_worker.cjs` to check date matching and streaming. To undo this change, restore the pre-audio-priority branch and its catalog/configuration files while retaining later unrelated UI changes.

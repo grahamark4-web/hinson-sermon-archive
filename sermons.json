@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T20:46:24.479978+00:00",
+  "updatedAt": "2026-10-09T19:55:53.472496+00:00",
   "source": "https://www.hinsonchurch.org/sermonindex",
   "sermons": [
     {
@@ -13032,8 +13032,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140810.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140810.mp3"
     },
     {
       "id": "5bbae97bf4e1fc3d3bb7737f",
@@ -13048,8 +13050,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140803.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140803.mp3"
     },
     {
       "id": "5bbae7a853450a0e4333b10f",
@@ -13064,8 +13068,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140727.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140727.mp3"
     },
     {
       "id": "5c3199331ae6cfe5e9db5ee1",
@@ -13085,8 +13091,10 @@
         "Guest Preacher"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2014/7/20/the-best-letter-ever-written",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31995f898583102b6cebfc/1601054704869/hnsn20140720.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20140720.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31995f898583102b6cebfc/1601054704869/hnsn20140720.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140720.mp3"
     },
     {
       "id": "5bbaea5aa4222f8e881987b0",
@@ -13101,8 +13109,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140713.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140713.mp3"
     },
     {
       "id": "5bbaeb16b208fc8b42e04a05",
@@ -13117,8 +13127,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140706.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140706.mp3"
     },
     {
       "id": "5bbaeb7cf4e1fc3d3bb78183",
@@ -13138,8 +13150,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140629.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140629.mp3"
     },
     {
       "id": "5bbaec118165f56086f5055d",
@@ -13159,8 +13173,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-bkyxs",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140622.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140622.mp3"
     },
     {
       "id": "5bbaecc324a69418550b1ef6",
@@ -13180,8 +13196,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140615.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140615.mp3"
     },
     {
       "id": "5bbaed25ec212d5199dcb4ad",
@@ -13201,8 +13219,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140608.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140608.mp3"
     },
     {
       "id": "5bbaedc7c83025c9ab7b505b",
@@ -13222,8 +13242,10 @@
         "The Wisdom You Need..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140601.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140601.mp3"
     },
     {
       "id": "5bbaee40e4966b863445404a",
@@ -13243,8 +13265,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140525.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140525.mp3"
     },
     {
       "id": "5bbaeec624a69418550b3011",
@@ -13264,8 +13288,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140518.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140518.mp3"
     },
     {
       "id": "5c3198272b6a28cb40270404",
@@ -13327,8 +13353,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140427.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140427.mp3"
     },
     {
       "id": "5bbaf069652deaada682f078",
@@ -13348,8 +13376,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140420.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140420.mp3"
     },
     {
       "id": "5c3197446d2a730597126f6e",
@@ -13369,8 +13399,10 @@
         "Guest Preacher"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2014/4/13/a-palm-sunday-prophecy",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c319777c2241ba8a709bb02/1601054704862/hnsn20140413.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20140413.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c319777c2241ba8a709bb02/1601054704862/hnsn20140413.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140413.mp3"
     },
     {
       "id": "5bbaf0ee104c7b81752d5b88",
@@ -13390,8 +13422,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-g2jyt",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140406.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140406.mp3"
     },
     {
       "id": "5bbf78b441920253560a5b9c",
@@ -13411,8 +13445,10 @@
         "Money Talks"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-pcbpb-e2cyy-rkma6",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140330.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140330.mp3"
     },
     {
       "id": "5bbaf16615fcc04e6f012975",
@@ -13432,8 +13468,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-kff5s",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140323.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140323.mp3"
     },
     {
       "id": "5bbaf1ca15fcc04e6f012c14",
@@ -13453,8 +13491,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-7zbcl",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140316.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140316.mp3"
     },
     {
       "id": "5bbaf22e1905f431b739f463",
@@ -13474,8 +13514,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-fnesx",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140309.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140309.mp3"
     },
     {
       "id": "5bbf79347817f79f095aee9d",
@@ -13495,8 +13537,10 @@
         "Money Talks"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-pcbpb-e2cyy-rkma6-4je4l",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140302.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140302.mp3"
     },
     {
       "id": "5bbaf2b9f9619a59004fdde1",
@@ -13516,8 +13560,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-l8brp",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140223.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140223.mp3"
     },
     {
       "id": "5bbaf321e79c70e0436fef30",
@@ -13537,8 +13583,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-fbr95",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140216.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140216.mp3"
     },
     {
       "id": "5bbaf38224a69418550b4e4f",
@@ -13558,8 +13606,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-df6al",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140209.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140209.mp3"
     },
     {
       "id": "5bbaf3d015fcc04e6f013942",
@@ -13579,8 +13629,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-5zmrz",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140202.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140202.mp3"
     },
     {
       "id": "5c31967f758d467874781394",
@@ -13600,8 +13652,10 @@
         "Guest Preacher"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2014/1/26/and-yet-he-reigns",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31969740ec9a8d36cd407f/1601054704858/hnsn20140126.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20140126.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31969740ec9a8d36cd407f/1601054704858/hnsn20140126.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140126.mp3"
     },
     {
       "id": "5bbaf44e0d929783f9b5d532",
@@ -13621,8 +13675,10 @@
         "Authentic Christianity"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-lnzw9",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140119.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140119.mp3"
     },
     {
       "id": "5bbaf57b085229e8f51836fc",
@@ -13642,8 +13698,10 @@
         "Rescued"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-eh7m3",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140112.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140112.mp3"
     },
     {
       "id": "5bbaf722085229e8f518411a",
@@ -13663,8 +13721,10 @@
         "The Big Picture"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-bb339",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20140105.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20140105.mp3"
     },
     {
       "id": "5bbaf7f44785d317a3f89032",
@@ -13684,8 +13744,10 @@
         "The Big Picture"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-bb339-px4n8",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131229.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131229.mp3"
     },
     {
       "id": "5bbaf9b64785d317a3f89a4d",
@@ -13705,8 +13767,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131222.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131222.mp3"
     },
     {
       "id": "5bbafa4d71c10b92927dc777",
@@ -13726,8 +13790,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-ydnpm",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131215.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131215.mp3"
     },
     {
       "id": "5bbafaab24a69418550b7b2f",
@@ -13747,8 +13813,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-bgyxf",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131208.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131208.mp3"
     },
     {
       "id": "5bbafb04652deaada68334db",
@@ -13768,8 +13836,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-hb9ct",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131201.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131201.mp3"
     },
     {
       "id": "5bbaf859e5e5f0f20c69d81c",
@@ -13810,8 +13880,10 @@
         "The Big Picture"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-bb339-2f2dh",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131117.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131117.mp3"
     },
     {
       "id": "5bbaf660104c7b81752d7eb5",
@@ -13831,8 +13903,10 @@
         "Rescued"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-5583x-xlxde-rmgpd-bzf3h-gbe89-atbjx-jghys-w2s8x-ztyh8-eh7m3-ynwm8",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131110.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131110.mp3"
     },
     {
       "id": "5bbafb52652deaada68336b0",
@@ -13852,8 +13926,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-pyxea",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131103.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131103.mp3"
     },
     {
       "id": "5bbafba924a69418550b816b",
@@ -13873,8 +13949,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-twgwb",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131027.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131027.mp3"
     },
     {
       "id": "5bbafc0b652deaada6833b65",
@@ -13894,8 +13972,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-z5m74",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131020.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131020.mp3"
     },
     {
       "id": "5c31a93088251b958f49f432",
@@ -13915,8 +13995,10 @@
         "Guest Preacher"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2013/10/13/two-parties-a-contrast-in-leadership",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31a99640ec9a8d36cdc87f/1601054704878/hnsn20131013.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20131013.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31a99640ec9a8d36cdc87f/1601054704878/hnsn20131013.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131013.mp3"
     },
     {
       "id": "5bbafc5e15fcc04e6f016f16",
@@ -13936,8 +14018,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-4rcsl",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20131006.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20131006.mp3"
     },
     {
       "id": "5bbafcb815fcc04e6f017153",
@@ -13957,8 +14041,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-9tb8b",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130929.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130929.mp3"
     },
     {
       "id": "5bbafd201905f431b73a3ab7",
@@ -13978,8 +14064,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-n8e6y",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130922.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130922.mp3"
     },
     {
       "id": "5bbaf92b4785d317a3f89712",
@@ -13999,8 +14087,10 @@
         "The Big Picture"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-bb339-ptsws",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130915.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130915.mp3"
     },
     {
       "id": "5bbafd89eef1a10b276c5f37",
@@ -14020,8 +14110,10 @@
         "Return of the King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-yf5bw-5fjdm",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6abed5f05a8e8f7076a282f5/1790891517876/Hinson+Church+Audio+Sept+8+2013.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20130908.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6abed5f05a8e8f7076a282f5/1790891517876/Hinson+Church+Audio+Sept+8+2013.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130908.mp3"
     },
     {
       "id": "5bbafe3715fcc04e6f017a8b",
@@ -14041,8 +14133,10 @@
         "The End"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-pcbpb",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130901.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130901.mp3"
     },
     {
       "id": "5bbafef853450a0e433450a9",
@@ -14062,8 +14156,10 @@
         "The End"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-pcbpb-wdzfl",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130825.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130825.mp3"
     },
     {
       "id": "5bbb00e4a4222f8e881a1bdb",
@@ -14083,8 +14179,10 @@
         "Life After the End"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-322pe",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130818.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130818.mp3"
     },
     {
       "id": "5bbb01ef9140b704833ad191",
@@ -14104,8 +14202,10 @@
         "Life After the End"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-322pe-emrxn",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130811.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130811.mp3"
     },
     {
       "id": "5bbb025953450a0e43346653",
@@ -14146,8 +14246,10 @@
         "Life Together"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2013/7/28/a-productive-life",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b02f03ce64e8bf1c6316/1601054704906/hnsn20130728.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20130728.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b02f03ce64e8bf1c6316/1601054704906/hnsn20130728.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130728.mp3"
     },
     {
       "id": "5c31afad4ae23783edb6c44c",
@@ -14167,8 +14269,10 @@
         "Life Together"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2013/7/21/a-profitable-life",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31afee032be4fbaf2abb00/1601054704903/hnsn20130721.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20130721.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31afee032be4fbaf2abb00/1601054704903/hnsn20130721.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130721.mp3"
     },
     {
       "id": "5c31aee82b6a28cb4027aad9",
@@ -14188,8 +14292,10 @@
         "Beholding the God ..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2013/7/14/beholding-the-god-of-self-sufficient-fullness",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31af2703ce64e8bf1c5ce5/1601054704898/hnsn20130714.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20130714.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31af2703ce64e8bf1c5ce5/1601054704898/hnsn20130714.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130714.mp3"
     },
     {
       "id": "5bbb02e19140b704833ad73c",
@@ -14209,8 +14315,10 @@
         "Life Together"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-322pe-wzddz",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130707.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130707.mp3"
     },
     {
       "id": "5bbb044c0d929783f9b63a95",
@@ -14230,8 +14338,10 @@
         "Life Together"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-322pe-wzddz-d6rtw",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130630.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130630.mp3"
     },
     {
       "id": "5bbb04bd4192025ef750dc26",
@@ -14251,8 +14361,10 @@
         "Life Together"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-322pe-wzddz-fyms4",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130623.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130623.mp3"
     },
     {
       "id": "5bbb052f9140b704833ae5a2",
@@ -14272,8 +14384,10 @@
         "Life Together"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-322pe-wzddz-8l76x",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130616.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130616.mp3"
     },
     {
       "id": "5bbb058053450a0e43347add",
@@ -14293,8 +14407,10 @@
         "Life Together"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-322pe-wzddz-shz6z",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130609.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130609.mp3"
     },
     {
       "id": "5bbb05dd15fcc04e6f01adfc",
@@ -14314,8 +14430,10 @@
         "Life Together"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-322pe-wzddz-fd9b6",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130602.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130602.mp3"
     },
     {
       "id": "5bbaff5ee5e5f0f20c6a0349",
@@ -14335,8 +14453,10 @@
         "The End"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-pcbpb-2n8bf",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130526.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130526.mp3"
     },
     {
       "id": "5bbb0f8cf9619a5900509c1e",
@@ -14356,8 +14476,10 @@
         "Forgiveness"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-44zn3",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130519.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130519.mp3"
     },
     {
       "id": "5bbaffb2eef1a10b276c6c33",
@@ -14377,8 +14499,10 @@
         "The End"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-pcbpb-e2cyy",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130512.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130512.mp3"
     },
     {
       "id": "5bbb105c085229e8f518e31c",
@@ -14398,8 +14522,10 @@
         "Forgiveness"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-44zn3-8ascg",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130505.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130505.mp3"
     },
     {
       "id": "5bbb06771905f431b73a77f7",
@@ -14419,8 +14545,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130428.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130428.mp3"
     },
     {
       "id": "5bbb07a524a69418550bce09",
@@ -14440,8 +14568,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130421.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130421.mp3"
     },
     {
       "id": "5bbb0841f9619a5900506c13",
@@ -14461,8 +14591,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-ls4lz",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130414.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130414.mp3"
     },
     {
       "id": "5bbb1245e5e5f0f20c6a8006",
@@ -14482,8 +14614,10 @@
         "Happiness..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-88hfz",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130407.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130407.mp3"
     },
     {
       "id": "5bbb08a8652deaada6838b17",
@@ -14503,8 +14637,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-w838h",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130331.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130331.mp3"
     },
     {
       "id": "5bbb0910f9619a5900507106",
@@ -14524,8 +14660,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-h5y22",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130324.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130324.mp3"
     },
     {
       "id": "5bbb097be2c4833b72902adc",
@@ -14545,8 +14683,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-7t8x7",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130317.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130317.mp3"
     },
     {
       "id": "5bbb09ce9140b704833b03d1",
@@ -14566,8 +14706,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-j53nl",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130310.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130310.mp3"
     },
     {
       "id": "5bbb10d14192025ef7512d0a",
@@ -14587,8 +14729,10 @@
         "False Dichotomies"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-44zn3-e6l4k",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130303.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130303.mp3"
     },
     {
       "id": "5bbb0a67652deaada6839645",
@@ -14608,8 +14752,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-ajfdz",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130224.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130224.mp3"
     },
     {
       "id": "5bbb0ae5f4e1fc3d3bb854e0",
@@ -14629,8 +14775,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-8pmcb",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130217.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130217.mp3"
     },
     {
       "id": "5bbb12c6ec212d5199ddaa69",
@@ -14650,8 +14798,10 @@
         "Happiness..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-88hfz-pgz2t",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130210.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130210.mp3"
     },
     {
       "id": "5bbb0b337817f7ebddc0b317",
@@ -14671,8 +14821,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-4lr9z",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130203.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130203.mp3"
     },
     {
       "id": "5bbb0c05eef1a10b276cbb97",
@@ -14692,8 +14844,10 @@
         "Liberation Theology"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-kdcrr",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130127.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130127.mp3"
     },
     {
       "id": "5bbb11754785d317a3f93a2e",
@@ -14713,8 +14867,10 @@
         "False Dichotomies"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-p22p2-6xl7j-pen3y-44zn3-e6l4k-yrzd9",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130120.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130120.mp3"
     },
     {
       "id": "5bbb154915fcc04e6f021573",
@@ -14734,8 +14890,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130113.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130113.mp3"
     },
     {
       "id": "5bbb13444192025ef7513c54",
@@ -14755,8 +14913,10 @@
         "Jesus"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-88hfz-2z8zb",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20130106.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20130106.mp3"
     },
     {
       "id": "5bbb13f58165f56086f61093",
@@ -14776,8 +14936,10 @@
         "Jesus"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-88hfz-2z8zb-xaewl",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121230.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121230.mp3"
     },
     {
       "id": "5bbb15f2f9619a590050c6c5",
@@ -14797,8 +14959,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-nn46a",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121223.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121223.mp3"
     },
     {
       "id": "5bbb1652f4e1fc3d3bb8a1cd",
@@ -14818,8 +14982,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-8kxg8",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121216.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121216.mp3"
     },
     {
       "id": "5bbb16a5e5e5f0f20c6a9bb6",
@@ -14839,8 +15005,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-3g3df",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121209.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121209.mp3"
     },
     {
       "id": "5bbb16eb53450a0e4334ee9b",
@@ -14860,8 +15028,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-pzys7",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121202.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121202.mp3"
     },
     {
       "id": "5bbb1747f4e1fc3d3bb8a808",
@@ -14881,8 +15051,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-w6ejj",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121125.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121125.mp3"
     },
     {
       "id": "5bbba0b3a4222f1715828d80",
@@ -14902,8 +15074,10 @@
         "Parables of Paul"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-5zjer",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121118.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121118.mp3"
     },
     {
       "id": "5bbb1783e79c70e04370dcd8",
@@ -14923,8 +15097,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-yrryy",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121111.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121111.mp3"
     },
     {
       "id": "5bbb17efe2c4833b72908adb",
@@ -14944,8 +15120,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-xygdz",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121104.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121104.mp3"
     },
     {
       "id": "5bbb185553450a0e4334f826",
@@ -14965,8 +15143,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-6kspw",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121028.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121028.mp3"
     },
     {
       "id": "5bbba145f4e1fc178a1b537c",
@@ -14986,8 +15166,10 @@
         "Parables of Paul"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-5zjer-cbeek",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121021.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121021.mp3"
     },
     {
       "id": "5bbb18b01905f431b73af170",
@@ -15007,8 +15189,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-rgssp",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121014.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121014.mp3"
     },
     {
       "id": "5bbb19099140b704833b68bc",
@@ -15028,8 +15212,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-49n35",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20121007.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20121007.mp3"
     },
     {
       "id": "5bbb195c15fcc04e6f022f65",
@@ -15049,8 +15235,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-dmk28",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120930.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120930.mp3"
     },
     {
       "id": "5bbb19d8652deaada68401d9",
@@ -15070,8 +15258,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-98xte",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120923.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120923.mp3"
     },
     {
       "id": "5bbb1a2324a69418550c489a",
@@ -15091,8 +15281,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-yx8zr",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120916.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120916.mp3"
     },
     {
       "id": "5bbb1a8271c10b92927e9aa5",
@@ -15112,8 +15304,10 @@
         "What Jesus Said..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-hdsfy-jjm3z",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120909.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120909.mp3"
     },
     {
       "id": "5bbba1bde4966b75a2ecbe8c",
@@ -15133,8 +15327,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120902.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120902.mp3"
     },
     {
       "id": "5bbba28053450a10e91eee85",
@@ -15154,8 +15350,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-fsngl",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120826.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120826.mp3"
     },
     {
       "id": "5bbba2f771c10b84450b293f",
@@ -15175,8 +15373,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-52pan",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120819.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120819.mp3"
     },
     {
       "id": "5c31ab8cf950b7a898071920",
@@ -15218,8 +15418,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120805.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120805.mp3"
     },
     {
       "id": "5c31acc4032be4fbaf2aa2f4",
@@ -15240,8 +15442,10 @@
         "The Transformers"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2012/7/29/life",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31ad22f950b7a898072744/1601054704892/hnsn20120729.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20120729.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31ad22f950b7a898072744/1601054704892/hnsn20120729.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120729.mp3"
     },
     {
       "id": "5c31ac124d7a9c0f3dff9db8",
@@ -15262,8 +15466,10 @@
         "The Transformers"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2012/7/22/church",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31ac5a0e2e72045faaa1d8/1601054704888/hnsn20120722.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20120722.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31ac5a0e2e72045faaa1d8/1601054704888/hnsn20120722.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120722.mp3"
     },
     {
       "id": "5bbba425085229dc11b78964",
@@ -15283,8 +15489,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120715.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120715.mp3"
     },
     {
       "id": "5bbba49fe4966b75a2ecf019",
@@ -15304,8 +15512,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-eht7a",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120708.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120708.mp3"
     },
     {
       "id": "5bbba4f14785d3eb717a00a2",
@@ -15325,8 +15535,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-tna9n",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120701.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120701.mp3"
     },
     {
       "id": "5bbba587f4e1fc178a1ba451",
@@ -15346,8 +15558,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-tna9n-tl8fg",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120624.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120624.mp3"
     },
     {
       "id": "5bbba5dee79c70b9cb8118fc",
@@ -15367,8 +15581,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-tna9n-l9f6m",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120617.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120617.mp3"
     },
     {
       "id": "5bbba651f9619a52cec09842",
@@ -15388,8 +15604,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-pk856",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120610.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120610.mp3"
     },
     {
       "id": "5bbba6a3e4966b75a2ed12a6",
@@ -15409,8 +15627,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-me6yw",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120603.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120603.mp3"
     },
     {
       "id": "5bbba6f7eef1a1e6a277d10f",
@@ -15430,8 +15650,10 @@
         "...Really?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-r76e4",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120527.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120527.mp3"
     },
     {
       "id": "5bbba78ef4e1fc178a1bca95",
@@ -15451,8 +15673,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120520.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120520.mp3"
     },
     {
       "id": "5bbba82115fcc02dad7faaf5",
@@ -15472,8 +15696,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120513.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120513.mp3"
     },
     {
       "id": "5bbbbd84e79c703d0ac60c26",
@@ -15493,8 +15719,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-778yc",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120506.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120506.mp3"
     },
     {
       "id": "5bbbbdcbeef1a160e3bfe4d0",
@@ -15514,8 +15742,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120429.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120429.mp3"
     },
     {
       "id": "5bbbbf1e652dea42d693cbc4",
@@ -15530,8 +15760,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2-hwgy5",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120422.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120422.mp3"
     },
     {
       "id": "5bbe822b24a6944890951b11",
@@ -15551,8 +15783,10 @@
         "Songs of the Savior"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-2p23w-32jpw",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120415.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120415.mp3"
     },
     {
       "id": "5bbbbff3e79c703d0ac63c1a",
@@ -15572,8 +15806,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2-f4js7",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120408.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120408.mp3"
     },
     {
       "id": "5c31b40821c67cd2740a02ec",
@@ -15593,8 +15829,10 @@
         "Just As I Am"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2012/4/1/without-one-plea",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b4302b6a28cb4027caaa/1601054704923/hnsn20120401.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20120401.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b4302b6a28cb4027caaa/1601054704923/hnsn20120401.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120401.mp3"
     },
     {
       "id": "5c31b38a4fa51ae3f535dac0",
@@ -15614,8 +15852,10 @@
         "Just As I Am"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2012/3/25/poor-wretched-blind",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b3d62b6a28cb4027c8ef/1601054704920/hnsn20120325.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20120325.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b3d62b6a28cb4027c8ef/1601054704920/hnsn20120325.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120325.mp3"
     },
     {
       "id": "5bbbc0a9c830255b15bd8c2d",
@@ -15635,8 +15875,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2-3fal9",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120318.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120318.mp3"
     },
     {
       "id": "5bbbc1244785d36e9c282067",
@@ -15656,8 +15898,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2-w8crd",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120311.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120311.mp3"
     },
     {
       "id": "5bbbc178652dea42d693fcb4",
@@ -15677,8 +15921,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2-jtk88",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120304.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120304.mp3"
     },
     {
       "id": "5bbbc1cbe5e5f044bc4b753e",
@@ -15698,8 +15944,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2-hdtc2",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120226.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120226.mp3"
     },
     {
       "id": "5bbbc20ce5e5f044bc4b7a57",
@@ -15719,8 +15967,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2-sdf22",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120219.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120219.mp3"
     },
     {
       "id": "5bbbc26a9140b782d10d619e",
@@ -15740,8 +15990,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2-sdf22-neg89",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120212.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120212.mp3"
     },
     {
       "id": "5bbbc2d81905f4d002b2153c",
@@ -15761,8 +16013,10 @@
         "Chosen..."
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-e4xns-hlteh-jj5rz-9hh49-seglh-tjpj2-sdf22-j694x",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120205.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120205.mp3"
     },
     {
       "id": "5b1afd07562fa7f5d358a3b4",
@@ -15775,8 +16029,10 @@
         "Church Matters?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2012/1/22/missions",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120122.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120122.mp3"
     },
     {
       "id": "5b1afc972b6a282a613fffb6",
@@ -15789,8 +16045,10 @@
         "Church Matters?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2012/1/15/congregationalism",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120115.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120115.mp3"
     },
     {
       "id": "5bbce8f08165f517af9545cb",
@@ -15807,8 +16065,10 @@
         "Come, Thou Long Expected"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120108.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120108.mp3"
     },
     {
       "id": "5bbce9d61905f408e47d228b",
@@ -15825,8 +16085,10 @@
         "Come, Thou Long Expected"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-37beg",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20120101.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20120101.mp3"
     },
     {
       "id": "5bbe3aad104c7b934724dad5",
@@ -15842,8 +16104,10 @@
         "Come, Thou Long Expected"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-rtjst",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111225.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111225.mp3"
     },
     {
       "id": "5bbe3df61905f437ce64943a",
@@ -15863,8 +16127,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111218.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111218.mp3"
     },
     {
       "id": "5bbe3f317817f7fc9919913d",
@@ -15884,8 +16150,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-pnwmn",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111211.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111211.mp3"
     },
     {
       "id": "5bbe3f924192020c41ba9982",
@@ -15905,8 +16173,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-5hdwk",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111204.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111204.mp3"
     },
     {
       "id": "5bbe3fd7e79c70daff439a0d",
@@ -15926,8 +16196,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111127.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111127.mp3"
     },
     {
       "id": "5b1afc3d1ae6cfcbab422f05",
@@ -15940,8 +16212,10 @@
         "Church Matters?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/11/20/what-are-deacons",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111120.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111120.mp3"
     },
     {
       "id": "5b1afb74758d46508aa1ff75",
@@ -15954,8 +16228,10 @@
         "Church Matters?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/11/13/what-are-elders",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111113.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111113.mp3"
     },
     {
       "id": "5bbe403f9140b7a32ac1cbb1",
@@ -15975,8 +16251,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-p29sb",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111106.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111106.mp3"
     },
     {
       "id": "5bbe40c70d92972c87c741fc",
@@ -15996,8 +16274,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-lejzf",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111030.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111030.mp3"
     },
     {
       "id": "5bbe410553450abfcaf21c01",
@@ -16017,8 +16297,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-2mc9g",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111023.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111023.mp3"
     },
     {
       "id": "5bbe40fab208fc82c6abcc57",
@@ -16038,8 +16320,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111016.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111016.mp3"
     },
     {
       "id": "5bbe829b419202876b9a6044",
@@ -16059,8 +16343,10 @@
         "Songs of the Savior"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-2p23w-32jpw-g9nga",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111009.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111009.mp3"
     },
     {
       "id": "5bbe41a415fcc06749dd541f",
@@ -16080,8 +16366,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-24ykb",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20111002.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20111002.mp3"
     },
     {
       "id": "5bbe41d98165f5f283145f23",
@@ -16101,8 +16389,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-3gmdf",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110925.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110925.mp3"
     },
     {
       "id": "5bbe422215fcc06749dd5b59",
@@ -16122,8 +16412,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-67e37",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110918.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110918.mp3"
     },
     {
       "id": "5bbe427c104c7b9347255566",
@@ -16143,8 +16435,10 @@
         "Once and Future King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-xg79s",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110911.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110911.mp3"
     },
     {
       "id": "5c31aa991ae6cfe5e9dbd5a1",
@@ -16164,8 +16458,10 @@
         "Guest Preacher"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/9/4/the-blessed-one",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31aaccc2241ba8a70a4239/1601054704881/hnsn20110904.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20110904.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31aaccc2241ba8a70a4239/1601054704881/hnsn20110904.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110904.mp3"
     },
     {
       "id": "5bbe42d0ec212d07495322e3",
@@ -16181,8 +16477,10 @@
         "Revolution"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110828.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110828.mp3"
     },
     {
       "id": "5bbe434c0d92972c87c76a78",
@@ -16198,8 +16496,10 @@
         "Revolution"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-lw72e",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110821.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110821.mp3"
     },
     {
       "id": "5bbe43a6104c7b9347256810",
@@ -16216,8 +16516,10 @@
         "Revolution"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-nx9z5",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110814.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110814.mp3"
     },
     {
       "id": "5bbe445615fcc06749dd7da2",
@@ -16233,8 +16535,10 @@
         "Revolution"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-8p64t",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110807.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110807.mp3"
     },
     {
       "id": "5bbe44edc830255695a4c9ce",
@@ -16251,8 +16555,10 @@
         "Revolution"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-73jyd",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110731.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110731.mp3"
     },
     {
       "id": "5bbe45a59140b7a32ac228e0",
@@ -16267,8 +16573,10 @@
         "Revolution"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-crj79",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110724.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110724.mp3"
     },
     {
       "id": "5bbe832e9140b72662ef5309",
@@ -16288,8 +16596,10 @@
         "Suffering God"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a-36b8m",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110717.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110717.mp3"
     },
     {
       "id": "5bbe83af104c7b437b6b06c4",
@@ -16309,8 +16619,10 @@
         "Suffering God"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a-36b8m-78ysz",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110710.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110710.mp3"
     },
     {
       "id": "5bbe83fa9140b72662ef5f95",
@@ -16330,8 +16642,10 @@
         "Suffering God"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a-36b8m-dy6nm",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110703.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110703.mp3"
     },
     {
       "id": "5bbe461eeef1a1188bca7ce0",
@@ -16351,8 +16665,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110626.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110626.mp3"
     },
     {
       "id": "5c31b0e7f950b7a89807410b",
@@ -16372,8 +16688,10 @@
         "Guest Preacher"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/6/19/our-heavenly-father",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b107898583102b6d9a7b/1601054704910/hnsn20110619.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20110619.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b107898583102b6d9a7b/1601054704910/hnsn20110619.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110619.mp3"
     },
     {
       "id": "5bbe46907817f7fc991a0ebf",
@@ -16393,8 +16711,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jr4az",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110612.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110612.mp3"
     },
     {
       "id": "5bbe470fe2c483db9c64648b",
@@ -16414,8 +16734,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-92ct4",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110529.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110529.mp3"
     },
     {
       "id": "5bbe47678165f5f28314c070",
@@ -16435,8 +16757,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-psekp",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110522.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110522.mp3"
     },
     {
       "id": "5bbe479a4785d31f81a29a8f",
@@ -16456,8 +16780,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-a7k2w",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110515.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110515.mp3"
     },
     {
       "id": "5bbe47d70d92972c87c7bd61",
@@ -16477,8 +16803,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-n33l5",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110508.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110508.mp3"
     },
     {
       "id": "5bbe48384192028d678bd4e3",
@@ -16498,8 +16826,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-6m4ka",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110501.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110501.mp3"
     },
     {
       "id": "5bbe4895b208fc82c6ac4fbc",
@@ -16519,8 +16849,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-hlymd",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110424.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110424.mp3"
     },
     {
       "id": "5c31b1b370a6adec3ed50338",
@@ -16540,8 +16872,10 @@
         "What is Love?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/4/17/obedient-love",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b2a8032be4fbaf2acc0d/1601054704916/hnsn20110417.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20110417.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b2a8032be4fbaf2acc0d/1601054704916/hnsn20110417.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110417.mp3"
     },
     {
       "id": "5bbe4874e79c70daff442920",
@@ -16561,8 +16895,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110410.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110410.mp3"
     },
     {
       "id": "5bbe494d104c7b934725d4eb",
@@ -16582,8 +16918,10 @@
         "What Else Do You Need...?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-bj252",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110403.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110403.mp3"
     },
     {
       "id": "5c31b510562fa7a26ed0c7fd",
@@ -16603,8 +16941,10 @@
         "Wisdom From Heaven"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/3/27/the-warnings-of-wisdom",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b57c0e2e72045faada2e/1601054704930/hnsn20110327.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20110327.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b57c0e2e72045faada2e/1601054704930/hnsn20110327.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110327.mp3"
     },
     {
       "id": "5c31b47b4ae23783edb6e1b5",
@@ -16624,8 +16964,10 @@
         "Wisdom From Heaven"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/3/20/the-works-of-wisdom",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b4bf70a6adec3ed5157b/1601054704926/hnsn20110320.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20110320.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b4bf70a6adec3ed5157b/1601054704926/hnsn20110320.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110320.mp3"
     },
     {
       "id": "5b1afa796d2a73a4cf04ba7b",
@@ -16638,8 +16980,10 @@
         "Church Matters?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-ntsjt-yclzt",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110313.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110313.mp3"
     },
     {
       "id": "5b19de97562fa72ab72b4160",
@@ -16652,8 +16996,10 @@
         "Church Matters?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-ntsjt",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6a964f22332cd95f04ab15ee/1788235556163/Hinson+Church+Audio+Mar+6+2011.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20110306.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6a964f22332cd95f04ab15ee/1788235556163/Hinson+Church+Audio+Mar+6+2011.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110306.mp3"
     },
     {
       "id": "5b19dc9bf950b7075faa1360",
@@ -16666,8 +17012,10 @@
         "Church Matters?"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110227.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110227.mp3"
     },
     {
       "id": "5bbe49e48165f57907d3015e",
@@ -16687,8 +17035,10 @@
         "On the Edge of Heaven"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110220.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110220.mp3"
     },
     {
       "id": "5bbe4a659140b730e56f8089",
@@ -16708,8 +17058,10 @@
         "On the Edge of Heaven"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-egdxr",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110213.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110213.mp3"
     },
     {
       "id": "5bbe4ab7e5e5f008f3dbcb59",
@@ -16729,8 +17081,10 @@
         "On the Edge of Heaven"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-ewb6d",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110206.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110206.mp3"
     },
     {
       "id": "5bbe4af6ec212d93a172b361",
@@ -16750,8 +17104,10 @@
         "On the Edge of Heaven"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-2eh2t",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110123.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110123.mp3"
     },
     {
       "id": "5bbe6901f9619ae9202c518a",
@@ -16771,8 +17127,10 @@
         "On the Edge of Heaven"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-3tgbs",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110116.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110116.mp3"
     },
     {
       "id": "5bbe726b8165f52adf128ad1",
@@ -16792,8 +17150,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20110109.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110109.mp3"
     },
     {
       "id": "5c31b60688251b958f4a4916",
@@ -16813,8 +17173,10 @@
         "Guest Preacher"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/1/2/words-of-wisdom",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b6506d2a7305971345af/1601054704933/hnsn20110102.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20110102.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31b6506d2a7305971345af/1601054704933/hnsn20110102.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20110102.mp3"
     },
     {
       "id": "5bbe732c1905f477c4e5bdd9",
@@ -16834,8 +17196,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-clhb9",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101226.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101226.mp3"
     },
     {
       "id": "5bbe73831905f477c4e5c1c7",
@@ -16855,8 +17219,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-6s2fw",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101219.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101219.mp3"
     },
     {
       "id": "5bbe73c7f4e1fc93bd98237b",
@@ -16876,8 +17242,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-4g77z",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101212.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101212.mp3"
     },
     {
       "id": "5bbe742871c10b4e236634ed",
@@ -16897,8 +17265,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-cra29",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101205.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101205.mp3"
     },
     {
       "id": "5bbe747471c10b4e23663a20",
@@ -16918,8 +17288,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-zsatk",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101128.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101128.mp3"
     },
     {
       "id": "5c31a8b1b8a0455ef9c86905",
@@ -16939,8 +17311,10 @@
         "The People and Their King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2010/11/21/gods-anointing-king",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31a8cf4fa51ae3f5358ec1/1601054704875/hnsn20101121.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20101121.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31a8cf4fa51ae3f5358ec1/1601054704875/hnsn20101121.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101121.mp3"
     },
     {
       "id": "5c31a79821c67cd27409a9ac",
@@ -16960,8 +17334,10 @@
         "The People and Their King"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2010/11/14/the-unity-of-the-church",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31a7f670a6adec3ed4baa1/1601054704872/hnsn20101114.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20101114.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31a7f670a6adec3ed4baa1/1601054704872/hnsn20101114.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101114.mp3"
     },
     {
       "id": "5bbe775a8165f52adf12dc0c",
@@ -16981,8 +17357,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-j57dt",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101107.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101107.mp3"
     },
     {
       "id": "5bbe778d53450a02f306cb45",
@@ -17002,8 +17380,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-xakx8",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101031.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101031.mp3"
     },
     {
       "id": "5bbe77db104c7be4e7060611",
@@ -17023,8 +17403,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-jd8xs",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101024.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101024.mp3"
     },
     {
       "id": "5bbe7819f4e1fcee42f65fbc",
@@ -17044,8 +17426,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-eckp2",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101017.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101017.mp3"
     },
     {
       "id": "5bbe784f7817f747715207a7",
@@ -17065,8 +17449,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-w9wkx",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101010.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101010.mp3"
     },
     {
       "id": "5bbe78ad1905f4d2a4f98ceb",
@@ -17086,8 +17472,10 @@
         "Jesus: the Man & Mission"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-6s7k9-l5z6h-xxwfs-xre3r-sn4zb-texx2-jscpl-75wfb-b5nhh-2p23w",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20101003.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20101003.mp3"
     },
     {
       "id": "5bbe8688e2c4834993f3acd0",
@@ -17128,8 +17516,10 @@
         "Partners in the Gospel"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a-36b8m-9lpg3-4atcn",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20100919.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20100919.mp3"
     },
     {
       "id": "5bbe8785f9619a60d8ab81fc",
@@ -17149,8 +17539,10 @@
         "Partners in the Gospel"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a-36b8m-9lpg3-s8hpw",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20100912.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20100912.mp3"
     },
     {
       "id": "5bbe87f9b208fc580d2f4c48",
@@ -17170,8 +17562,10 @@
         "Partners in the Gospel"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a-36b8m-9lpg3-dzzrt",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20100905.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20100905.mp3"
     },
     {
       "id": "5bbe8879e2c4834993f3c34b",
@@ -17191,8 +17585,10 @@
         "Partners in the Gospel"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a-36b8m-9lpg3-ptep6",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20100829.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20100829.mp3"
     },
     {
       "id": "5bbe894ce4966bb61a6e8d2c",
@@ -17212,8 +17608,10 @@
         "Partners in the Gospel"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a-36b8m-9lpg3-lb8xg",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20100822.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20100822.mp3"
     },
     {
       "id": "5bbe89ba9140b72662efa86e",
@@ -17233,8 +17631,10 @@
         "Partners in the Gospel"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2011/2/27/baptism-2mcbf-tfldl-hmtak-hf87a-36b8m-9lpg3-wj6rp",
-      "audio": "",
-      "legacyAudio": true
+      "audio": "/archive-audio/hnsn20100815.mp3",
+      "legacyAudio": false,
+      "originalAudio": "",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20100815.mp3"
     },
     {
       "id": "5c31ad616d2a7305971311b3",
@@ -17254,8 +17654,10 @@
         "Guest Preacher"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2010/8/8/romans-831-39",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31ae25b8a0455ef9c893eb/1601054704895/hnsn20100808.mp3",
-      "legacyAudio": false
+      "audio": "/archive-audio/hnsn20100808.mp3",
+      "legacyAudio": false,
+      "originalAudio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/5c31ae25b8a0455ef9c893eb/1601054704895/hnsn20100808.mp3",
+      "audioSource": "http://www.hinsonchurch.net/audio/hnsn20100808.mp3"
     }
   ]
 }

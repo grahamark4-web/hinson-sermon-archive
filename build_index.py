@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from platform_links import update_links
+from archive_audio import update_archive_audio
 from urllib.parse import urljoin
 BASE = 'https://www.hinsonchurch.org'
 SITE_TZ = ZoneInfo('America/Los_Angeles')
@@ -77,9 +78,11 @@ def main():
     known={r['url'].replace(BASE,'').rstrip('/') for r in rows}
     missing=sorted(u for u in links if u.replace(BASE,'') not in known)
     if missing: raise RuntimeError(f'{len(missing)} sermon index links missing from crawl: {missing[:5]}')
+    archive_report=update_archive_audio(rows,root)
     payload={'updatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'source':BASE+'/sermonindex','sermons':rows}
     temp=target.with_suffix('.tmp'); temp.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n'); temp.replace(target)
     report={'count':len(rows),'firstDate':rows[-1]['date'],'lastDate':rows[0]['date'],'indexLinksChecked':len(links),'missingSpeaker':sum(not r['speaker'] for r in rows),'missingPassage':sum(not r['passages'] for r in rows),'legacyAudio':sum(r['legacyAudio'] for r in rows),'noAudio':sum(not r['audio'] and not r['legacyAudio'] for r in rows)}
     report.update(update_links(rows,root))
+    report.update(archive_report)
     (root/'catalog-report.json').write_text(json.dumps(report,indent=2)+'\n'); print(json.dumps(report),flush=True)
 if __name__=='__main__': main()

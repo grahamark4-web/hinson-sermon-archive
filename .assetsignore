@@ -1,0 +1,12 @@
+*.py
+*.cjs
+*.mjs
+README.md
+wrangler.jsonc
+archive-audio.json
+archive-result.json
+__pycache__/
+.github/
+.git/
+.wrangler/
+node_modules/
