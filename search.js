@@ -1,0 +1,31 @@
+/* Scripture queries match overlapping ranges, rather than title substrings. */
+(function(root){
+const books='Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|2 Chronicles|Ezra|Nehemiah|Esther|Job|Psalms|Proverbs|Ecclesiastes|Song of Solomon|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|1 Corinthians|2 Corinthians|Galatians|Ephesians|Philippians|Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy|Titus|Philemon|Hebrews|James|1 Peter|2 Peter|1 John|2 John|3 John|Jude|Revelation'.split('|');
+const norm=s=>String(s||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
+const aliases={'psalm':'Psalms','ps':'Psalms','song of songs':'Song of Solomon','gen':'Genesis','ex':'Exodus','matt':'Matthew','mt':'Matthew','rom':'Romans','jn':'John','rev':'Revelation','1 tim':'1 Timothy','2 tim':'2 Timothy','1 cor':'1 Corinthians','2 cor':'2 Corinthians'};
+for(const b of books)aliases[norm(b)]=b;
+const names=Object.keys(aliases).sort((a,b)=>b.length-a.length).map(s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|');
+function parse(s){
+ const m=norm(s).replace(/–|—/g,'-').match(new RegExp('^('+names+')\\.?\\s+(\\d+(?:\\s*:\\s*\\d+)?(?:\\s*-\\s*\\d+(?:\\s*:\\s*\\d+)?)?(?:\\s*,\\s*\\d+(?:\\s*-\\s*\\d+)?)*)$'));
+ if(!m)return null;
+ const parts=m[2].replace(/\s/g,'').split(',');const singleChapter=['Obadiah','Philemon','2 John','3 John','Jude'].includes(aliases[m[1]]);let chapter=singleChapter?1:undefined;
+ const ranges=parts.map((part,i)=>{
+  let [a,b]=part.split('-');const verseMode=a.includes(':')||singleChapter||(i>0&&chapter!==undefined);
+  let start,end;
+  if(a.includes(':')){const [c,v]=a.split(':').map(Number);chapter=c;start=c*1000+v;}
+  else if(verseMode)start=chapter*1000+Number(a);else start=Number(a)*1000;
+  if(!b)end=verseMode?start:start+999;
+  else if(b.includes(':')){const [c,v]=b.split(':').map(Number);end=c*1000+v;}
+  else end=verseMode?chapter*1000+Number(b):Number(b)*1000+999;
+  return [start,end];
+ });return {book:aliases[m[1]],ranges};
+}
+function matches(sermon,q){
+ if(!q.trim())return true;
+ const query=parse(q);
+ if(query)return (sermon.passages||[]).some(p=>{const r=parse(p.reference);return r&&r.book===query.book&&r.ranges.some(a=>query.ranges.some(b=>a[0]<=b[1]&&b[0]<=a[1]));});
+ const hay=norm([sermon.title,sermon.speaker,...(sermon.series||[]),...(sermon.books||[]),...(sermon.passages||[]).map(p=>p.reference)].join(' '));
+ return norm(q).split(' ').every(word=>hay.includes(word));
+}
+const api={books,norm,parse,matches};if(typeof module!=='undefined')module.exports=api;else root.SermonSearch=api;
+})(typeof window!=='undefined'?window:globalThis);
