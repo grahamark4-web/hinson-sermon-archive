@@ -51,3 +51,9 @@ Use a Code Block with HTML display enabled. Keep the source collection published
 ## Platform episode links
 
 `platform_links.py` refreshes Apple’s public episode lookup and Spotify’s publicly supplied show metadata. It matches Apple episodes to archive entries using the original MP3 filename, then a unique title and publication date within 14 days. Spotify titles are matched to the Apple episode first. Ambiguous matches are omitted. Verified links persist in `podcast-links.json` as the public feeds rotate; a temporary platform lookup failure retains the existing links and records a warning in the catalog report. Initial coverage is 100 Apple and 50 Spotify links, collected from the public catalogs. The daily Spotify metadata normally supplies the most recent 12 episodes, so new links accumulate over time. Platform links are omitted for unmatched sermons; the Follow links always open the podcast show.
+
+## UX refinement and rollback (October 9, 2026)
+
+The pre-refinement UI is preserved on branch `backup/pre-ux-refinement-2026-10-09` at commit `39ed9c1a9bb225749ccd428a31cc41cbd690ac93`. To undo only this design update, restore `index.html`, `styles.css`, and `app.js` from that branch to main and commit. Leave catalog files and the refresh workflow unchanged so newer sermons are retained. Cloudflare will deploy the restoration automatically.
+
+Add `?embed=1` to the iframe URL to hide the app title and introduction when the surrounding church page supplies them. Existing embed URLs continue to work. The fixed iframe height remains unchanged; automatic height adjustment and a persistent player are separate enhancements.

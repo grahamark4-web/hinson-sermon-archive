@@ -46,3 +46,42 @@ footer a{display:inline-block;margin-top:10px}
 
 /* Compact logo buttons for the podcast links at the top of the archive. */
 .podcast-subscribe{gap:8px;margin-top:12px}.subscribe-logo{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#fff;border:1px solid var(--line);border-radius:6px;text-decoration:none}.subscribe-logo:hover{background:#f5f5f5;border-color:#bbb}.subscribe-logo img{display:block;width:24px;height:24px}.subscribe-logo:focus-visible{outline:2px solid var(--accent);outline-offset:3px}@media(pointer:coarse){.subscribe-logo{width:44px;height:44px}}
+
+/* Archive UX refinement: primary listening, quieter controls, compact header. */
+[hidden]{display:none!important}
+header{padding-bottom:20px}.intro{margin-top:8px}
+.search-panel{padding:24px}.hint{margin-bottom:16px}
+#clear{background:transparent;color:var(--muted);border-color:transparent;padding:8px;text-decoration:underline}
+#clear:hover{color:var(--ink);background:#f5f5f5}
+.filters{grid-template-columns:repeat(3,1fr)}
+.filter-disclosure summary{display:none}
+.results-bar{margin-top:20px}
+.sort-control{display:flex;align-items:center;gap:8px}
+.sort-control label{margin:0;color:var(--muted);font-weight:400}
+.sort-control select{width:auto;min-height:40px;padding:6px 10px;font-size:14px}
+.sermon-title{text-decoration:none;color:inherit}
+.sermon-title:hover{text-decoration:underline;text-decoration-thickness:1px}
+.sermon{padding:22px 0}
+.meta{margin-bottom:8px}.actions{margin-top:12px;gap:10px}
+.play{background:var(--accent);color:#fff;border-color:var(--accent)}
+.play:hover,.play[aria-pressed="true"]{background:#404040;color:#fff;border-color:#404040}
+.platform-link{border-color:transparent;padding:8px;color:var(--muted)}
+.platform-link:hover{color:var(--ink);border-color:var(--line)}
+.audio-options{position:relative;font-size:14px;color:var(--muted)}
+.audio-options summary{cursor:pointer;padding:10px 4px}
+.audio-options a{display:block;padding:10px;background:#fff;border:1px solid var(--line)}
+footer{padding-top:24px}footer #updated{margin:0 0 8px}
+.embedded header h1,.embedded header .intro{display:none}
+.embedded header{padding-bottom:16px}.embedded .podcast-subscribe{margin-top:0}
+@media(max-width:700px){
+ main{padding:16px}.search-panel{padding:16px}
+ .search-row{gap:4px}.hint{margin-bottom:12px}
+ .filter-disclosure summary{display:list-item;font-size:14px;cursor:pointer;padding:10px 0}
+ .filter-disclosure[open] summary{margin-bottom:8px}
+ .filters{grid-template-columns:1fr;gap:12px}
+ .results-bar{flex-direction:row;align-items:center;gap:8px;font-size:13px}
+ .sort-control label{display:none}.sort-control select{max-width:140px}
+ .sermon{padding:20px 0;gap:6px}.actions{gap:6px}
+ .platform-link{padding:8px 6px}h2{margin-bottom:8px}
+ header{padding-bottom:16px}
+}
