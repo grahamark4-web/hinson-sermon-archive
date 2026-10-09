@@ -32,7 +32,7 @@ h2{font:400 28px/1.2 var(--heading-font);color:rgba(26,26,26,.9);margin:0 0 9px}
 .passage{color:var(--ink);font-weight:400}
 .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .actions a{font-size:14px}
-.play{min-height:36px;font-size:13px;padding:6px 14px}
+.play{-webkit-appearance:none;appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;font-size:14px;line-height:1;padding:9px 14px;background:#fff;color:var(--ink);border:1px solid #b9b9b9;border-radius:3px}.play:hover,.play[aria-pressed="true"]{background:#f3f3f3;border-color:#999}.play svg{display:block;flex:none}.platform-link{display:inline-flex;align-items:center;min-height:44px;padding:6px 10px;border:1px solid var(--line);border-radius:3px;text-decoration:none}.platform-link:hover{background:#f5f5f5}.podcast-subscribe{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:16px 0 0;font-size:14px}.platform-note{font-size:13px;color:var(--muted);margin:8px 0 0}
 .audio-wrap{margin-top:14px}
 audio{width:min(100%,620px);display:block}
 .notice{font-size:14px;color:var(--muted);margin:8px 0}

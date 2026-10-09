@@ -6,5 +6,8 @@
   "missingSpeaker": 3,
   "missingPassage": 58,
   "legacyAudio": 183,
-  "noAudio": 3
+  "noAudio": 3,
+  "appleEpisodeLinks": 100,
+  "spotifyEpisodeLinks": 50,
+  "platformLookupWarnings": []
 }

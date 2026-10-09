@@ -4,6 +4,7 @@ import concurrent.futures, datetime as dt, html, json, re, time, urllib.request
 from html.parser import HTMLParser
 from zoneinfo import ZoneInfo
 from pathlib import Path
+from platform_links import update_links
 from urllib.parse import urljoin
 BASE = 'https://www.hinsonchurch.org'
 SITE_TZ = ZoneInfo('America/Los_Angeles')
@@ -79,5 +80,6 @@ def main():
     payload={'updatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'source':BASE+'/sermonindex','sermons':rows}
     temp=target.with_suffix('.tmp'); temp.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n'); temp.replace(target)
     report={'count':len(rows),'firstDate':rows[-1]['date'],'lastDate':rows[0]['date'],'indexLinksChecked':len(links),'missingSpeaker':sum(not r['speaker'] for r in rows),'missingPassage':sum(not r['passages'] for r in rows),'legacyAudio':sum(r['legacyAudio'] for r in rows),'noAudio':sum(not r['audio'] and not r['legacyAudio'] for r in rows)}
+    report.update(update_links(rows,root))
     (root/'catalog-report.json').write_text(json.dumps(report,indent=2)+'\n'); print(json.dumps(report),flush=True)
 if __name__=='__main__': main()

@@ -5,3 +5,6 @@
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' https://use.typekit.net; media-src https:; connect-src 'self'; img-src 'self' data:; frame-ancestors 'self' https://hinsonchurch.org https://www.hinsonchurch.org https://*.squarespace.com
 /sermons.json
   Cache-Control: public, max-age=300
+
+/podcast-links.json
+  Cache-Control: public, max-age=300
