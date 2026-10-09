@@ -43,3 +43,6 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:38px 10px}
 footer a{display:inline-block;margin-top:10px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media(max-width:700px){main{padding:20px 18px}.search-panel{padding:18px}.filters{grid-template-columns:1fr 1fr}.search-row{flex-direction:column}.search-row button{align-self:flex-start}.sermon{grid-template-columns:1fr;gap:5px}h2{font-size:25px}.results-bar{align-items:flex-start;flex-direction:column;gap:0}header{padding-bottom:24px}}
+
+/* Compact logo buttons for the podcast links at the top of the archive. */
+.podcast-subscribe{gap:8px;margin-top:12px}.subscribe-logo{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#fff;border:1px solid var(--line);border-radius:6px;text-decoration:none}.subscribe-logo:hover{background:#f5f5f5;border-color:#bbb}.subscribe-logo img{display:block;width:24px;height:24px}.subscribe-logo:focus-visible{outline:2px solid var(--accent);outline-offset:3px}@media(pointer:coarse){.subscribe-logo{width:44px;height:44px}}
