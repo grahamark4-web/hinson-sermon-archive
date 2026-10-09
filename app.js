@@ -1,6 +1,10 @@
 'use strict';
 const $=id=>document.getElementById(id);let sermons=[],platformLinks={},limit=30,filtered=[];
 const controls=['query','book','speaker','year','sort'];
+const mobileSearch=matchMedia('(max-width:700px)');
+const desktopPlaceholder=$('query').placeholder;
+function updateSearchPlaceholder(){ $('query').placeholder=mobileSearch.matches?'Search':desktopPlaceholder; }
+updateSearchPlaceholder();mobileSearch.addEventListener('change',updateSearchPlaceholder);
 const params=new URLSearchParams(location.search);if(params.get('embed')==='1')document.body.classList.add('embedded');if(matchMedia('(max-width:700px)').matches)document.querySelector('.filter-disclosure').open=false;for(const id of controls)if(params.has(id))$(id).value=params.get(id);
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
 function link(text,url){const a=el('a',text);a.href=url;a.target='_blank';a.rel='noopener';return a;}
