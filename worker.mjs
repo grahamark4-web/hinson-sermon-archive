@@ -10,8 +10,8 @@ export default {
   const headers=new Headers();
   for(const key of ['Range','If-Range','If-None-Match','If-Modified-Since'])if(request.headers.has(key))headers.set(key,request.headers.get(key));
   let upstream;
-  try{upstream=await fetch(source,{method:request.method,headers,redirect:'error'});}catch{return new Response('Recording temporarily unavailable',{status:502});}
-  if(![200,206,304,416].includes(upstream.status))return new Response('Recording temporarily unavailable',{status:502});
+  try{upstream=await fetch(source,{method:request.method,headers,redirect:'manual'});}catch(error){return new Response('Recording temporarily unavailable',{status:502,headers:{'X-Audio-Upstream-Status':'fetch-error','X-Audio-Error':String(error.message).replace(/[^a-zA-Z0-9 .:-]/g,'').slice(0,150)}});}
+  if(![200,206,304,416].includes(upstream.status))return new Response('Recording temporarily unavailable',{status:502,headers:{'X-Audio-Upstream-Status':String(upstream.status)}});
   const out=new Headers();
   for(const key of ['Content-Length','Content-Range','Accept-Ranges','ETag','Last-Modified'])if(upstream.headers.has(key))out.set(key,upstream.headers.get(key));
   out.set('Content-Type','audio/mpeg');out.set('Cache-Control','public, max-age=14400');out.set('X-Content-Type-Options','nosniff');
