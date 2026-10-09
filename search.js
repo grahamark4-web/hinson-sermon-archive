@@ -27,5 +27,21 @@ function matches(sermon,q){
  const hay=norm([sermon.title,sermon.speaker,...(sermon.series||[]),...(sermon.books||[]),...(sermon.passages||[]).map(p=>p.reference)].join(' '));
  return norm(q).split(' ').every(word=>hay.includes(word));
 }
-const api={books,norm,parse,matches};if(typeof module!=='undefined')module.exports=api;else root.SermonSearch=api;
+function filterMatches(sermon,selection,except){
+ return (except==='book'||!selection.book||(sermon.books||[]).includes(selection.book))&&
+ (except==='speaker'||!selection.speaker||sermon.speaker===selection.speaker)&&
+ (except==='year'||!selection.year||sermon.date.startsWith(selection.year));
+}
+function facets(sermons,selection){
+ const searched=sermons.filter(s=>matches(s,selection.query||''));
+ const bookRows=searched.filter(s=>filterMatches(s,selection,'book'));
+ const speakerRows=searched.filter(s=>filterMatches(s,selection,'speaker'));
+ const yearRows=searched.filter(s=>filterMatches(s,selection,'year'));
+ return {
+ book:books.filter(b=>bookRows.some(s=>(s.books||[]).includes(b))).reverse(),
+ speaker:[...new Set(speakerRows.map(s=>s.speaker).filter(Boolean))].sort(),
+ year:[...new Set(yearRows.map(s=>s.date.slice(0,4)))].sort().reverse()
+ };
+}
+const api={books,norm,parse,matches,filterMatches,facets};if(typeof module!=='undefined')module.exports=api;else root.SermonSearch=api;
 })(typeof window!=='undefined'?window:globalThis);

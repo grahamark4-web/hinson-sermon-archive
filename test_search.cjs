@@ -14,3 +14,20 @@ assert(matches(sermon('Jude 20-25'),'Jude 1:22'));
 assert(matches(sermon('3 John 9-10'),'3 John 1:9'));
 assert(!matches(sermon('3 John 9-10'),'3 John 1:8'));
 console.log('13 Scripture and speaker checks passed');
+
+const {facets}=require('./search.js');
+const rows=[
+ {title:'Hope',books:['Romans'],speaker:'Alice',date:'2026-01-04',series:[],passages:[]},
+ {title:'Grace',books:['Romans'],speaker:'Bob',date:'2025-01-05',series:[],passages:[]},
+ {title:'Hope',books:['John'],speaker:'Bob',date:'2026-01-11',series:[],passages:[]}
+];
+assert.deepEqual(facets(rows,{book:'Romans'}).speaker,['Alice','Bob']);
+assert.deepEqual(facets(rows,{book:'Romans',year:'2026'}).speaker,['Alice']);
+assert.deepEqual(facets(rows,{speaker:'Bob',year:'2026'}).book,['John']);
+assert.deepEqual(facets(rows,{book:'Romans',speaker:'Bob'}).year,['2025']);
+assert.deepEqual(facets(rows,{book:'Romans',speaker:'Alice',year:'2026'}).year,['2026']);
+assert.deepEqual(facets(rows,{query:'Hope',book:'Romans'}).speaker,['Alice']);
+assert.deepEqual(facets(rows,{}).book,['Romans','John']);
+assert.deepEqual(facets(rows,{}).year,['2026','2025']);
+assert.deepEqual(facets(rows,{query:'No such sermon'}).speaker,[]);
+console.log('9 cross-filter checks passed');
