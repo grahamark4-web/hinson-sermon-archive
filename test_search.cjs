@@ -31,3 +31,14 @@ assert.deepEqual(facets(rows,{}).book,['Romans','John']);
 assert.deepEqual(facets(rows,{}).year,['2026','2025']);
 assert.deepEqual(facets(rows,{query:'No such sermon'}).speaker,[]);
 console.log('9 cross-filter checks passed');
+
+const {highlightRanges}=require('./search.js');
+assert.deepEqual(highlightRanges('Grace and grace','GRACE'),[[0,5],[10,15]]);
+assert.deepEqual(highlightRanges('Michael Lawrence','Michael Lawrence'),[[0,7],[8,16]]);
+assert.deepEqual(highlightRanges('God’s Glory','God\'s'),[[0,5]]);
+assert.deepEqual(highlightRanges('Résumé','resume'),[[0,6]]);
+assert.deepEqual(highlightRanges('Romans 8:18-30','Romans 8:28',true),[[0,14]]);
+assert.deepEqual(highlightRanges('Romans 8:1-17','Romans 8:28',true),[[0,6]]);
+assert.deepEqual(highlightRanges('Example',''),[]);
+assert.deepEqual(highlightRanges('a+b and [x]','a+b [x]'),[[0,3],[8,11]]);
+console.log('8 search highlight checks passed');

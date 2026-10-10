@@ -43,5 +43,20 @@ function facets(sermons,selection){
  year:[...new Set(yearRows.map(s=>s.date.slice(0,4)))].sort().reverse()
  };
 }
-const api={books,norm,parse,matches,filterMatches,facets};if(typeof module!=='undefined')module.exports=api;else root.SermonSearch=api;
+function highlightRanges(text,q,reference=false){
+ const query=parse(q),passage=reference?parse(text):null;
+ if(query&&passage&&query.book===passage.book&&passage.ranges.some(a=>query.ranges.some(b=>a[0]<=b[1]&&b[0]<=a[1])))return [[0,text.length]];
+ if(!q.trim())return [];
+ let normalized='',positions=[];
+ for(let i=0;i<text.length;){const char=String.fromCodePoint(text.codePointAt(i)),part=char.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[’‘]/g,"'");for(const c of part){normalized+=c;positions.push([i,i+char.length]);}i+=char.length;}
+ const ranges=[];
+ for(const term of [...new Set(norm(q).split(' ').filter(Boolean))]){
+  let start=0,index;
+  while((index=normalized.indexOf(term,start))!==-1){ranges.push([positions[index][0],positions[index+term.length-1][1]]);start=index+term.length;}
+ }
+ ranges.sort((a,b)=>a[0]-b[0]);const merged=[];
+ for(const r of ranges){const last=merged[merged.length-1];if(last&&r[0]<=last[1])last[1]=Math.max(last[1],r[1]);else merged.push(r);}
+ return merged;
+}
+const api={books,norm,parse,matches,filterMatches,facets,highlightRanges};if(typeof module!=='undefined')module.exports=api;else root.SermonSearch=api;
 })(typeof window!=='undefined'?window:globalThis);

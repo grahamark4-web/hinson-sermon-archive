@@ -87,3 +87,6 @@ footer{padding-top:24px}footer #updated{margin:0 0 8px}
 }
 
 .filter-disclosure{margin-top:16px}
+
+/* Hinson archive gold, with dark text for readable search matches. */
+.search-highlight{background:#fccd10;color:#1a1a1a;padding:0 .08em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
