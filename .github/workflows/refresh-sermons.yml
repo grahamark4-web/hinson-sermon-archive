@@ -40,3 +40,4 @@ jobs:
             git commit -m "Refresh sermon catalog"
             git push
           fi
+# Manual refresh requested 2026-10-10T00:33Z
