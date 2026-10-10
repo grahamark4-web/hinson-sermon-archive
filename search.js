@@ -63,5 +63,10 @@ function highlightRanges(text,q,reference=false){
  for(const r of ranges){const last=merged[merged.length-1];if(last&&r[0]<=last[1])last[1]=Math.max(last[1],r[1]);else merged.push(r);}
  return merged;
 }
-const api={books,norm,parse,matches,filterMatches,facets,highlightRanges,seriesValues};if(typeof module!=='undefined')module.exports=api;else root.SermonSearch=api;
+function scripturePriority(sermon,q){
+ const book=parse(q)?.book||aliases[norm(q).replace(/\.$/,'')];
+ if(!book)return 0;
+ return (sermon.books||[]).includes(book)||(sermon.passages||[]).some(p=>parse(p.reference)?.book===book)?0:1;
+}
+const api={books,norm,parse,matches,filterMatches,facets,highlightRanges,seriesValues,scripturePriority};if(typeof module!=='undefined')module.exports=api;else root.SermonSearch=api;
 })(typeof window!=='undefined'?window:globalThis);

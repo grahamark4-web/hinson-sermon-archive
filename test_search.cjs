@@ -58,3 +58,13 @@ assert(filterMatches(seriesRows[1],{series:'Guest Preacher'}));
 assert(!filterMatches(seriesRows[0],{series:'Standalone (no series)'}));
 assert(filterMatches(seriesRows[2],{series:'Standalone (no series)'}));
 console.log('8 sermon series checks passed');
+
+const S=require('./search.js');
+const romansSermon={title:'Life in Christ',books:['Romans'],passages:[{reference:'Romans 8:1-11'}]};
+const mentionsRomans={title:'Romans as an illustration',books:['Psalms'],passages:[{reference:'Psalm 62'}]};
+assert.equal(S.scripturePriority(romansSermon,'Romans'),0);
+assert.equal(S.scripturePriority(mentionsRomans,'Romans'),1);
+assert.equal(S.scripturePriority(romansSermon,'rom.'),0);
+assert.equal(S.scripturePriority(mentionsRomans,'ROMANS 8:28'),1);
+assert.equal(S.scripturePriority(mentionsRomans,'anxiety'),0);
+console.log('Bible book search priority checks passed');

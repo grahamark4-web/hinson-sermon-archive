@@ -41,7 +41,13 @@ function render(){
  updateFilterOptions();
  const selection=Object.fromEntries(controls.map(id=>[id,$(id).value]));
  filtered=sermons.filter(s=>searchMatches(s,selection.query)&&SermonSearch.filterMatches(s,selection));
- if($('sort').value==='oldest')filtered.sort((a,b)=>a.date.localeCompare(b.date));else if($('sort').value==='title')filtered.sort((a,b)=>a.title.localeCompare(b.title));else filtered.sort((a,b)=>b.date.localeCompare(a.date));
+ filtered.sort((a,b)=>{
+  const priority=SermonSearch.scripturePriority(a,selection.query)-SermonSearch.scripturePriority(b,selection.query);
+  if(priority)return priority;
+  if($('sort').value==='oldest')return a.date.localeCompare(b.date);
+  if($('sort').value==='title')return a.title.localeCompare(b.title);
+  return b.date.localeCompare(a.date);
+ });
  const fragment=document.createDocumentFragment();
  for(const s of filtered.slice(0,limit)){
   const article=el('article',undefined,'sermon'),date=el('time',new Date(s.date+'T12:00:00Z').toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}),'date');date.dateTime=s.date;article.append(date);
