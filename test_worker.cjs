@@ -2,7 +2,9 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 (async()=>{
  const text=fs.readFileSync('worker.mjs','utf8').replace("import archive from './archive-audio.json';","const archive="+fs.readFileSync('archive-audio.json','utf8')+';');
- const {default:worker}=await import('data:text/javascript;base64,'+Buffer.from(text).toString('base64'));
+ const moduleURL=require('node:url').pathToFileURL(require('node:path').resolve('transcript_search.mjs')).href;
+ const workerText=text.replace("'./transcript_search.mjs'",JSON.stringify(moduleURL));
+ const {default:worker}=await import('data:text/javascript;base64,'+Buffer.from(workerText).toString('base64'));
  const url='https://app.example/archive-audio/'+new URL(Object.values(JSON.parse(fs.readFileSync('archive-audio.json')).byDate)[0].url).pathname.split('/').pop();
  let upstreamRequest;
  global.fetch=async(source,init)=>{upstreamRequest={source,init};return new Response(new Uint8Array([1,2,3]),{status:206,headers:{'Content-Range':'bytes 0-2/100','Content-Length':'3','Accept-Ranges':'bytes','Set-Cookie':'do-not-forward'}});};

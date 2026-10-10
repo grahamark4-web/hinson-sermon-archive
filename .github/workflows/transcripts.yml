@@ -1,0 +1,85 @@
+name: Transcribe sermon pilot
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Number of untranscribed sermons (1–20)'
+        default: '10'
+        required: true
+  schedule:
+    - cron: '45 12 * * *'
+  push:
+    branches: [main]
+    paths: ['.github/workflows/transcripts.yml']
+permissions:
+  contents: read
+concurrency:
+  group: sermon-transcripts
+  cancel-in-progress: false
+jobs:
+  select:
+    runs-on: ubuntu-latest
+    outputs:
+      ids: ${{ steps.select.outputs.ids }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: select
+        env:
+          COUNT: ${{ github.event.inputs.count || (github.event_name == 'schedule' && '2') || '10' }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "ids=$(python transcripts.py select --count "$COUNT" --recent-only)" >> "$GITHUB_OUTPUT"
+          else
+            echo "ids=$(python transcripts.py select --count "$COUNT")" >> "$GITHUB_OUTPUT"
+          fi
+  transcribe:
+    needs: select
+    if: needs.select.outputs.ids != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        id: ${{ fromJSON(needs.select.outputs.ids) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install faster-whisper==1.2.1
+      - run: python transcripts.py transcribe --id '${{ matrix.id }}'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: transcript-${{ matrix.id }}
+          path: transcripts/*.json
+          retention-days: 7
+  publish:
+    needs: [select, transcribe]
+    if: always() && needs.select.result == 'success' && needs.select.outputs.ids != '[]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: transcript-*
+          path: transcripts
+          merge-multiple: true
+      - run: |
+          node test_transcripts.cjs
+          python transcripts.py build
+      - name: Publish completed transcripts and search index
+        run: |
+          git config user.name "Hinson transcript updater"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add transcripts transcript-search
+          if ! git diff --cached --quiet; then
+            git commit -m "Index timestamped sermon transcripts"
+            git pull --rebase origin main
+            git push
+          fi

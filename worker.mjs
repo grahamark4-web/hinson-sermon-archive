@@ -1,8 +1,10 @@
 import archive from './archive-audio.json';
+import {searchTranscripts} from './transcript_search.mjs';
 const allowed=new Map(Object.values(archive.byDate).map(e=>[new URL(e.url).pathname.split('/').pop(),e.url]));
 export default {
  async fetch(request,env){
   const url=new URL(request.url);
+  if(url.pathname==='/api/transcript-search'){if(request.method!=='GET')return new Response('Method not allowed',{status:405});return searchTranscripts(request,env);}
   const download=url.pathname.startsWith('/download/');
   if(!download&&!url.pathname.startsWith('/archive-audio/'))return env.ASSETS.fetch(request);
   if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405});

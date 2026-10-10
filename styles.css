@@ -101,3 +101,11 @@ footer{padding-top:24px}footer #updated{margin:0 0 8px}
 .audio-options a{height:44px;display:flex;align-items:center;padding:10px 12px}
 .audio-options a:hover{background:#f5f5f5}
 @media(max-width:700px){.actions{position:relative}.audio-options{position:static}.audio-options a{left:0;right:auto}}
+
+/* Timestamped transcript search excerpts. */
+.transcript-status{font-size:13px;color:var(--muted);margin:9px 0 0}
+.transcript-matches{margin-top:16px;border-left:3px solid #fccd10;padding-left:14px;max-width:760px}
+.transcript-label{font-size:12px;color:var(--muted);margin:0 0 8px}
+.transcript-excerpt{margin:0 0 12px}.transcript-excerpt p{font-size:15px;line-height:1.5;margin:0 0 5px}
+.timestamp{background:transparent;color:var(--ink);border-color:var(--line);font-size:13px;padding:6px 10px;min-height:44px}
+.timestamp:hover{background:#fff7d6;color:var(--ink);border-color:#dcc269}

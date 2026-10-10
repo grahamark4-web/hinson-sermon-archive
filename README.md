@@ -83,3 +83,15 @@ Replace the old fixed-height iframe with this complete Squarespace Code Block. D
 ```
 
 The fallback height remains 1100px until the app reports its size. To revert, restore the original iframe block; app-side messages do not alter older embeds. The `?embed=1` setting hides the duplicate app title and introduction; omit it if those should remain visible.
+
+## Timestamped sermon text search
+
+The first pilot transcribes the 10 newest recordings using faster-whisper `small.en` on GitHub Actions CPU runners. The transcription workflow uses public audio and needs no API key. It runs at most two transcription jobs simultaneously, preserves segment timestamps, and publishes completed transcripts plus a sharded inverted index. Individual jobs may take a while; the app reports actual indexed coverage. Failed recordings are retried on the next run. Automatic transcripts may mishear words; excerpts are labeled accordingly.
+
+The search bar combines metadata matches with transcript matches. Quotation marks request a contiguous phrase, including across adjacent transcription segments. Unquoted searches match all meaningful query terms in a short passage. Common topics have explicit related-word expansions (for example, anxiety also searches worry and fear). This is not unrestricted semantic/AI topic search. Each transcript result includes up to two excerpts and buttons that seek to the segment's start. All book, preacher, year and series filters apply to the combined results.
+
+After the pilot, the daily transcript workflow checks the 10 newest catalog entries and processes up to two missing or changed recordings. It does not automatically backfill the entire historical archive. To expand coverage, run **Transcribe sermon pilot** in GitHub Actions with a count between 1 and 20. A transcript is tied to its audio URL; replacing audio causes the previous transcript to be excluded until regenerated.
+
+Raw transcripts live in `transcripts/<sermon-id>.json`. Run `python transcripts.py build` to regenerate index shards after corrections. Visitors fetch only matching excerpts through `/api/transcript-search`; the full transcript corpus is not downloaded into their browsers. Extremely broad queries can be truncated and the app asks for a more specific phrase. The pilot is reversible by reverting the transcript feature commit and disabling its workflow.
+
+Validation: `node test_transcripts.cjs`, `node test_search.cjs`, `node test_worker.cjs`.

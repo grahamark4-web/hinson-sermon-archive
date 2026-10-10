@@ -8,3 +8,8 @@
 
 /podcast-links.json
   Cache-Control: public, max-age=300
+
+/transcript-search/manifest.json
+  Cache-Control: no-cache
+/transcript-search/*
+  Cache-Control: public, max-age=300

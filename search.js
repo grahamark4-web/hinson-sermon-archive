@@ -35,8 +35,8 @@ function filterMatches(sermon,selection,except){
  (except==='year'||!selection.year||sermon.date.startsWith(selection.year))&&
  (except==='series'||!selection.series||seriesValues(sermon).includes(selection.series));
 }
-function facets(sermons,selection){
- const searched=sermons.filter(s=>matches(s,selection.query||''));
+function facets(sermons,selection,matcher=matches){
+ const searched=sermons.filter(s=>matcher(s,selection.query||''));
  const bookRows=searched.filter(s=>filterMatches(s,selection,'book'));
  const speakerRows=searched.filter(s=>filterMatches(s,selection,'speaker'));
  const yearRows=searched.filter(s=>filterMatches(s,selection,'year'));
