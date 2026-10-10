@@ -15,7 +15,7 @@ class Element{
  const context={document,console,URL,URLSearchParams,location:{href:'https://app.example/',search:''},history:{replaceState(){}},matchMedia:()=>({matches:false,addEventListener(){}}),setTimeout,clearTimeout,AbortController,SermonSearch:require('./search.js'),fetch:async(url)=>({ok:true,json:async()=>url==='sermons.json'?{sermons:[sermon],updatedAt:'2026-10-04'}:url==='podcast-links.json'?{links:{}}:url==='/transcript-search/manifest.json'?{coverage:1}:{coverage:1,matches:{test:{sourceAudio:sermon.audio,excerpts:[{start:41.5,text:'Bring your worry to God.',terms:['worry']},{start:90,text:'Pray when you are anxious.',terms:['anxious']}]}}}})};
  context.window=context;context.window.parent=context;vm.createContext(context);vm.runInContext(fs.readFileSync('app.js','utf8'),context);
  await new Promise(resolve=>setImmediate(resolve));ids.query.value='anxiety';await context.requestTranscripts();
- const jumps=ids.results.all().filter(n=>n.className==='timestamp');assert.equal(jumps.length,2);assert.equal(jumps[0].textContent,'Listen at 0:41');
+ const jumps=ids.results.all().filter(n=>n.className==='timestamp');assert.equal(jumps.length,2);assert.equal(jumps[0].children.find(n=>n.tagName==='span').textContent,'Listen at 0:41');
  jumps[0].click();const audio=document.querySelectorAll('audio')[0];assert.equal(audio.paused,false);audio.readyState=1;audio.emit('loadedmetadata');assert.equal(audio.currentTime,41.5,'seek occurs when metadata is ready');
  jumps[1].click();assert.equal(audio.currentTime,90,'existing player seeks to the next match');
  ids.book.value='Genesis';ids.book.emit('change');assert.equal(ids.results.all().filter(n=>n.className==='sermon').length,0,'filters apply to transcript results');
