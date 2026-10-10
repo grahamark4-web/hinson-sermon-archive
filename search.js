@@ -27,20 +27,25 @@ function matches(sermon,q){
  const hay=norm([sermon.title,sermon.speaker,...(sermon.series||[]),...(sermon.books||[]),...(sermon.passages||[]).map(p=>p.reference)].join(' '));
  return norm(q).split(' ').every(word=>hay.includes(word));
 }
+const oneOff='One Off (no series)';
+function seriesValues(sermon){return sermon.series&&sermon.series.length?sermon.series:[oneOff];}
 function filterMatches(sermon,selection,except){
  return (except==='book'||!selection.book||(sermon.books||[]).includes(selection.book))&&
  (except==='speaker'||!selection.speaker||sermon.speaker===selection.speaker)&&
- (except==='year'||!selection.year||sermon.date.startsWith(selection.year));
+ (except==='year'||!selection.year||sermon.date.startsWith(selection.year))&&
+ (except==='series'||!selection.series||seriesValues(sermon).includes(selection.series));
 }
 function facets(sermons,selection){
  const searched=sermons.filter(s=>matches(s,selection.query||''));
  const bookRows=searched.filter(s=>filterMatches(s,selection,'book'));
  const speakerRows=searched.filter(s=>filterMatches(s,selection,'speaker'));
  const yearRows=searched.filter(s=>filterMatches(s,selection,'year'));
+ const seriesRows=searched.filter(s=>filterMatches(s,selection,'series'));
  return {
  book:books.filter(b=>bookRows.some(s=>(s.books||[]).includes(b))).reverse(),
  speaker:[...new Set(speakerRows.map(s=>s.speaker).filter(Boolean))].sort(),
- year:[...new Set(yearRows.map(s=>s.date.slice(0,4)))].sort().reverse()
+ year:[...new Set(yearRows.map(s=>s.date.slice(0,4)))].sort().reverse(),
+ series:[...new Set(seriesRows.flatMap(seriesValues))].sort((a,b)=>a.localeCompare(b))
  };
 }
 function highlightRanges(text,q,reference=false){
@@ -58,5 +63,5 @@ function highlightRanges(text,q,reference=false){
  for(const r of ranges){const last=merged[merged.length-1];if(last&&r[0]<=last[1])last[1]=Math.max(last[1],r[1]);else merged.push(r);}
  return merged;
 }
-const api={books,norm,parse,matches,filterMatches,facets,highlightRanges};if(typeof module!=='undefined')module.exports=api;else root.SermonSearch=api;
+const api={books,norm,parse,matches,filterMatches,facets,highlightRanges,seriesValues};if(typeof module!=='undefined')module.exports=api;else root.SermonSearch=api;
 })(typeof window!=='undefined'?window:globalThis);

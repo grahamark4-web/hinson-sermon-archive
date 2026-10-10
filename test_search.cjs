@@ -42,3 +42,19 @@ assert.deepEqual(highlightRanges('Romans 8:1-17','Romans 8:28',true),[[0,6]]);
 assert.deepEqual(highlightRanges('Example',''),[]);
 assert.deepEqual(highlightRanges('a+b and [x]','a+b [x]'),[[0,3],[8,11]]);
 console.log('8 search highlight checks passed');
+
+const {seriesValues,filterMatches}=require('./search.js');
+const seriesRows=[
+ {title:'A',books:['Romans'],speaker:'Alice',date:'2026-01-04',series:['Grace'],passages:[]},
+ {title:'B',books:['John'],speaker:'Bob',date:'2025-01-05',series:['Guest Preacher','Grace'],passages:[]},
+ {title:'C',books:['Romans'],speaker:'Bob',date:'2025-01-12',series:[],passages:[]}
+];
+assert.deepEqual(seriesValues(seriesRows[2]),['One Off (no series)']);
+assert.deepEqual(facets(seriesRows,{book:'Romans',year:'2026'}).series,['Grace']);
+assert.deepEqual(facets(seriesRows,{series:'Guest Preacher'}).speaker,['Bob']);
+assert.deepEqual(facets(seriesRows,{series:'One Off (no series)'}).book,['Romans']);
+assert.deepEqual(facets(seriesRows,{series:'Grace'}).year,['2026','2025']);
+assert(filterMatches(seriesRows[1],{series:'Guest Preacher'}));
+assert(!filterMatches(seriesRows[0],{series:'One Off (no series)'}));
+assert(filterMatches(seriesRows[2],{series:'One Off (no series)'}));
+console.log('8 sermon series checks passed');
