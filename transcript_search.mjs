@@ -1,10 +1,8 @@
 // A server-side inverted index: visitors receive excerpts, never the full corpus.
 export function tokens(text){return String(text).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').match(/[a-z0-9]+/g)||[];}
 export function bucket(term){let n=2166136261;for(const c of term)n=Math.imul(n^c.charCodeAt(0),16777619);return (n>>>0)%64;}
-const stop=new Set('a an and are as at be been but by for from had has have he her him his i in is it its of on or our that the their them they this to was we were will with you your'.split(' '));
-// Explicit topic synonyms; this is related-word search, not AI interpretation.
-const topics={anxiety:['anxiety','anxious','worry','worried','fear'],forgiveness:['forgiveness','forgive','forgiven','forgiving'],prayer:['prayer','pray','praying'],suffering:['suffering','suffer','pain','affliction'],marriage:['marriage','married','husband','wife'],parenting:['parenting','parents','parent','children'],money:['money','wealth','riches','financial'],salvation:['salvation','saved','save','redemption'],repentance:['repentance','repent','repenting'],grief:['grief','grieving','mourning','bereavement'],leadership:['leadership','leaders','leader','elders'],evangelism:['evangelism','evangelize','witness','outreach'],humility:['humility','humble','pride'],baptism:['baptism','baptize','baptized'],resurrection:['resurrection','risen','raised'],generosity:['generosity','generous','giving'],loneliness:['loneliness','lonely','alone']};
-export function queryGroups(query){const all=tokens(query),quoted=/^\s*["“].+["”]\s*$/.test(query);return {quoted,phrase:all.join(' '),groups:quoted?all.map(t=>[t]):all.filter(t=>!stop.has(t)).map(t=>topics[t]||[t])};}
+// Transcript queries always match consecutive whole words, with or without quotes.
+export function queryGroups(query){const all=tokens(query);return {quoted:true,phrase:all.join(' '),groups:all.map(t=>[t])};}
 async function asset(env,url,path){const r=await env.ASSETS.fetch(new Request(new URL(path,url)));if(!r.ok)throw Error('Transcript index unavailable');return r.json();}
 export async function searchTranscripts(request,env){
  const url=new URL(request.url),q=(url.searchParams.get('q')||'').trim();

@@ -46,7 +46,7 @@ function updateFilterOptions(){
  }
 }
 function render(){
- $('transcript-status').textContent=!$('transcripts').checked?'Transcript search is off.':transcriptCoverage?'Searchable transcripts for '+transcriptCoverage+' sermons · Use quotation marks for an exact phrase.':'Sermon transcription is in progress.';
+ $('transcript-status').textContent=!$('transcripts').checked?'Transcript search is off.':transcriptCoverage?'Searchable transcripts for '+transcriptCoverage+' sermons · Matches exact words and phrases.':'Sermon transcription is in progress.';
  updateFilterOptions();renderChips();
  const selection=Object.fromEntries(controls.map(id=>[id,$(id).value]));
  filtered=sermons.filter(s=>searchMatches(s,selection.query)&&SermonSearch.filterMatches(s,selection));
