@@ -60,7 +60,6 @@ header{padding-bottom:20px}.intro{margin-top:8px}
 .sort-control label{margin:0;color:var(--muted);font-weight:400}
 .sort-control select{width:auto;min-height:40px;padding:6px 10px;font-size:14px}
 .sermon-title{text-decoration:none;color:inherit}
-.sermon-title:hover{text-decoration:underline;text-decoration-thickness:1px}
 .sermon{padding:22px 0}
 .meta{margin-bottom:8px}.actions{margin-top:12px;gap:10px}
 .play{background:var(--accent);color:#fff;border-color:var(--accent)}
