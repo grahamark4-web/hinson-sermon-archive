@@ -11,7 +11,7 @@ export async function searchTranscripts(request,env){
  if(q.length>200)return Response.json({error:'Search is limited to 200 characters.'},{status:400});
  let manifest;try{manifest=await asset(env,url,'/transcript-search/manifest.json');}catch{return Response.json({coverage:0,matches:{}});}
  const {groups,quoted,phrase}=queryGroups(q);
- if(!manifest.coverage||!groups.length||groups.length>16)return Response.json({coverage:manifest.coverage,matches:{}});
+ if(!manifest.coverage||!groups.length||groups.length>40)return Response.json({coverage:manifest.coverage,matches:{}});
  try{
   const buckets=[...new Set(groups.flat().map(bucket))];
   const shards=await Promise.all(buckets.map(b=>asset(env,url,`/transcript-search/terms-${b}.json`)));
