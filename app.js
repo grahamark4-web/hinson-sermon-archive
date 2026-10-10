@@ -52,3 +52,22 @@ for(const id of controls)$(id).addEventListener(id==='query'?'input':'change',()
 $('clear').addEventListener('click',()=>{for(const id of controls)$(id).value=id==='sort'?'newest':'';limit=30;render();$('query').focus();});
 $('more').addEventListener('click',()=>{limit+=30;render();});
 Promise.all([fetch('sermons.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Catalog unavailable');return r.json();}),fetch('podcast-links.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{links:{}}).catch(()=>({links:{}}))]).then(([data,platformData])=>{platformLinks=platformData.links||{};sermons=data.sermons;for(const id of ['book','speaker','year','series']){if(params.has(id)){const o=el('option',params.get(id));o.value=params.get(id);$(id).append(o);$(id).value=params.get(id);}}$('updated').textContent='Catalog updated '+new Date(data.updatedAt).toLocaleDateString();render();}).catch(()=>{$('status').textContent='The archive could not load. Please refresh or use the original archive below.';});
+
+/* Fit the iframe to its content so the containing page owns scrolling. */
+if(window.parent!==window){
+ let lastEmbedHeight=0,embedFrame=0;
+ const reportEmbedHeight=()=>{
+  embedFrame=0;
+  const height=Math.ceil(document.querySelector('main').getBoundingClientRect().bottom+window.scrollY);
+  if(height>0&&height!==lastEmbedHeight){
+   lastEmbedHeight=height;
+   window.parent.postMessage({type:'hinson-sermon-archive:resize',height},'*');
+  }
+ };
+ const queueEmbedHeight=()=>{if(!embedFrame)embedFrame=requestAnimationFrame(reportEmbedHeight);};
+ new ResizeObserver(queueEmbedHeight).observe(document.querySelector('main'));
+ window.addEventListener('load',queueEmbedHeight);
+ window.addEventListener('resize',queueEmbedHeight);
+ if(document.fonts)document.fonts.ready.then(queueEmbedHeight);
+ queueEmbedHeight();
+}
