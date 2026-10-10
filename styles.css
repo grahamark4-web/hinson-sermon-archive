@@ -150,3 +150,13 @@ button,.platform-link,.options-toggle{transition:background-color .15s,border-co
 .sermon h2{margin-bottom:10px}
 @media(pointer:coarse){.filter-chip{min-height:44px}}
 @media(prefers-reduced-motion:reduce){button,.platform-link,.options-toggle{transition:none}}
+
+/* Optional transcript search, with a native accessible switch. */
+.search-settings{display:flex;align-items:center;flex-wrap:wrap;gap:8px 18px;margin-top:8px}
+.search-settings .transcript-status{margin:0}
+.transcript-toggle{display:inline-flex;align-items:center;gap:9px;min-height:44px;margin:0;font-size:14px;font-weight:400;cursor:pointer}
+.transcript-toggle input{appearance:none;-webkit-appearance:none;position:relative;flex:none;width:38px;height:22px;min-height:0;padding:0;margin:0;border:1px solid #aaa;border-radius:12px;background:#deded9;cursor:pointer}
+.transcript-toggle input::before{content:'';position:absolute;left:3px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.transcript-toggle input:checked{background:#fccd10;border-color:#b79d34}
+.transcript-toggle input:checked::before{left:19px;background:#1a1a1a}
+@media(max-width:700px){.search-settings{gap:0}.search-settings .transcript-status{flex-basis:100%;margin-bottom:4px}}
