@@ -1,0 +1,110 @@
+name: Transcribe full sermon archive
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 15 * * *'
+  push:
+    branches: [main]
+    paths: ['.github/workflows/transcript-backfill.yml']
+permissions:
+  contents: read
+concurrency:
+  group: sermon-transcripts
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      batches: ${{ steps.plan.outputs.batches }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: plan
+        run: echo "batches=$(python transcript_backfill.py plan)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: backfill-plan
+          path: backfill-plan.json
+          retention-days: 2
+  transcribe:
+    needs: plan
+    if: needs.plan.outputs.batches != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        batch: ${{ fromJSON(needs.plan.outputs.batches) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: backfill-plan
+      - run: pip install faster-whisper==1.2.1 av==15.1.0
+      - name: Transcribe and checkpoint this batch
+        env:
+          BACKFILL_BATCH: ${{ matrix.batch }}
+        run: python -u transcript_backfill.py run
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: backfill-transcripts-${{ matrix.batch }}
+          path: backfill-output/*.json
+          retention-days: 2
+          if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: backfill-report-${{ matrix.batch }}
+          path: backfill-reports/*.json
+          retention-days: 2
+          if-no-files-found: warn
+  publish:
+    needs: [plan, transcribe]
+    if: always() && needs.plan.result == 'success' && needs.plan.outputs.batches != '[]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: backfill-transcripts-*
+          path: transcripts
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: backfill-report-*
+          path: backfill-reports
+          merge-multiple: true
+      - name: Validate and build the searchable archive
+        run: |
+          node test_transcripts.cjs
+          node test_transcript_ui.cjs
+          python transcripts.py build
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import transcript_backfill, transcripts
+          reports=[json.loads(p.read_text()) for p in Path('backfill-reports').glob('*.json')]
+          catalog=transcripts.read(Path('sermons.json'),{})['sermons']
+          summary={'completedThisRun':sum(len(r['completed']) for r in reports),'failed':[e for r in reports for e in r['failed']],'remainingWithAudio':transcript_backfill.pending(),'withoutUsableAudio':[s['id'] for s in catalog if not s.get('audio')]}
+          transcripts.save(Path('transcript-backfill-report.json'),summary)
+          print(json.dumps({k:len(v) if isinstance(v,list) else v for k,v in summary.items()}))
+          PY
+      - name: Publish completed transcripts
+        run: |
+          git config user.name "Hinson transcript updater"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add transcripts transcript-search transcript-backfill-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Transcribe and index the remaining sermon archive"
+            git pull --rebase origin main
+            git push
+          fi
