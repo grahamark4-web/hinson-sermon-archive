@@ -5,6 +5,9 @@
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
-    "run_worker_first": ["/archive-audio/*"]
+    "run_worker_first": [
+      "/archive-audio/*",
+      "/download/*"
+    ]
   }
 }
