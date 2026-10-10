@@ -92,3 +92,13 @@ footer{padding-top:24px}footer #updated{margin:0 0 8px}
 .search-highlight{background:#fccd10;color:#1a1a1a;padding:0 .08em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
 @media(min-width:701px){.filters{grid-template-columns:repeat(4,minmax(0,1fr))}.filters select{min-width:0}}
+
+/* Overlay the audio menu without changing the sermon row height. */
+.audio-options{position:relative}
+.audio-options[open]{z-index:10}
+.audio-options a{position:absolute;left:0;width:170px;background:#fff;box-shadow:0 5px 12px rgba(0,0,0,.1)}
+.audio-options a:nth-of-type(1){top:100%;border-radius:3px 3px 0 0}
+.audio-options a:nth-of-type(2){top:calc(100% + 44px);border-radius:0 0 3px 3px}
+.audio-options a{height:44px;display:flex;align-items:center;padding:10px 12px}
+.audio-options a:hover{background:#f5f5f5}
+@media(max-width:700px){.audio-options a{left:auto;right:0}}
