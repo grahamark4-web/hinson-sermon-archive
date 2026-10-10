@@ -27,7 +27,7 @@ function matches(sermon,q){
  const hay=norm([sermon.title,sermon.speaker,...(sermon.series||[]),...(sermon.books||[]),...(sermon.passages||[]).map(p=>p.reference)].join(' '));
  return norm(q).split(' ').every(word=>hay.includes(word));
 }
-const oneOff='One Off (no series)';
+const oneOff='Standalone (no series)';
 function seriesValues(sermon){return sermon.series&&sermon.series.length?sermon.series:[oneOff];}
 function filterMatches(sermon,selection,except){
  return (except==='book'||!selection.book||(sermon.books||[]).includes(selection.book))&&

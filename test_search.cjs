@@ -49,12 +49,12 @@ const seriesRows=[
  {title:'B',books:['John'],speaker:'Bob',date:'2025-01-05',series:['Guest Preacher','Grace'],passages:[]},
  {title:'C',books:['Romans'],speaker:'Bob',date:'2025-01-12',series:[],passages:[]}
 ];
-assert.deepEqual(seriesValues(seriesRows[2]),['One Off (no series)']);
+assert.deepEqual(seriesValues(seriesRows[2]),['Standalone (no series)']);
 assert.deepEqual(facets(seriesRows,{book:'Romans',year:'2026'}).series,['Grace']);
 assert.deepEqual(facets(seriesRows,{series:'Guest Preacher'}).speaker,['Bob']);
-assert.deepEqual(facets(seriesRows,{series:'One Off (no series)'}).book,['Romans']);
+assert.deepEqual(facets(seriesRows,{series:'Standalone (no series)'}).book,['Romans']);
 assert.deepEqual(facets(seriesRows,{series:'Grace'}).year,['2026','2025']);
 assert(filterMatches(seriesRows[1],{series:'Guest Preacher'}));
-assert(!filterMatches(seriesRows[0],{series:'One Off (no series)'}));
-assert(filterMatches(seriesRows[2],{series:'One Off (no series)'}));
+assert(!filterMatches(seriesRows[0],{series:'Standalone (no series)'}));
+assert(filterMatches(seriesRows[2],{series:'Standalone (no series)'}));
 console.log('8 sermon series checks passed');
