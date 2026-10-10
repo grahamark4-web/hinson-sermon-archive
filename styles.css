@@ -109,3 +109,18 @@ footer{padding-top:24px}footer #updated{margin:0 0 8px}
 .transcript-excerpt{margin:0 0 12px}.transcript-excerpt p{font-size:15px;line-height:1.5;margin:0 0 5px}
 .timestamp{background:transparent;color:var(--ink);border-color:var(--line);font-size:13px;padding:6px 10px;min-height:44px}
 .timestamp:hover{background:#fff7d6;color:var(--ink);border-color:#dcc269}
+
+/* Clear boundaries between controls, result navigation, sermons and excerpts. */
+.search-panel{background:#f6f6f4;border-color:#deded9;border-radius:6px}
+.results-bar{margin:30px 0 18px;padding:0 0 14px;border-bottom:1px solid #d8d8d3}
+.results-bar #status{margin:0}
+.sermon{background:#fff;border:1px solid #deded9;border-radius:6px;padding:24px;margin:0 0 16px;position:relative;overflow:visible}
+.sermon:has(.audio-options[open]){z-index:10}
+.transcript-matches{background:#fffaf0;border-left:3px solid #fccd10;border-radius:0 4px 4px 0;padding:14px 16px;margin-top:18px}
+.transcript-excerpt:last-child{margin-bottom:0}
+@media(max-width:700px){
+ .results-bar{margin-top:24px;gap:12px}
+ .results-bar #status{max-width:60%}
+ .sermon{padding:18px 16px;margin-bottom:14px}
+ .transcript-matches{padding:12px;margin-top:16px}
+}
