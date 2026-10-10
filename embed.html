@@ -1,4 +1,4 @@
-<iframe
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hinson Embed Preview</title><link rel="stylesheet" href="styles.css"></head><body><main><h1>Sermon Archive</h1><p>This preview uses the same automatic height embed as the church page.</p></main><iframe
   id="hinson-sermon-archive"
   src="https://hinson-sermon-archive.grahamark4.workers.dev/?embed=1"
   title="Hinson Sermon Archive"
@@ -6,17 +6,4 @@
   style="width:100%;height:1100px;border:0;display:block;overflow:hidden;"
   loading="lazy">
 </iframe>
-<script>
-(function () {
-  var frame = document.getElementById('hinson-sermon-archive');
-  window.addEventListener('message', function (event) {
-    if (event.origin !== 'https://hinson-sermon-archive.grahamark4.workers.dev' ||
-        event.source !== frame.contentWindow) return;
-    var message = event.data;
-    if (!message || message.type !== 'hinson-sermon-archive:resize' ||
-        typeof message.height !== 'number' || !Number.isFinite(message.height) ||
-        message.height <= 0) return;
-    frame.style.height = Math.ceil(message.height) + 'px';
-  });
-})();
-</script>
+<script src="https://hinson-sermon-archive.grahamark4.workers.dev/embed-resize.js"></script></body></html>

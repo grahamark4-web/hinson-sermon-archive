@@ -68,7 +68,7 @@ The daily refresh reads http://www.hinsonchurch.net/ and pairs the Subject and D
 
 ## Automatic iframe height
 
-Replace the old fixed-height iframe with this complete Squarespace Code Block. Disable Display Source. Inline JavaScript must be permitted by the site's plan and block settings. Check the published page while signed out; editor previews can suppress scripts. Only messages from this iframe and the app's exact origin can change its height. The app reports main content height after filtering, loading more results, opening audio, fonts loading, and responsive layout changes.
+Replace the old fixed-height iframe with this complete Squarespace Code Block. Disable Display Source. JavaScript must be permitted by the site's plan and block settings. Check the published page while signed out; editor previews can suppress scripts. Only messages from this iframe and the app's exact origin can change its height. The app reports main content height after filtering, loading more results, opening audio, fonts loading, and responsive layout changes.
 
 ```html
 <iframe
@@ -79,20 +79,7 @@ Replace the old fixed-height iframe with this complete Squarespace Code Block. D
   style="width:100%;height:1100px;border:0;display:block;overflow:hidden;"
   loading="lazy">
 </iframe>
-<script>
-(function () {
-  var frame = document.getElementById('hinson-sermon-archive');
-  window.addEventListener('message', function (event) {
-    if (event.origin !== 'https://hinson-sermon-archive.grahamark4.workers.dev' ||
-        event.source !== frame.contentWindow) return;
-    var message = event.data;
-    if (!message || message.type !== 'hinson-sermon-archive:resize' ||
-        typeof message.height !== 'number' || !Number.isFinite(message.height) ||
-        message.height <= 0) return;
-    frame.style.height = Math.ceil(message.height) + 'px';
-  });
-})();
-</script>
+<script src="https://hinson-sermon-archive.grahamark4.workers.dev/embed-resize.js"></script>
 ```
 
 The fallback height remains 1100px until the app reports its size. To revert, restore the original iframe block; app-side messages do not alter older embeds. The `?embed=1` setting hides the duplicate app title and introduction; omit it if those should remain visible.
