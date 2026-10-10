@@ -124,3 +124,29 @@ footer{padding-top:24px}footer #updated{margin:0 0 8px}
  .sermon{padding:18px 16px;margin-bottom:14px}
  .transcript-matches{padding:12px;margin-top:16px}
 }
+
+/* Consistent controls with Hinson typography and restrained gold accents. */
+input,select{border-radius:5px;border-color:#c9c9c3}
+input:focus,select:focus{border-color:#777}
+button,.platform-link,.options-toggle{transition:background-color .15s,border-color .15s,color .15s}
+.play{border-radius:5px;min-height:44px;padding:10px 16px}
+.actions{gap:8px}
+.platform-link{width:44px;height:44px;padding:0;justify-content:center;border:1px solid #deded9;border-radius:5px;background:#fff}
+.platform-link img{display:block;width:20px;height:20px}
+.platform-link:hover{background:#f6f6f4;border-color:#aaa}
+.audio-options summary.options-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #deded9;border-radius:5px;list-style:none;color:#555}
+.audio-options summary::-webkit-details-marker{display:none}
+.options-toggle:hover,.audio-options[open] .options-toggle{background:#f6f6f4;border-color:#aaa}
+.audio-options a{text-decoration:none}
+.audio-options a:hover{text-decoration:underline}
+.timestamp{display:inline-flex;align-items:center;gap:7px;border-radius:5px;background:#fff4cd;border-color:#e7d696;font-variant-numeric:tabular-nums}
+.timestamp:hover{background:#ffebaa;border-color:#c4aa53}
+.active-filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.filter-chip{display:inline-flex;align-items:center;gap:9px;min-height:36px;max-width:100%;padding:5px 10px;background:#fff;color:var(--ink);border:1px solid #d2d2cb;border-radius:18px;font-size:13px}
+.filter-chip span{overflow-wrap:anywhere;white-space:normal;text-align:left}
+.filter-chip svg{flex:none;width:12px;height:12px}
+.filter-chip:hover{background:#fff4cd;border-color:#c4aa53;color:var(--ink)}
+.date{font-size:13px}
+.sermon h2{margin-bottom:10px}
+@media(pointer:coarse){.filter-chip{min-height:44px}}
+@media(prefers-reduced-motion:reduce){button,.platform-link,.options-toggle{transition:none}}
