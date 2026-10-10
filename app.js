@@ -6,9 +6,9 @@ async function requestTranscripts(){
  const q=$('query').value.trim(),generation=++transcriptGeneration;transcriptRequest?.abort();
  transcriptHits={};transcriptQuery=q;
  if(!q||SermonSearch.parse(q)){render();return;}
- transcriptRequest=new AbortController();$('transcript-status').textContent='Searching sermon text…';
+ transcriptRequest=new AbortController();$('transcript-status').textContent='Searching sermon transcripts…';
  try{const r=await fetch('/api/transcript-search?q='+encodeURIComponent(q),{signal:transcriptRequest.signal});if(!r.ok)throw Error('Search unavailable');const data=await r.json();if(generation!==transcriptGeneration)return;transcriptHits=data.matches||{};transcriptCoverage=data.coverage||0;render();if(data.truncated)$('transcript-status').textContent+=' · Try a more specific phrase for additional matches.';}
- catch(error){if(error.name!=='AbortError'&&generation===transcriptGeneration){render();$('transcript-status').textContent='Sermon text search is temporarily unavailable. Title and Scripture search still work.';}}
+ catch(error){if(error.name!=='AbortError'&&generation===transcriptGeneration){render();$('transcript-status').textContent='Transcript search is temporarily unavailable. Title and Scripture search still work.';}}
 }
 const controls=['query','book','speaker','year','series','sort'];
 const mobileSearch=matchMedia('(max-width:700px)');
@@ -37,7 +37,7 @@ function updateFilterOptions(){
  }
 }
 function render(){
- $('transcript-status').textContent=transcriptCoverage?'Sermon text searchable for '+transcriptCoverage+' sermons · Use quotation marks for an exact phrase.':'Sermon text indexing is in progress.';
+ $('transcript-status').textContent=transcriptCoverage?'Searchable transcripts for '+transcriptCoverage+' sermons · Use quotation marks for an exact phrase.':'Sermon transcription is in progress.';
  updateFilterOptions();
  const selection=Object.fromEntries(controls.map(id=>[id,$(id).value]));
  filtered=sermons.filter(s=>searchMatches(s,selection.query)&&SermonSearch.filterMatches(s,selection));
