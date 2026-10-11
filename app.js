@@ -13,7 +13,7 @@ async function requestTranscripts(){
 const controls=['query','book','speaker','year','series','sort'];
 const mobileSearch=matchMedia('(max-width:700px)');
 const desktopPlaceholder=$('query').placeholder;
-function updateSearchPlaceholder(){ $('query').placeholder=mobileSearch.matches?'Search':desktopPlaceholder; }
+function updateSearchPlaceholder(){ $('query').placeholder=$('transcripts').checked?'Try "It\'s the end of the world as we know it"':mobileSearch.matches?'Search':desktopPlaceholder; }
 updateSearchPlaceholder();mobileSearch.addEventListener('change',()=>{updateSearchPlaceholder();render();});
 const params=new URLSearchParams(location.search);try{$('transcripts').checked=localStorage.getItem('hinson-search-transcripts')!=='off';}catch{}if(params.has('transcripts'))$('transcripts').checked=params.get('transcripts')!=='0';if(params.get('embed')==='1')document.body.classList.add('embedded');if(matchMedia('(max-width:700px)').matches)document.querySelector('.filter-disclosure').open=false;for(const id of controls)if(params.has(id))$(id).value=params.get(id);
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
@@ -41,6 +41,7 @@ function updateFilterOptions(){
  }
 }
 function render(){
+ updateSearchPlaceholder();
  $('transcript-status').textContent=!$('transcripts').checked?'Transcript search is off.':transcriptCoverage?(mobileSearch.matches?transcriptCoverage+' sermons transcribed.':'Searchable transcripts for '+transcriptCoverage+' sermons · Matches exact words and phrases.'):'Sermon transcription is in progress.';
  updateFilterOptions();
  const selection=Object.fromEntries(controls.map(id=>[id,$(id).value]));
