@@ -141,14 +141,8 @@ button,.platform-link,.options-toggle{transition:background-color .15s,border-co
 .audio-options a:hover{text-decoration:underline}
 .timestamp{display:inline-flex;align-items:center;gap:7px;border-radius:5px;background:#fff4cd;border-color:#e7d696;font-variant-numeric:tabular-nums}
 .timestamp:hover{background:#ffebaa;border-color:#c4aa53}
-.active-filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.filter-chip{display:inline-flex;align-items:center;gap:9px;min-height:36px;max-width:100%;padding:5px 10px;background:#fff;color:var(--ink);border:1px solid #d2d2cb;border-radius:18px;font-size:13px}
-.filter-chip span{overflow-wrap:anywhere;white-space:normal;text-align:left}
-.filter-chip svg{flex:none;width:12px;height:12px}
-.filter-chip:hover{background:#fff4cd;border-color:#c4aa53;color:var(--ink)}
 .date{font-size:13px}
 .sermon h2{margin-bottom:10px}
-@media(pointer:coarse){.filter-chip{min-height:44px}}
 @media(prefers-reduced-motion:reduce){button,.platform-link,.options-toggle{transition:none}}
 
 /* Optional transcript search, with a native accessible switch. */

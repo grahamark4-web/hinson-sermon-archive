@@ -22,11 +22,6 @@ function smallIcon(kind){
  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 16 16');svg.setAttribute('width','16');svg.setAttribute('height','16');svg.setAttribute('aria-hidden','true');
  const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('fill','currentColor');path.setAttribute('d',kind==='play'?'M4 2 L13 8 L4 14 Z':kind==='close'?'M4 3 L8 7 L12 3 L13 4 L9 8 L13 12 L12 13 L8 9 L4 13 L3 12 L7 8 L3 4 Z':'M3 6 A2 2 0 1 1 3 10 A2 2 0 1 1 3 6 M8 6 A2 2 0 1 1 8 10 A2 2 0 1 1 8 6 M13 6 A2 2 0 1 1 13 10 A2 2 0 1 1 13 6');svg.append(path);return svg;
 }
-function renderChips(){
- const chips=$('active-filters');if(!chips)return;chips.replaceChildren();
- for(const id of ['book','speaker','series','year']){if(!$(id).value)continue;const chip=el('button',undefined,'filter-chip');chip.type='button';chip.setAttribute('aria-label','Remove '+{book:'book',speaker:'preacher',series:'series',year:'year'}[id]+' filter: '+$(id).value);chip.append(el('span',$(id).value),smallIcon('close'));chip.addEventListener('click',()=>{$(id).value='';limit=30;render();$(id).focus();});chips.append(chip);}
- chips.hidden=!chips.children.length;
-}
 function highlight(node,reference=false,query=$('query').value){
  const text=node.textContent,ranges=SermonSearch.highlightRanges(text,query.replace(/^[\s"“]+|[\s"”]+$/g,''),reference);
  if(!ranges.length)return node;
@@ -47,7 +42,7 @@ function updateFilterOptions(){
 }
 function render(){
  $('transcript-status').textContent=!$('transcripts').checked?'Transcript search is off.':transcriptCoverage?(mobileSearch.matches?transcriptCoverage+' sermons transcribed.':'Searchable transcripts for '+transcriptCoverage+' sermons · Matches exact words and phrases.'):'Sermon transcription is in progress.';
- updateFilterOptions();renderChips();
+ updateFilterOptions();
  const selection=Object.fromEntries(controls.map(id=>[id,$(id).value]));
  filtered=sermons.filter(s=>searchMatches(s,selection.query)&&SermonSearch.filterMatches(s,selection));
  filtered.sort((a,b)=>{
