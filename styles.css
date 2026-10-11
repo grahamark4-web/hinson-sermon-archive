@@ -162,3 +162,6 @@ button,.platform-link,.options-toggle{transition:background-color .15s,border-co
 @media(max-width:700px){.search-settings{gap:0}.search-settings .transcript-status{flex-basis:100%;margin-bottom:4px}}
 
 @media(prefers-reduced-motion:reduce){.transcript-toggle input,.transcript-toggle input::before{transition:none}}
+
+/* Keep mobile controls still as transcript status changes. */
+@media(max-width:700px){.search-settings .transcript-status{min-height:3.2em;line-height:1.6}}
