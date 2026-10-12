@@ -1,14 +1,16 @@
 // A server-side inverted index: visitors receive excerpts, never the full corpus.
-export function tokens(text){return String(text).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').match(/[a-z0-9]+/g)||[];}
+export function tokens(text){return String(text).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/['’‘ʼ]/g,'').match(/[a-z0-9]+/g)||[];}
 export function bucket(term){let n=2166136261;for(const c of term)n=Math.imul(n^c.charCodeAt(0),16777619);return (n>>>0)%64;}
 // Transcript queries always match consecutive whole words, with or without quotes.
-export function queryGroups(query){const all=tokens(query);return {quoted:true,phrase:all.join(' '),groups:all.map(t=>[t])};}
+function legacyTokens(text){return String(text).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').match(/[a-z0-9]+/g)||[];}
+export function queryGroups(query,tokenize=tokens){const all=tokenize(query);return {quoted:true,phrase:all.join(' '),groups:all.map(t=>[t])};}
 async function asset(env,url,path){const r=await env.ASSETS.fetch(new Request(new URL(path,url)));if(!r.ok)throw Error('Transcript index unavailable');return r.json();}
 export async function searchTranscripts(request,env){
  const url=new URL(request.url),q=(url.searchParams.get('q')||'').trim();
  if(q.length>200)return Response.json({error:'Search is limited to 200 characters.'},{status:400});
  let manifest;try{manifest=await asset(env,url,'/transcript-search/manifest.json');}catch{return Response.json({coverage:0,matches:{}});}
- const {groups,quoted,phrase}=queryGroups(q);
+ const tokenize=manifest.version>=2?tokens:legacyTokens;
+ const {groups,quoted,phrase}=queryGroups(q,tokenize);
  if(!manifest.coverage||!groups.length||groups.length>40)return Response.json({coverage:manifest.coverage,matches:{}});
  try{
   const buckets=[...new Set(groups.flat().map(bucket))];
@@ -19,12 +21,12 @@ export async function searchTranscripts(request,env){
   const allPages=[...new Set(candidates.map(id=>Math.floor(id/500)))],pages=allPages.slice(0,Math.max(1,45-buckets.length));
   const chunks=Object.assign({},...await Promise.all(pages.map(p=>asset(env,url,`/transcript-search/passages-${p}.json`))));
   const matches={};
-  for(const id of candidates){const c=chunks[id];if(!c)continue;const normalized=tokens(c.text).join(' ');if(quoted&&!(' '+normalized+' ').includes(' '+phrase+' '))continue;
+  for(const id of candidates){const c=chunks[id];if(!c)continue;const normalized=tokenize(c.text).join(' ');if(quoted&&!(' '+normalized+' ').includes(' '+phrase+' '))continue;
    const doc=manifest.documents[c.sermonId];if(!doc)continue;
    const hit=matches[c.sermonId]||(matches[c.sermonId]={sourceAudio:doc.sourceAudio,excerpts:[]});
-   const segment=c.segments.find(s=>groups.some(g=>g.some(t=>tokens(s.text).includes(t))))||c.segments[0];
+   const segment=c.segments.find(s=>groups.some(g=>g.some(t=>tokenize(s.text).includes(t))))||c.segments[0];
    if(hit.excerpts.some(e=>Math.abs(e.start-segment.start)<15)||hit.excerpts.length>=3)continue;
-   hit.excerpts.push({start:segment.start,end:c.end,text:c.text.slice(0,500),terms:groups.flat().filter(t=>tokens(c.text).includes(t))});
+   hit.excerpts.push({start:segment.start,end:c.end,text:c.text.slice(0,500),terms:groups.flat().filter(t=>tokenize(c.text).includes(t))});
   }
   return Response.json({coverage:manifest.coverage,matches,truncated:candidates.length===5000||pages.length<allPages.length},{headers:{'Cache-Control':'public, max-age=300'}});
  }catch{return Response.json({error:'Sermon text search is temporarily unavailable.'},{status:503});}

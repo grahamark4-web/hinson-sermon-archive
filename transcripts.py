@@ -40,7 +40,10 @@ def transcribe(sermon_id):
                 rows.append({'start':round(seg.start,2),'end':round(seg.end,2),'text':text})
         if len(rows)<10:raise ValueError('Too little speech detected; refusing to publish')
     save(ROOT/'transcripts'/f'{sermon_id}.json',{'sermonId':sermon_id,'sourceAudio':s['audio'],'model':MODEL,'automatic':True,'duration':round(info.duration,2),'segments':rows})
-def words(text):return re.findall(r'[a-z0-9]+',unicodedata.normalize('NFKD',text.lower()))
+def words(text):
+    normalized=unicodedata.normalize('NFKD',text.lower())
+    normalized=''.join(c for c in normalized if not unicodedata.combining(c))
+    return re.findall(r'[a-z0-9]+',re.sub(r"['’‘ʼ]",'',normalized))
 def bucket(term):
     n=2166136261
     for c in term:n=((n^ord(c))*16777619)&0xffffffff
@@ -63,7 +66,7 @@ def build():
     for p in out.glob('*.json'):p.unlink()
     for b,data in enumerate(terms):save(out/f'terms-{b}.json',data)
     for page in range((index+499)//500):save(out/f'passages-{page}.json',{str(i):chunks[i] for i in range(page*500,min(index,(page+1)*500))})
-    save(out/'manifest.json',{'version':1,'coverage':len(documents),'documents':documents,'passages':index})
+    save(out/'manifest.json',{'version':2,'coverage':len(documents),'documents':documents,'passages':index})
     print(f'Indexed {len(documents)} sermons and {index} passages')
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('command',choices=['select','transcribe','build']);p.add_argument('--count',type=int,default=10);p.add_argument('--id');p.add_argument('--recent-only',action='store_true');a=p.parse_args()

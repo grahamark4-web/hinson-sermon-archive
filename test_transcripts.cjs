@@ -10,7 +10,7 @@ const {execFileSync}=require('node:child_process');
   fs.mkdirSync(path.join(temp,'transcripts'));
   const sermon={id:'test',audio:'https://example.com/audio.mp3',date:'2026-10-04'};
   fs.writeFileSync(path.join(temp,'sermons.json'),JSON.stringify({sermons:[sermon]}));
-  fs.writeFileSync(path.join(temp,'transcripts/test.json'),JSON.stringify({sourceAudio:sermon.audio,model:'small.en',segments:[{start:41.5,end:50,text:'We can bring our worry to God.'},{start:50,end:65,text:'Prayer is an expression of dependence.'},{start:90,end:105,text:'Forgiveness means learning to forgive.'}]}));
+  fs.writeFileSync(path.join(temp,'transcripts/test.json'),JSON.stringify({sourceAudio:sermon.audio,model:'small.en',segments:[{start:41.5,end:50,text:'We can bring our worry to God.'},{start:50,end:65,text:'Prayer is an expression of dependence.'},{start:90,end:105,text:'Forgiveness means learning to forgive.'},{start:120,end:130,text:"It's the end of the world as we know it."},{start:150,end:160,text:'Don’t lose hope.'}]}));
   execFileSync('python',['-c',`import transcripts\nfrom pathlib import Path\ntranscripts.ROOT=Path(${JSON.stringify(temp)})\ntranscripts.build()`]);
   const env={ASSETS:{fetch:async(request)=>{const filename=path.join(temp,new URL(request.url).pathname);return fs.existsSync(filename)?new Response(fs.readFileSync(filename)):new Response('',{status:404});}}};
   const search=async(q)=>{const r=await searchTranscripts(new Request('https://example.com/api/transcript-search?q='+encodeURIComponent(q)),env);assert.equal(r.status,200);return r.json();};
@@ -26,6 +26,15 @@ const {execFileSync}=require('node:child_process');
   assert.deepEqual((await search('"Prayer is absent"')).matches,{});
   assert.ok((await search('forgiveness')).matches.test);
   assert.deepEqual((await search('leadership')).matches,{});
+  const exact=await search("it's the end of the world as we know it");
+  assert.ok(exact.matches.test,'original contraction still matches');
+  for(const q of ["its the end of the world as we know it","IT’S THE END OF THE WORLD AS WE KNOW IT",'"its the end of the world as we know it"']){
+   assert.deepEqual((await search(q)).matches,exact.matches,'apostrophe and capitalization variants match identically');
+  }
+  assert.ok((await search('dont lose hope')).matches.test,'missing apostrophe matches curly transcript apostrophe');
+  assert.ok((await search("don't lose hope")).matches.test,'straight apostrophe matches curly transcript apostrophe');
+  assert.deepEqual((await search('it the end of the world as we know it')).matches,{},'whole word matching remains strict');
+
   assert.equal(queryGroups('"worry to God"').quoted,true);
   assert.equal((await searchTranscripts(new Request('https://example.com/api/transcript-search?q='+'x'.repeat(201)),env)).status,400);
   const Search=require('./search.js');const s={...sermon,speaker:'Test Preacher',books:['Romans'],passages:[],series:['Test Series'],title:'Unrelated title'};

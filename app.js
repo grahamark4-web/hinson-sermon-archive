@@ -8,7 +8,7 @@ async function requestTranscripts(){
  transcriptHits={};transcriptQuery=q;
  if(!$('transcripts').checked||!q||SermonSearch.parse(q)){render();return;}
  transcriptRequest=new AbortController();$('transcript-status').textContent='Searching sermon transcripts…';
- try{const r=await fetch('/api/transcript-search?q='+encodeURIComponent(q)+'&v=exact-1',{signal:transcriptRequest.signal});if(!r.ok)throw Error('Search unavailable');const data=await r.json();if(generation!==transcriptGeneration)return;transcriptHits=data.matches||{};transcriptCoverage=data.coverage||0;render(true);if(data.truncated)$('transcript-status').textContent+=mobileSearch.matches?' · Try a more specific phrase.':' · Try a more specific phrase for additional matches.';}
+ try{const r=await fetch('/api/transcript-search?q='+encodeURIComponent(q)+'&v=apostrophe-2',{signal:transcriptRequest.signal});if(!r.ok)throw Error('Search unavailable');const data=await r.json();if(generation!==transcriptGeneration)return;transcriptHits=data.matches||{};transcriptCoverage=data.coverage||0;render(true);if(data.truncated)$('transcript-status').textContent+=mobileSearch.matches?' · Try a more specific phrase.':' · Try a more specific phrase for additional matches.';}
  catch(error){if(error.name!=='AbortError'&&generation===transcriptGeneration){render();$('transcript-status').textContent=mobileSearch.matches?'Transcript search unavailable. Try again.':'Transcript search is temporarily unavailable. Title and Scripture search still work.';}}
 }
 const controls=['query','book','speaker','year','series','sort'];

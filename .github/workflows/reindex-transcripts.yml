@@ -1,0 +1,41 @@
+name: Rebuild transcript search index
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['transcripts.py', 'transcript_search.mjs', 'test_transcripts.cjs', '.github/workflows/reindex-transcripts.yml']
+permissions:
+  contents: write
+concurrency:
+  group: sermon-transcripts
+  cancel-in-progress: false
+jobs:
+  reindex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate and rebuild existing transcripts
+        run: |
+          node test_transcripts.cjs
+          node test_transcript_ui.cjs
+          python transcripts.py build
+      - name: Publish rebuilt index
+        run: |
+          git config user.name "Hinson transcript updater"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add transcript-search
+          if ! git diff --cached --quiet; then
+            git commit -m "Rebuild apostrophe-insensitive transcript search index"
+            git pull --rebase origin main
+            git push
+          fi
