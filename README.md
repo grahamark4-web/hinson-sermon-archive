@@ -95,3 +95,8 @@ After the pilot, the daily transcript workflow checks the 10 newest catalog entr
 Raw transcripts live in `transcripts/<sermon-id>.json`. Run `python transcripts.py build` to regenerate index shards after corrections. Visitors fetch only matching excerpts through `/api/transcript-search`; the full transcript corpus is not downloaded into their browsers. Extremely broad queries can be truncated and the app asks for a more specific phrase. The pilot is reversible by reverting the transcript feature commit and disabling its workflow.
 
 Validation: `node test_transcripts.cjs`, `node test_search.cjs`, `node test_worker.cjs`.
+
+
+### Publishing refreshed transcripts
+
+Catalog and transcript commits deploy through Cloudflare Workers Builds. A successful transcription workflow means the transcript is saved; verify the Cloudflare deployment and live `/transcript-search/manifest.json` before treating it as searchable in production.
