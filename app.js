@@ -4,12 +4,12 @@ let visibleSermonIds=new Set();
 let transcriptHits={},transcriptQuery='',transcriptCoverage=0,transcriptTimer,transcriptRequest,transcriptGeneration=0;
 function searchMatches(sermon,q){return SermonSearch.matches(sermon,q)||($('transcripts').checked&&q.trim()===transcriptQuery&&transcriptHits[sermon.id]?.sourceAudio===sermon.audio);}
 async function requestTranscripts(){
- const q=$('query').value.trim(),generation=++transcriptGeneration;transcriptRequest?.abort();
+ const q=$('query').value.trim(),generation=++transcriptGeneration;transcriptRequest?.abort();ArchiveUI.loading(false);
  transcriptHits={};transcriptQuery=q;
  if(!$('transcripts').checked||!q||SermonSearch.parse(q)){render();return;}
- transcriptRequest=new AbortController();$('transcript-status').textContent='Searching sermon transcripts…';
- try{const r=await fetch('/api/transcript-search?q='+encodeURIComponent(q)+'&v=apostrophe-2',{signal:transcriptRequest.signal});if(!r.ok)throw Error('Search unavailable');const data=await r.json();if(generation!==transcriptGeneration)return;transcriptHits=data.matches||{};transcriptCoverage=data.coverage||0;render(true);if(data.truncated)$('transcript-status').textContent+=mobileSearch.matches?' · Try a more specific phrase.':' · Try a more specific phrase for additional matches.';}
- catch(error){if(error.name!=='AbortError'&&generation===transcriptGeneration){render();$('transcript-status').textContent=mobileSearch.matches?'Transcript search unavailable. Try again.':'Transcript search is temporarily unavailable. Title and Scripture search still work.';}}
+ transcriptRequest=new AbortController();ArchiveUI.loading(true);$('transcript-status').textContent='Searching sermon transcripts…';
+ try{const r=await fetch('/api/transcript-search?q='+encodeURIComponent(q)+'&v=apostrophe-2',{signal:transcriptRequest.signal});if(!r.ok)throw Error('Search unavailable');const data=await r.json();if(generation!==transcriptGeneration)return;ArchiveUI.loading(false);transcriptHits=data.matches||{};transcriptCoverage=data.coverage||0;render(true);if(data.truncated)$('transcript-status').textContent+=mobileSearch.matches?' · Try a more specific phrase.':' · Try a more specific phrase for additional matches.';}
+ catch(error){if(error.name!=='AbortError'&&generation===transcriptGeneration){ArchiveUI.loading(false);render();$('transcript-status').textContent=mobileSearch.matches?'Transcript search unavailable. Try again.':'Transcript search is temporarily unavailable. Title and Scripture search still work.';}}
 }
 const controls=['query','book','speaker','year','series','sort'];
 const mobileSearch=matchMedia('(max-width:700px)');
@@ -46,7 +46,7 @@ function render(animateNew=false){
  $('transcript-status').textContent=!$('transcripts').checked?'Transcript search is off.':transcriptCoverage?(mobileSearch.matches?transcriptCoverage+' sermons transcribed.':'Searchable transcripts for '+transcriptCoverage+' sermons · Matches exact words and phrases.'):'Sermon transcription is in progress.';
  updateFilterOptions();
  const selection=Object.fromEntries(controls.map(id=>[id,$(id).value]));
- filtered=sermons.filter(s=>searchMatches(s,selection.query)&&SermonSearch.filterMatches(s,selection));
+ filtered=sermons.filter(s=>(!params.get('sermon')||s.id===params.get('sermon'))&&searchMatches(s,selection.query)&&SermonSearch.filterMatches(s,selection));
  filtered.sort((a,b)=>{
   const priority=SermonSearch.scripturePriority(a,selection.query)-SermonSearch.scripturePriority(b,selection.query);
   if(priority)return priority;
@@ -61,28 +61,12 @@ function render(animateNew=false){
   const meta=el('p',undefined,'meta');const passage=el('span',undefined,'passage');if(s.passages.length){s.passages.forEach((p,i)=>{if(i)passage.append(document.createTextNode('; '));passage.append(highlight(el('span',p.reference),true));});}else passage.append(highlight(el('span',s.books.join(', ')||'Passage not listed')));meta.append(passage,document.createTextNode('  ·  '),highlight(el('span',s.speaker||'Preacher not listed')));content.append(meta);
   content.append(highlight(el('p',SermonSearch.seriesValues(s).join(' · '),'meta')));
   const actions=el('div',undefined,'actions');
-  let startPlayback;
+  const startPlayback=seconds=>ArchiveUI.listen(s,seconds);
   if(s.audio){
-   const play=el('button',undefined,'play'),label=el('span','Listen');
-   const icon=document.createElementNS('http://www.w3.org/2000/svg','svg');icon.setAttribute('viewBox','0 0 16 16');icon.setAttribute('width','14');icon.setAttribute('height','14');icon.setAttribute('aria-hidden','true');
-   const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d','M4 2 L13 8 L4 14 Z');path.setAttribute('fill','currentColor');icon.append(path);play.append(icon,label);play.type='button';play.setAttribute('aria-pressed','false');play.setAttribute('aria-label','Listen to '+s.title);
-   let audio,wrap,pendingSeek=0;
-   const seek=()=>{if(audio&&audio.readyState>=1){audio.currentTime=Math.min(pendingSeek,Number.isFinite(audio.duration)?Math.max(0,audio.duration-.1):pendingSeek);}};
-   const showPlaybackError=()=>{if(!wrap.querySelector('.notice'))(wrap.querySelector('.audio-content')||wrap).append(el('p','Press play in the audio player to listen.','notice'));};
-   startPlayback=(seconds=0)=>{
-    pendingSeek=Math.max(0,Number(seconds)||0);document.querySelectorAll('audio').forEach(a=>{if(a!==audio)a.pause();});
-    if(!audio){
-     wrap=el('div',undefined,'audio-wrap');audio=el('audio');audio.controls=true;audio.preload='metadata';audio.src=s.audio;audio.setAttribute('aria-label',s.title);
-     const state=()=>{const active=!audio.paused&&!audio.ended;label.textContent=active?'Pause':'Listen';path.setAttribute('d',active?'M3 2 H6 V14 H3 Z M10 2 H13 V14 H10 Z':'M4 2 L13 8 L4 14 Z');play.setAttribute('aria-label',(active?'Pause ':'Listen to ')+s.title);play.setAttribute('aria-pressed',String(active));};
-     for(const event of ['play','pause','ended'])audio.addEventListener(event,state);
-     audio.addEventListener('loadedmetadata',seek);
-     audio.addEventListener('error',()=>{if(s.originalAudio&&s.originalAudio.startsWith('https://')&&audio.getAttribute('src')!==s.originalAudio){audio.src=s.originalAudio;audio.play().catch(showPlaybackError);}else if(!wrap.querySelector('.notice'))(wrap.querySelector('.audio-content')||wrap).append(el('p','Audio is temporarily unavailable. Try an available podcast link below.','notice'));});
-     const audioContent=el('div',undefined,'audio-content');audioContent.append(audio);wrap.append(audioContent);content.append(wrap);
-    }
-    seek();audio.play().catch(showPlaybackError);
-   };
-   play.addEventListener('click',()=>{if(audio){if(audio.paused)startPlayback(audio.currentTime);else audio.pause();}else startPlayback();});actions.append(play);
+   const play=el('button',undefined,'play');play.type='button';play.append(smallIcon('play'),el('span','Listen'));play.setAttribute('aria-pressed','false');play.setAttribute('aria-label','Listen to '+s.title);
+   ArchiveUI.bindPlay(play,s,params.get('sermon')===s.id?Number(params.get('t'))||0:undefined);actions.append(play);
   }
+  actions.append(ArchiveUI.shareButton(s));
 
   const platforms=platformLinks[s.id]||{};for(const [name,url] of [['Spotify',platforms.spotify],['Apple Podcasts',platforms.apple]]){if(url){const a=link(undefined,url);a.className='platform-link';a.title=name;const logo=el('img');logo.src=name==='Spotify'?'assets/spotify.svg':'assets/apple-podcasts.svg';logo.alt='';logo.width=20;logo.height=20;logo.setAttribute('aria-hidden','true');a.append(logo);a.setAttribute('aria-label',name+': '+s.title);actions.append(a);}}if(s.audio){const options=el('details',undefined,'audio-options');const download=el('a','Download');download.href='/download/'+encodeURIComponent(s.id);download.setAttribute('download','');const summary=el('summary',undefined,'options-toggle');summary.setAttribute('aria-label','More options for '+s.title);summary.title='More options';summary.append(smallIcon('more'));options.append(summary,link('Open in new tab',s.audio),download);actions.append(options);}content.append(actions);if(!s.audio&&!s.legacyAudio)content.append(el('p','Use an available podcast link below to listen.','notice'));
   if(s.legacyAudio)content.append(el('p','This sermon uses an older audio link. Try an available podcast link below if it does not play.','notice'));
@@ -92,24 +76,24 @@ function render(animateNew=false){
    for(const excerpt of transcript.excerpts.slice(0,2)){
     const block=el('div',undefined,'transcript-excerpt');block.append(highlight(el('p','“'+excerpt.text+'”'),false,(excerpt.terms||[]).join(' ')||$('query').value));
     const minutes=Math.floor(excerpt.start/60),seconds=Math.floor(excerpt.start%60),stamp=minutes+':'+String(seconds).padStart(2,'0');
-    const jump=el('button',undefined,'timestamp');jump.append(smallIcon('play'),el('span','Listen at '+stamp));jump.type='button';jump.setAttribute('aria-label','Listen to '+s.title+' at '+stamp);jump.addEventListener('click',()=>startPlayback?.(excerpt.start));block.append(jump);excerpts.append(block);
+    const jump=el('button',undefined,'timestamp');jump.append(smallIcon('play'),el('span','Listen at '+stamp));jump.type='button';jump.setAttribute('aria-label','Listen to '+s.title+' at '+stamp);jump.addEventListener('click',()=>startPlayback?.(excerpt.start));block.append(jump);ArchiveUI.excerptMore(block,s,excerpt,p=>highlight(p,false,(excerpt.terms||[]).join(' ')||$('query').value));excerpts.append(block);
    }content.append(excerpts);
   }
   article.append(content);fragment.append(article);
  }
  visibleSermonIds=new Set(filtered.slice(0,limit).map(s=>s.id));
- $('results').replaceChildren(fragment);
+ $('results').replaceChildren(fragment);ArchiveUI.update();
  if(!filtered.length)$('results').append(el('div','No sermons match these filters. Try another passage or clear the filters.','empty'));
  $('status').textContent=filtered.length.toLocaleString()+' sermon'+(filtered.length===1?'':'s')+' found'+(filtered.length>limit?' · showing '+limit:'');$('more').hidden=filtered.length<=limit;
- $('clear').hidden=!controls.some(id=>$(id).value&&(id!=='sort'||$(id).value!=='newest'));const next=new URL(location.href);for(const id of controls){if($(id).value&&(id!=='sort'||$(id).value!=='newest'))next.searchParams.set(id,$(id).value);else next.searchParams.delete(id);}if(!$('transcripts').checked)next.searchParams.set('transcripts','0');else next.searchParams.delete('transcripts');history.replaceState(null,'',next);
+ $('clear').hidden=!params.get('sermon')&&!controls.some(id=>$(id).value&&(id!=='sort'||$(id).value!=='newest'));const next=new URL(location.href);if(!params.get('sermon')){next.searchParams.delete('sermon');next.searchParams.delete('t');}for(const id of controls){if($(id).value&&(id!=='sort'||$(id).value!=='newest'))next.searchParams.set(id,$(id).value);else next.searchParams.delete(id);}if(!$('transcripts').checked)next.searchParams.set('transcripts','0');else next.searchParams.delete('transcripts');history.replaceState(null,'',next);
 }
 $('transcripts').addEventListener('change',()=>{
- clearTimeout(transcriptTimer);transcriptGeneration++;transcriptRequest?.abort();transcriptHits={};transcriptQuery='';limit=30;
+ clearTimeout(transcriptTimer);transcriptGeneration++;transcriptRequest?.abort();transcriptHits={};transcriptQuery='';ArchiveUI.loading(false);limit=30;
  try{localStorage.setItem('hinson-search-transcripts',$('transcripts').checked?'on':'off');}catch{}
  render();if($('transcripts').checked)requestTranscripts();
 });
-for(const id of controls)$(id).addEventListener(id==='query'?'input':'change',()=>{limit=30;if(id==='query'){clearTimeout(transcriptTimer);transcriptGeneration++;transcriptRequest?.abort();transcriptHits={};transcriptQuery='';render();transcriptTimer=setTimeout(requestTranscripts,350);}else render();});
-$('clear').addEventListener('click',()=>{clearTimeout(transcriptTimer);transcriptGeneration++;transcriptRequest?.abort();transcriptHits={};transcriptQuery='';for(const id of controls)$(id).value=id==='sort'?'newest':'';limit=30;render();$('query').focus();});
+for(const id of controls)$(id).addEventListener(id==='query'?'input':'change',()=>{params.delete('sermon');params.delete('t');limit=30;if(id==='query'){clearTimeout(transcriptTimer);transcriptGeneration++;transcriptRequest?.abort();transcriptHits={};transcriptQuery='';ArchiveUI.loading(false);render();transcriptTimer=setTimeout(requestTranscripts,350);}else render();});
+$('clear').addEventListener('click',()=>{params.delete('sermon');params.delete('t');clearTimeout(transcriptTimer);transcriptGeneration++;transcriptRequest?.abort();transcriptHits={};transcriptQuery='';ArchiveUI.loading(false);for(const id of controls)$(id).value=id==='sort'?'newest':'';limit=30;render();$('query').focus();});
 $('more').addEventListener('click',()=>{limit+=30;render(true);});
 Promise.all([fetch('sermons.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Catalog unavailable');return r.json();}),fetch('podcast-links.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{links:{}}).catch(()=>({links:{}}))]).then(([data,platformData])=>{platformLinks=platformData.links||{};sermons=data.sermons;fetch('/transcript-search/manifest.json').then(r=>r.ok?r.json():null).then(m=>{if(m){transcriptCoverage=m.coverage;render();}}).catch(()=>{});for(const id of ['book','speaker','year','series']){if(params.has(id)){const o=el('option',params.get(id));o.value=params.get(id);$(id).append(o);$(id).value=params.get(id);}}$('updated').textContent='Catalog updated '+new Date(data.updatedAt).toLocaleDateString();render();if($('query').value.trim())requestTranscripts();}).catch(()=>{$('status').textContent='The archive could not load. Please refresh and try again.';});
 
