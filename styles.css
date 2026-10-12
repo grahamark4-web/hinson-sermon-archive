@@ -170,3 +170,13 @@ button,.platform-link,.options-toggle{transition:background-color .15s,border-co
 .transcript-toggle input::before{background:linear-gradient(#fff,#f1f1ed);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 1px 2px rgba(0,0,0,.28)}
 .transcript-toggle input:checked::before{background:linear-gradient(#393939,#1a1a1a);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 1px 2px rgba(0,0,0,.25)}
 @media(prefers-reduced-motion:reduce){.play{transition:none}.play:active{transform:none}}
+
+/* Short, purposeful motion for disclosure and newly loaded content. */
+@keyframes menu-reveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.audio-options[open] a{animation:menu-reveal .14s ease-out}
+@keyframes player-reveal{from{grid-template-rows:0fr;opacity:0}to{grid-template-rows:1fr;opacity:1}}
+.audio-wrap{display:grid;grid-template-rows:1fr;animation:player-reveal .2s ease-out}
+.audio-content{min-height:0;overflow:hidden}
+@keyframes result-reveal{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.sermon[data-enter="true"]{animation:result-reveal .18s ease-out}
+@media(prefers-reduced-motion:reduce){.audio-options[open] a,.audio-wrap,.sermon[data-enter="true"]{animation:none}}
