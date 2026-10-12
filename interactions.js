@@ -7,7 +7,7 @@ const ArchiveUI=(()=>{
  function position(){if(!player||player.hidden)return;if(window.parent!==window&&viewport){player.style.position='absolute';player.style.bottom='auto';player.style.top=Math.max(viewport.top,viewport.bottom-player.offsetHeight-12)+'px';player.style.visibility=viewport.bottom-viewport.top<player.offsetHeight?'hidden':'visible';}}
  function update(){
   if(!current)return;const active=!audio.paused&&!audio.ended,duration=Number.isFinite(audio.duration)?audio.duration:0;
-  toggle.textContent=active?'Pause':'Play';toggle.setAttribute('aria-label',(active?'Pause ':'Play ')+current.title);toggle.setAttribute('aria-pressed',String(active));
+  const icon=document.createElementNS('http://www.w3.org/2000/svg','svg'),path=document.createElementNS('http://www.w3.org/2000/svg','path');icon.setAttribute('viewBox','0 0 24 24');icon.setAttribute('aria-hidden','true');path.setAttribute('d',active?'M7 5h4v14H7z M14 5h4v14h-4z':'M8 5v14l11-7z');icon.append(path);toggle.replaceChildren(icon);toggle.setAttribute('aria-label',(active?'Pause ':'Play ')+current.title);toggle.setAttribute('aria-pressed',String(active));
   document.getElementById('player-back').disabled=!duration;document.getElementById('player-forward').disabled=!duration;
   seek.disabled=!duration;seek.max=String(duration||1);seek.value=String(audio.currentTime||0);seek.setAttribute('aria-valuetext',stamp(audio.currentTime)+' of '+stamp(duration));
   clock.textContent=stamp(audio.currentTime)+' / '+stamp(duration);progress.style.width=(duration?100*audio.currentTime/duration:0)+'%';
@@ -32,12 +32,23 @@ const ArchiveUI=(()=>{
   button.addEventListener('click',()=>listen(sermon,current?.id===sermon.id?undefined:initialSeconds));
  }
  function shareUrl(sermon,seconds){const url=new URL('/',location.href);url.searchParams.set('sermon',sermon.id);if(seconds>0)url.searchParams.set('t',Math.floor(seconds));return url.href;}
- async function share(button,sermon,seconds=0){
-  const original=button.getAttribute('data-share-label')||button.textContent;button.setAttribute('data-share-label',original);clearTimeout(copyTimers.get(button));
-  try{await navigator.clipboard.writeText(shareUrl(sermon,seconds));button.parentElement.querySelector('.share-fallback')?.remove();button.textContent='✓ Link copied';button.setAttribute('data-copied','true');copyTimers.set(button,setTimeout(()=>{button.textContent=original;button.removeAttribute('data-copied');},1800));}
-  catch{let fallback=button.parentElement.querySelector('.share-fallback');if(!fallback){fallback=document.createElement('input');fallback.type='text';fallback.readOnly=true;fallback.setAttribute('aria-label','Copy this sermon link');fallback.className='share-fallback';button.parentElement.append(fallback);}fallback.value=shareUrl(sermon,seconds);fallback.focus();fallback.select();button.removeAttribute('data-copied');button.textContent='Select link';}
+ function copyHidden(text){
+  const field=document.createElement('textarea'),focused=document.activeElement;
+  field.value=text;field.readOnly=true;field.setAttribute('aria-hidden','true');field.setAttribute('tabindex','-1');
+  Object.assign(field.style,{position:'fixed',left:'-9999px',top:'0',opacity:'0',fontSize:'16px'});
+  document.body.append(field);let copied=false;
+  try{field.focus({preventScroll:true});field.select();copied=!!document.execCommand('copy');}catch{}finally{field.remove();focused?.focus({preventScroll:true});}
+  return copied;
  }
- function shareButton(sermon,seconds=0){const button=document.createElement('button');button.type='button';button.className='share-button';button.textContent=seconds?'Share moment':'Share';button.setAttribute('aria-label',seconds?'Share '+sermon.title+' at '+stamp(seconds):'Share '+sermon.title);button.addEventListener('click',()=>share(button,sermon,seconds));return button;}
+ async function share(button,sermon,seconds=0){
+  if(button.getAttribute('data-copying')==='true')return;
+  const original=button.getAttribute('data-share-label')||button.textContent;button.setAttribute('data-share-label',original);clearTimeout(copyTimers.get(button));button.setAttribute('data-copying','true');
+  const url=shareUrl(sermon,seconds);let copied=copyHidden(url);
+  if(!copied){try{await navigator.clipboard.writeText(url);copied=true;}catch{}}
+  button.removeAttribute('data-copying');button.textContent=copied?'✓ Copied':"Couldn’t copy";button.setAttribute('data-copied',String(copied));
+  copyTimers.set(button,setTimeout(()=>{button.textContent=original;button.removeAttribute('data-copied');},1800));
+ }
+ function shareButton(sermon,seconds=0){const button=document.createElement('button');button.type='button';button.className='share-button';button.textContent='Copy link';button.setAttribute('aria-live','polite');button.setAttribute('aria-label',seconds?'Copy link to '+sermon.title+' at '+stamp(seconds):'Copy link to '+sermon.title);button.addEventListener('click',()=>share(button,sermon,seconds));return button;}
  async function context(sermon,excerpt){
   if(!docs.has(sermon.id))docs.set(sermon.id,fetch('/transcripts/'+encodeURIComponent(sermon.id)+'.json').then(r=>{if(!r.ok)throw Error('Unavailable');return r.json();}).catch(error=>{docs.delete(sermon.id);throw error;}));
   const doc=await docs.get(sermon.id);if(doc.sourceAudio!==sermon.audio)throw Error('Recording changed');

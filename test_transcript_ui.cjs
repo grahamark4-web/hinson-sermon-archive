@@ -24,12 +24,14 @@ class Element{
  jumps[1].click();assert.equal(audio.currentTime,90,'existing player seeks to the next match');
  const shared=vm.runInContext('ArchiveUI.shareUrl({id:"test"},90)',context);assert.equal(shared,'https://app.example/?sermon=test&t=90');
  const moreText=ids.results.all().find(n=>n.className==='read-more');moreText.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(moreText.getAttribute('aria-expanded'),'true');assert.match(ids.results.all().find(n=>n.className==='excerpt-context').all().map(n=>n.textContent).join(' '),/Surrounding words/);
- const share=ids.results.all().find(n=>n.className==='share-button');share.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(share.textContent,'✓ Link copied');assert.equal(copied,'https://app.example/?sermon=test');
+ const share=ids.results.all().find(n=>n.className==='share-button');share.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(share.textContent,'✓ Copied');assert.equal(copied,'https://app.example/?sermon=test');
  context.navigator.clipboard.writeText=async()=>{throw Error('Clipboard blocked in embed');};
  share.click();await new Promise(resolve=>setImmediate(resolve));share.click();await new Promise(resolve=>setImmediate(resolve));share.click();await new Promise(resolve=>setImmediate(resolve));
- assert.equal(share.parentElement.all().filter(n=>n.className==='share-fallback').length,1,'repeated fallback clicks reuse one field');assert.equal(share.textContent,'Select link');
- const fallback=share.parentElement.querySelector('.share-fallback');assert.equal(fallback.selected,true);assert.equal(fallback.value,'https://app.example/?sermon=test');
- context.navigator.clipboard.writeText=async text=>{copied=text;};share.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(share.parentElement.querySelector('.share-fallback'),null,'successful copy removes fallback');
+ assert.equal(share.textContent,"Couldn’t copy");assert.equal(document.body.children.length,0,'failed copies leave no address field');
+ document.execCommand=()=>{const field=document.body.children[0];assert.equal(field.selected,true);copied=field.value;return true;};
+ for(let i=0;i<3;i++){share.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(share.textContent,'✓ Copied');assert.equal(document.body.children.length,0);}
+ assert.equal(copied,'https://app.example/?sermon=test','embedded fallback copies correct link without showing it');
+ document.execCommand=()=>false;context.navigator.clipboard.writeText=async text=>{copied=text;};
  ids.transcripts.checked=false;ids.transcripts.emit('change');assert.equal(ids.results.all().filter(n=>n.className==='sermon').length,0,'turning transcript search off removes transcript-only matches');assert.equal(document.querySelectorAll('audio')[0],audio,'player survives result rebuild');assert.equal(audio.paused,false,'filtering does not stop playback');assert.equal(ids['mini-player'].hidden,false);
  ids.transcripts.checked=true;ids.transcripts.emit('change');await new Promise(resolve=>setImmediate(resolve));assert.equal(ids.results.all().filter(n=>n.className==='sermon').length,1,'turning transcript search on restores matches');
  const menu=ids.results.all().find(n=>n.className==='audio-options');menu.open=true;for(const fn of docEvents.keydown||[])fn({key:'Escape'});assert.equal(menu.open,false,'Escape closes menu');menu.open=true;for(const fn of docEvents.click||[])fn({target:panel});assert.equal(menu.open,false,'outside click closes menu');
