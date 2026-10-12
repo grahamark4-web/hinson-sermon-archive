@@ -228,3 +228,5 @@ button,.platform-link,.options-toggle{transition:background-color .15s,border-co
  .search-input-wrap::after,.filter-chevron{transition:none}
  .search-panel[data-searching="true"] .search-input-wrap::after,.excerpt-context,.mini-player,.share-button[data-copied="true"]{animation:none}
 }
+
+.player-heading:has(.share-fallback){flex-wrap:wrap}.player-heading .share-fallback{flex:0 0 100%}
