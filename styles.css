@@ -159,3 +159,14 @@ button,.platform-link,.options-toggle{transition:background-color .15s,border-co
 
 /* Keep mobile controls still as transcript status changes. */
 @media(max-width:700px){.search-settings .transcript-status{min-height:3.2em;line-height:1.6}}
+
+/* Light tactile depth for the primary listening and search controls. */
+.play{background:linear-gradient(#303030,#1a1a1a);border-color:#161616;box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 2px 3px rgba(0,0,0,.12);transition:background-color .15s,border-color .15s,color .15s,box-shadow .15s,transform .1s}
+.play:hover{background:linear-gradient(#414141,#2b2b2b);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 2px 4px rgba(0,0,0,.15)}
+.play:active{transform:translateY(1px);box-shadow:inset 0 1px 2px rgba(0,0,0,.3),0 1px 1px rgba(0,0,0,.08)}
+.play[aria-pressed="true"]{background:linear-gradient(#292929,#353535);box-shadow:inset 0 1px 2px rgba(0,0,0,.25),0 1px 2px rgba(0,0,0,.08)}
+#query{box-shadow:inset 0 1px 3px rgba(26,26,26,.08),0 1px 0 rgba(255,255,255,.75)}
+.transcript-toggle input{box-shadow:inset 0 1px 2px rgba(0,0,0,.14),0 1px 0 rgba(255,255,255,.8)}
+.transcript-toggle input::before{background:linear-gradient(#fff,#f1f1ed);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 1px 2px rgba(0,0,0,.28)}
+.transcript-toggle input:checked::before{background:linear-gradient(#393939,#1a1a1a);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 1px 2px rgba(0,0,0,.25)}
+@media(prefers-reduced-motion:reduce){.play{transition:none}.play:active{transform:none}}
