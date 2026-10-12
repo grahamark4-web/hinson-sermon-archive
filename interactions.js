@@ -8,6 +8,7 @@ const ArchiveUI=(()=>{
  function update(){
   if(!current)return;const active=!audio.paused&&!audio.ended,duration=Number.isFinite(audio.duration)?audio.duration:0;
   toggle.textContent=active?'Pause':'Play';toggle.setAttribute('aria-label',(active?'Pause ':'Play ')+current.title);toggle.setAttribute('aria-pressed',String(active));
+  document.getElementById('player-back').disabled=!duration;document.getElementById('player-forward').disabled=!duration;
   seek.disabled=!duration;seek.max=String(duration||1);seek.value=String(audio.currentTime||0);seek.setAttribute('aria-valuetext',stamp(audio.currentTime)+' of '+stamp(duration));
   clock.textContent=stamp(audio.currentTime)+' / '+stamp(duration);progress.style.width=(duration?100*audio.currentTime/duration:0)+'%';
   document.querySelectorAll('.play[data-sermon-id]').forEach(button=>{
@@ -52,7 +53,7 @@ const ArchiveUI=(()=>{
  }
  function loading(on){const panel=document.querySelector('.search-panel');panel?.setAttribute('data-searching',String(on));document.getElementById('results')?.setAttribute('aria-busy',String(on));}
  function closeMenus(except){document.querySelectorAll('.audio-options[open]').forEach(menu=>{if(menu!==except)menu.open=false;});}
- document.addEventListener('click',event=>{if(!event.target.closest('.audio-options'))closeMenus();});
+ document.addEventListener('click',event=>{const menu=event.target.closest('.audio-options');if(!menu)closeMenus();else if(event.target.closest('summary'))closeMenus(menu);});
  document.addEventListener('toggle',event=>{if(event.target.matches('.audio-options')&&event.target.open)closeMenus(event.target);},true);
  document.addEventListener('keydown',event=>{if(event.key==='Escape'){const menu=document.querySelector('.audio-options[open]');if(menu){closeMenus();menu.querySelector('summary').focus();}}});
  const disclosure=document.querySelector('.filter-disclosure'),body=document.querySelector('.filters');
