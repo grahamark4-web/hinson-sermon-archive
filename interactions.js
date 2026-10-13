@@ -53,7 +53,7 @@ const ArchiveUI=(()=>{
   button.removeAttribute('data-copying');button.textContent=copied?'✓ Copied':"Couldn’t copy";button.setAttribute('data-copied',String(copied));
   copyTimers.set(button,setTimeout(()=>{button.textContent=original;button.removeAttribute('data-copied');},1800));
  }
- function shareButton(sermon,seconds=0){const button=document.createElement('button');button.type='button';button.className='share-button';button.textContent='Copy link';button.setAttribute('aria-live','polite');button.setAttribute('aria-label',seconds?'Copy link to '+sermon.title+' at '+stamp(seconds):'Copy link to '+sermon.title);button.addEventListener('click',()=>share(button,sermon,seconds));return button;}
+ function shareButton(sermon,seconds=0,clip=false){const button=document.createElement('button');button.type='button';button.className='share-button';button.textContent=clip?'Share clip':'Copy link';button.setAttribute('aria-live','polite');button.setAttribute('aria-label',clip?'Share clip from '+sermon.title+' at '+stamp(seconds):'Copy link to '+sermon.title);button.addEventListener('click',()=>share(button,sermon,seconds));return button;}
  async function context(sermon,excerpt){
   if(!docs.has(sermon.id))docs.set(sermon.id,fetch('/transcripts/'+encodeURIComponent(sermon.id)+'.json').then(r=>{if(!r.ok)throw Error('Unavailable');return r.json();}).catch(error=>{docs.delete(sermon.id);throw error;}));
   const doc=await docs.get(sermon.id);if(doc.sourceAudio!==sermon.audio)throw Error('Recording changed');
@@ -66,7 +66,7 @@ const ArchiveUI=(()=>{
   button.addEventListener('click',async()=>{if(busy)return;if(expanded){show(excerpt.text,false);return;}
    if(fullText===null){busy=true;button.textContent='Loading…';button.setAttribute('aria-busy','true');try{fullText=await context(sermon,excerpt);}catch{button.textContent='Try again';busy=false;button.removeAttribute('aria-busy');return;}busy=false;button.removeAttribute('aria-busy');}
    show(fullText,true);
-  });block.append(button,shareButton(sermon,excerpt.start));
+  });block.append(button,shareButton(sermon,excerpt.start,true));
  }
  function loading(on){const panel=document.querySelector('.search-panel');panel?.setAttribute('data-searching',String(on));document.getElementById('results')?.setAttribute('aria-busy',String(on));}
  function closeMenus(except){document.querySelectorAll('.audio-options[open]').forEach(menu=>{if(menu!==except)menu.open=false;});}
