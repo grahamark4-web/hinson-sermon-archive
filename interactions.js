@@ -82,7 +82,6 @@ const ArchiveUI=(()=>{
   document.getElementById('player-back').addEventListener('click',()=>{audio.currentTime=Math.max(0,audio.currentTime-15);update();});
   document.getElementById('player-forward').addEventListener('click',()=>{audio.currentTime=Math.min(Number.isFinite(audio.duration)?audio.duration:audio.currentTime+15,audio.currentTime+15);update();});
   seek.addEventListener('input',()=>{audio.currentTime=Number(seek.value);update();});
-  document.getElementById('player-share').addEventListener('click',event=>{if(current)share(event.currentTarget,current,audio.currentTime);});
   document.getElementById('player-close').addEventListener('click',()=>{audio.pause();player.hidden=true;document.body.classList.remove('has-player');const button=document.querySelector('.play[data-sermon-id="'+current?.id+'"]');button?.focus();});
   if(typeof ResizeObserver!=='undefined')new ResizeObserver(position).observe(player);
  }

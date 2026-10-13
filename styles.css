@@ -202,15 +202,13 @@ button,.platform-link,.options-toggle{transition:background-color .15s,border-co
 .player-controls button,#player-close{display:grid;place-items:center;width:44px;height:44px;min-height:44px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--ink);box-shadow:none;transition:background .15s,transform .15s}
 .player-controls button:hover,#player-close:hover{background:#efefea}
 .player-controls button:active,#player-close:active{transform:scale(.94)}
-.player-controls svg{width:28px;height:28px}
+.player-controls svg{width:32px;height:32px}
 #player-toggle{background:var(--gold);color:#1a1a1a;margin:0 4px;box-shadow:0 1px 3px #00000016}
 #player-toggle:hover{background:#f4c000}#player-toggle svg{width:23px;height:23px;fill:currentColor}
 #player-close{font:25px/1 Arial,sans-serif;color:var(--muted)}
 .player-timeline{display:flex;align-items:center;gap:10px;min-width:0}
 #player-seek{flex:1;min-width:40px;width:100%;min-height:32px;height:32px;padding:0;margin:0;border:0;background:transparent;box-shadow:none;accent-color:#9a7800;cursor:pointer}
 #player-time{font:12px proxima-nova,Arial,sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
-#player-share{background:transparent;border-color:transparent;padding:6px 8px;min-width:78px;white-space:nowrap}
-#player-share:hover,#player-share[data-copied="true"]{background:#fff4cd}
 #player-notice{grid-column:1/-1;margin:0;font-size:13px;color:var(--muted)}
 #player-notice:empty{display:none}#archive-audio{display:none}
 .has-player main{padding-bottom:110px}
@@ -224,8 +222,7 @@ button,.platform-link,.options-toggle{transition:background-color .15s,border-co
  .mini-player{bottom:8px;width:calc(100% - 16px);padding:8px 10px;grid-template-columns:1fr auto;gap:0 8px}
  .player-heading{grid-column:1;grid-row:1}#player-title{font-size:17px}
  .player-utilities{grid-column:2;grid-row:1}.player-utilities #player-close{width:36px}
- #player-share{font-size:12px;padding:6px;min-width:72px}
- .player-controls{grid-column:1;grid-row:2;justify-content:flex-start}
+  .player-controls{grid-column:1;grid-row:2;justify-content:flex-start}
  .player-timeline{grid-column:2;grid-row:2;width:clamp(108px,35vw,230px);justify-self:end}
  #player-time{font-size:11px}.has-player main{padding-bottom:145px}
 }
