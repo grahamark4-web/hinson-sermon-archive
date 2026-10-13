@@ -191,7 +191,8 @@ button,.platform-link,.options-toggle{transition:background-color .15s,border-co
 .share-button,.read-more{background:#fff;color:var(--ink);border:1px solid #deded9;border-radius:5px;font-size:13px;padding:8px 12px;min-height:44px}
 .share-button:hover,.read-more:hover{background:#fff4cd;color:var(--ink);border-color:#c4aa53}
 .share-button[data-copied="true"]{background:#fff4cd;border-color:#c4aa53;animation:result-reveal .15s ease-out}
-.read-more,.transcript-excerpt .share-button{margin:4px 0 0 8px}
+.transcript-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:8px}
+.transcript-actions>button{display:inline-flex;align-items:center;justify-content:center;margin:0;min-height:44px;white-space:nowrap}
 .mini-player{position:fixed;z-index:100;bottom:16px;left:50%;transform:translateX(-50%);width:min(1044px,calc(100% - 32px));display:grid;grid-template-columns:minmax(100px,1fr) auto minmax(160px,1.4fr) auto;align-items:center;gap:18px;background:#fffffff5;border:1px solid #d4d4cd;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.12);padding:10px 14px;animation:mini-reveal .18s ease-out}
 @keyframes mini-reveal{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
 .player-progress-track{display:none}#player-progress{width:0}

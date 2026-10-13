@@ -66,7 +66,7 @@ const ArchiveUI=(()=>{
   button.addEventListener('click',async()=>{if(busy)return;if(expanded){show(excerpt.text,false);return;}
    if(fullText===null){busy=true;button.textContent='Loading…';button.setAttribute('aria-busy','true');try{fullText=await context(sermon,excerpt);}catch{button.textContent='Try again';busy=false;button.removeAttribute('aria-busy');return;}busy=false;button.removeAttribute('aria-busy');}
    show(fullText,true);
-  });block.append(button,shareButton(sermon,excerpt.start,true));
+  });const actions=document.createElement('div');actions.className='transcript-actions';actions.append(block.querySelector('.timestamp'),button,shareButton(sermon,excerpt.start,true));block.append(actions);
  }
  function loading(on){const panel=document.querySelector('.search-panel');panel?.setAttribute('data-searching',String(on));document.getElementById('results')?.setAttribute('aria-busy',String(on));}
  function closeMenus(except){document.querySelectorAll('.audio-options[open]').forEach(menu=>{if(menu!==except)menu.open=false;});}
