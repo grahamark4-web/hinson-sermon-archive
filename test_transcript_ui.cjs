@@ -1,6 +1,7 @@
 // Test the actual UI script with a small DOM and media stub, without publishing fixtures.
 const assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
 class Element{
+ get textContent(){return this.children?.length?this.children.map(n=>n.textContent).join(''):this._text||'';}set textContent(value){this._text=value;this.children=[];}
  constructor(tag,text=''){this.tagName=tag;this.textContent=text;this.children=[];this.attributes={};this.listeners={};this.value='';this.paused=true;this.ended=false;this.readyState=0;this.duration=120;this.currentTime=0;this.style={};this.classList={add(){},remove(){}};this.offsetHeight=120;}
  append(...nodes){this.children.push(...nodes);nodes.forEach(n=>n.parentElement=this);}replaceChildren(...nodes){this.children=nodes;}
  setAttribute(k,v){this.attributes[k]=v;if(k==='src')this.src=v;}getAttribute(k){return k==='src'?this.src:this.attributes[k]??null;}
@@ -25,7 +26,9 @@ class Element{
  const stableIcon=ids['player-toggle'].children[0];for(let i=0;i<5;i++)audio.emit('timeupdate');assert.equal(ids['player-toggle'].children[0],stableIcon,'clock updates never replace the clicked icon');
  ids['player-toggle'].click();assert.equal(audio.paused,true,'pause acts synchronously');ids['player-toggle'].click();assert.equal(audio.paused,false);
  const shared=vm.runInContext('ArchiveUI.shareUrl({id:"test"},90)',context);assert.equal(shared,'https://app.example/?sermon=test&t=90');
- const moreText=ids.results.all().find(n=>n.className==='read-more');moreText.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(moreText.getAttribute('aria-expanded'),'true');assert.match(ids.results.all().find(n=>n.className==='excerpt-context').all().map(n=>n.textContent).join(' '),/Surrounding words/);
+ const moreText=ids.results.all().find(n=>n.className==='read-more'),quote=moreText.parentElement.querySelector('p');moreText.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(moreText.getAttribute('aria-expanded'),'true');assert.match(quote.all().map(n=>n.textContent).join(' '),/Surrounding words/);
+ assert.equal(moreText.parentElement.all().filter(n=>n.tagName==='p').length,1,'expanded context replaces the existing quote without duplicating it');assert.equal(moreText.parentElement.querySelector('p'),quote,'quote stays in place');assert.equal(moreText.parentElement.querySelector('.excerpt-context'),null);
+ moreText.click();assert.equal(moreText.getAttribute('aria-expanded'),'false');assert.equal(quote.textContent,'“Bring your worry to God.”');moreText.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(moreText.getAttribute('aria-expanded'),'true');
  const share=ids.results.all().find(n=>n.className==='share-button');share.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(share.textContent,'✓ Copied');assert.equal(copied,'https://app.example/?sermon=test');
  context.navigator.clipboard.writeText=async()=>{throw Error('Clipboard blocked in embed');};
  share.click();await new Promise(resolve=>setImmediate(resolve));share.click();await new Promise(resolve=>setImmediate(resolve));share.click();await new Promise(resolve=>setImmediate(resolve));

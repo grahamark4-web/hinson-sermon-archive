@@ -61,11 +61,12 @@ const ArchiveUI=(()=>{
   return segments.slice(Math.max(0,i-1),i+6).map(s=>s.text).join(' ');
  }
  function excerptMore(block,sermon,excerpt,highlight){
-  const button=document.createElement('button'),extra=document.createElement('div');button.type='button';button.className='read-more';button.textContent='Read more';button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Read more from '+sermon.title+' at '+stamp(excerpt.start));extra.className='excerpt-context';extra.hidden=true;let loaded=false,busy=false;
-  button.addEventListener('click',async()=>{if(busy)return;if(!extra.hidden){extra.hidden=true;button.textContent='Read more';button.setAttribute('aria-expanded','false');return;}
-   if(!loaded){busy=true;button.textContent='Loading…';button.setAttribute('aria-busy','true');try{const text=await context(sermon,excerpt);const paragraph=document.createElement('p');paragraph.textContent='“'+text+'”';extra.append(highlight(paragraph));loaded=true;}catch{button.textContent='Try reading more again';busy=false;button.removeAttribute('aria-busy');return;}busy=false;button.removeAttribute('aria-busy');}
-   extra.hidden=false;button.textContent='Read less';button.setAttribute('aria-expanded','true');
-  });block.append(button,shareButton(sermon,excerpt.start),extra);
+  const button=document.createElement('button'),quote=block.querySelector('p');button.type='button';button.className='read-more';button.textContent='Read more';button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Read more from '+sermon.title+' at '+stamp(excerpt.start));let expanded=false,fullText=null,busy=false;
+  function show(text,on){quote.textContent='“'+text+'”';highlight(quote);expanded=on;button.textContent=on?'Read less':'Read more';button.setAttribute('aria-expanded',String(on));}
+  button.addEventListener('click',async()=>{if(busy)return;if(expanded){show(excerpt.text,false);return;}
+   if(fullText===null){busy=true;button.textContent='Loading…';button.setAttribute('aria-busy','true');try{fullText=await context(sermon,excerpt);}catch{button.textContent='Try again';busy=false;button.removeAttribute('aria-busy');return;}busy=false;button.removeAttribute('aria-busy');}
+   show(fullText,true);
+  });block.append(button,shareButton(sermon,excerpt.start));
  }
  function loading(on){const panel=document.querySelector('.search-panel');panel?.setAttribute('data-searching',String(on));document.getElementById('results')?.setAttribute('aria-busy',String(on));}
  function closeMenus(except){document.querySelectorAll('.audio-options[open]').forEach(menu=>{if(menu!==except)menu.open=false;});}
