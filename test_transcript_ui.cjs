@@ -22,6 +22,8 @@ class Element{
  const jumps=ids.results.all().filter(n=>n.className==='timestamp');assert.equal(jumps.length,2);assert.equal(jumps[0].children.find(n=>n.tagName==='span').textContent,'Listen at 0:41');
  jumps[0].click();const audio=document.querySelectorAll('audio')[0];assert.equal(audio.paused,false);audio.readyState=1;audio.emit('loadedmetadata');assert.equal(audio.currentTime,41.5,'seek occurs when metadata is ready');
  jumps[1].click();assert.equal(audio.currentTime,90,'existing player seeks to the next match');
+ const stableIcon=ids['player-toggle'].children[0];for(let i=0;i<5;i++)audio.emit('timeupdate');assert.equal(ids['player-toggle'].children[0],stableIcon,'clock updates never replace the clicked icon');
+ ids['player-toggle'].click();assert.equal(audio.paused,true,'pause acts synchronously');ids['player-toggle'].click();assert.equal(audio.paused,false);
  const shared=vm.runInContext('ArchiveUI.shareUrl({id:"test"},90)',context);assert.equal(shared,'https://app.example/?sermon=test&t=90');
  const moreText=ids.results.all().find(n=>n.className==='read-more');moreText.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(moreText.getAttribute('aria-expanded'),'true');assert.match(ids.results.all().find(n=>n.className==='excerpt-context').all().map(n=>n.textContent).join(' '),/Surrounding words/);
  const share=ids.results.all().find(n=>n.className==='share-button');share.click();await new Promise(resolve=>setImmediate(resolve));assert.equal(share.textContent,'✓ Copied');assert.equal(copied,'https://app.example/?sermon=test');
@@ -38,5 +40,17 @@ class Element{
  ids.book.value='Genesis';ids.book.emit('change');assert.equal(ids.results.all().filter(n=>n.className==='sermon').length,0,'filters apply to transcript results');
  const menus=ids.results.all().filter(n=>n.className==='audio-options');if(menus.length){menus[0].open=true;for(const fn of docEvents.keydown||[])fn({key:'Escape'});assert.equal(menus[0].open,false);}
  ids['player-back'].click();assert.equal(audio.currentTime,75);ids['player-forward'].click();assert.equal(audio.currentTime,90);ids['player-close'].click();assert.equal(audio.paused,true);assert.equal(ids['mini-player'].hidden,true);
+ const normalPlay=audio.play.bind(audio);let rejectStart;audio.play=()=>new Promise((_,reject)=>{rejectStart=reject;});
+ vm.runInContext('ArchiveUI.listen({id:"slow",title:"Slow recording",audio:"https://example.com/slow.mp3",originalAudio:"https://example.com/fallback.mp3"})',context);
+ assert.equal(ids['player-toggle'].getAttribute('aria-pressed'),'true','pending playback offers Pause immediately');
+ const originalSource=audio.src;ids['player-toggle'].click();assert.equal(audio.paused,true);assert.equal(ids['player-toggle'].getAttribute('aria-pressed'),'false');
+ rejectStart(Object.assign(new Error('cancelled'),{name:'AbortError'}));await new Promise(resolve=>setImmediate(resolve));assert.equal(ids['player-notice'].textContent,'','cancelled play does not show an error');
+ let replayCount=0;audio.play=()=>{replayCount++;return normalPlay();};audio.emit('error');assert.notEqual(audio.src,originalSource);assert.equal(replayCount,0,'fallback never starts a paused recording');
+ ids['player-toggle'].click();assert.equal(replayCount,1);assert.equal(audio.paused,false);ids['player-toggle'].click();assert.equal(audio.paused,true);
+ audio.play=()=>new Promise((_,reject)=>{rejectStart=reject;});
+ vm.runInContext('ArchiveUI.listen({id:"old",title:"Old",audio:"https://example.com/old.mp3"})',context);const rejectOld=rejectStart;
+ audio.play=normalPlay;vm.runInContext('ArchiveUI.listen({id:"new",title:"New",audio:"https://example.com/new.mp3"})',context);
+ rejectOld(new Error('old failed'));await new Promise(resolve=>setImmediate(resolve));assert.equal(audio.paused,false);assert.equal(ids['player-toggle'].getAttribute('aria-pressed'),'true');assert.equal(ids['player-notice'].textContent,'');
+ ids['player-close'].click();
  console.log('Transcript UI excerpts, timestamp playback and filtering checks passed');
 })().catch(e=>{console.error(e);process.exitCode=1;});

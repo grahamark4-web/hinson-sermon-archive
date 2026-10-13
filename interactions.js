@@ -1,13 +1,13 @@
 'use strict';
 const ArchiveUI=(()=>{
  const player=document.getElementById('mini-player'),audio=document.getElementById('archive-audio'),title=document.getElementById('player-title'),toggle=document.getElementById('player-toggle'),seek=document.getElementById('player-seek'),clock=document.getElementById('player-time'),notice=document.getElementById('player-notice'),progress=document.getElementById('player-progress');
- let current=null,pendingSeek=null,viewport=null,copyTimers=new WeakMap();
+ let current=null,pendingSeek=null,viewport=null,copyTimers=new WeakMap(),wantPlay=false,playRequest=0;
  const docs=new Map(),reduced=matchMedia('(prefers-reduced-motion:reduce)');
  const stamp=n=>{n=Math.max(0,Math.floor(Number(n)||0));return Math.floor(n/60)+':'+String(n%60).padStart(2,'0');};
  function position(){if(!player||player.hidden)return;if(window.parent!==window&&viewport){player.style.position='absolute';player.style.bottom='auto';player.style.top=Math.max(viewport.top,viewport.bottom-player.offsetHeight-12)+'px';player.style.visibility=viewport.bottom-viewport.top<player.offsetHeight?'hidden':'visible';}}
  function update(){
-  if(!current)return;const active=!audio.paused&&!audio.ended,duration=Number.isFinite(audio.duration)?audio.duration:0;
-  const icon=document.createElementNS('http://www.w3.org/2000/svg','svg'),path=document.createElementNS('http://www.w3.org/2000/svg','path');icon.setAttribute('viewBox','0 0 24 24');icon.setAttribute('aria-hidden','true');path.setAttribute('d',active?'M7 5h4v14H7z M14 5h4v14h-4z':'M8 5v14l11-7z');icon.append(path);toggle.replaceChildren(icon);toggle.setAttribute('aria-label',(active?'Pause ':'Play ')+current.title);toggle.setAttribute('aria-pressed',String(active));
+  if(!current)return;const active=wantPlay&&!audio.ended,duration=Number.isFinite(audio.duration)?audio.duration:0;
+  let path=toggle.querySelector('path');if(!path){const icon=document.createElementNS('http://www.w3.org/2000/svg','svg');path=document.createElementNS('http://www.w3.org/2000/svg','path');icon.setAttribute('viewBox','0 0 24 24');icon.setAttribute('aria-hidden','true');icon.append(path);toggle.replaceChildren(icon);}path.setAttribute('d',active?'M7 5h4v14H7z M14 5h4v14h-4z':'M8 5v14l11-7z');toggle.setAttribute('aria-label',(active?'Pause ':'Play ')+current.title);toggle.setAttribute('aria-pressed',String(active));
   document.getElementById('player-back').disabled=!duration;document.getElementById('player-forward').disabled=!duration;
   seek.disabled=!duration;seek.max=String(duration||1);seek.value=String(audio.currentTime||0);seek.setAttribute('aria-valuetext',stamp(audio.currentTime)+' of '+stamp(duration));
   clock.textContent=stamp(audio.currentTime)+' / '+stamp(duration);progress.style.width=(duration?100*audio.currentTime/duration:0)+'%';
@@ -18,13 +18,18 @@ const ArchiveUI=(()=>{
   });position();
  }
  function applySeek(){if(pendingSeek!==null&&audio.readyState>=1){audio.currentTime=Math.min(pendingSeek,Number.isFinite(audio.duration)?Math.max(0,audio.duration-.1):pendingSeek);pendingSeek=null;}}
+ function pause(){wantPlay=false;playRequest++;audio.pause();notice.textContent='';update();}
+ function play(){
+  wantPlay=true;const request=++playRequest;notice.textContent='';update();
+  audio.play().catch(error=>{if(request!==playRequest||!wantPlay)return;wantPlay=false;if(error.name!=='AbortError')notice.textContent='Press Play to start listening.';update();});
+ }
  function listen(sermon,seconds){
   if(!audio)return;const same=current?.id===sermon.id&&current.audio===sermon.audio;
-  if(same&&seconds===undefined&&!audio.paused){audio.pause();return;}
+  if(same&&seconds===undefined&&wantPlay){pause();return;}
   notice.textContent='';
-  if(!same){audio.pause();current=sermon;audio.src=sermon.audio;audio.setAttribute('aria-label',sermon.title);title.textContent=sermon.title;pendingSeek=Math.max(0,Number(seconds)||0);}
+  if(!same){pause();current=sermon;audio.src=sermon.audio;audio.setAttribute('aria-label',sermon.title);title.textContent=sermon.title;pendingSeek=Math.max(0,Number(seconds)||0);}
   else if(seconds!==undefined)pendingSeek=Math.max(0,Number(seconds)||0);
-  player.hidden=false;document.body.classList.add('has-player');applySeek();update();audio.play().catch(()=>{notice.textContent='Press Play to start listening.';update();});
+  player.hidden=false;document.body.classList.add('has-player');applySeek();play();
  }
  function bindPlay(button,sermon,initialSeconds){
   button.setAttribute('data-sermon-id',sermon.id);button.setAttribute('data-sermon-title',sermon.title);
@@ -75,14 +80,17 @@ const ArchiveUI=(()=>{
   animation.finished.then(()=>{if(!opening)disclosure.open=false;disclosure.removeAttribute('data-closing');body.style.overflow='';animation=null;}).catch(()=>{animation=null;});
  });}
  if(audio){
-  for(const event of ['play','pause','ended','timeupdate','durationchange'])audio.addEventListener(event,update);
+  for(const event of ['timeupdate','durationchange'])audio.addEventListener(event,update);
+  audio.addEventListener('play',()=>{if(!wantPlay)audio.pause();update();});
+  audio.addEventListener('pause',()=>{if(audio.paused)wantPlay=false;update();});
+  audio.addEventListener('ended',()=>{wantPlay=false;playRequest++;update();});
   audio.addEventListener('loadedmetadata',()=>{applySeek();update();});
-  audio.addEventListener('error',()=>{if(current?.originalAudio?.startsWith('https://')&&audio.getAttribute('src')!==current.originalAudio){audio.src=current.originalAudio;audio.play().catch(()=>{notice.textContent='Press Play to start listening.';});}else notice.textContent='Audio is unavailable. Try the sermon’s podcast links.';update();});
-  toggle.addEventListener('click',()=>{if(audio.paused)audio.play().catch(()=>{notice.textContent='Audio could not start. Try again.';});else audio.pause();});
+  audio.addEventListener('error',()=>{if(current?.originalAudio?.startsWith('https://')&&audio.getAttribute('src')!==current.originalAudio){pendingSeek=pendingSeek??audio.currentTime;audio.src=current.originalAudio;if(wantPlay)play();}else{wantPlay=false;playRequest++;notice.textContent='Audio is unavailable. Try the sermon’s podcast links.';}update();});
+  toggle.addEventListener('click',()=>{if(wantPlay)pause();else play();});
   document.getElementById('player-back').addEventListener('click',()=>{audio.currentTime=Math.max(0,audio.currentTime-15);update();});
   document.getElementById('player-forward').addEventListener('click',()=>{audio.currentTime=Math.min(Number.isFinite(audio.duration)?audio.duration:audio.currentTime+15,audio.currentTime+15);update();});
   seek.addEventListener('input',()=>{audio.currentTime=Number(seek.value);update();});
-  document.getElementById('player-close').addEventListener('click',()=>{audio.pause();player.hidden=true;document.body.classList.remove('has-player');const button=document.querySelector('.play[data-sermon-id="'+current?.id+'"]');button?.focus();});
+  document.getElementById('player-close').addEventListener('click',()=>{pause();player.hidden=true;document.body.classList.remove('has-player');const button=document.querySelector('.play[data-sermon-id="'+current?.id+'"]');button?.focus();});
   if(typeof ResizeObserver!=='undefined')new ResizeObserver(position).observe(player);
  }
  window.addEventListener('message',event=>{if(event.source!==window.parent||!['https://www.hinsonchurch.org','https://hinsonchurch.org'].includes(event.origin))return;const m=event.data;if(m?.type==='hinson-sermon-archive:viewport'&&Number.isFinite(m.top)&&Number.isFinite(m.bottom)){viewport=m;position();}});
