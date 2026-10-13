@@ -36,7 +36,7 @@ const ArchiveUI=(()=>{
   if(initialSeconds>0)button.querySelector('span').textContent='Listen at '+stamp(initialSeconds);
   button.addEventListener('click',()=>listen(sermon,current?.id===sermon.id?undefined:initialSeconds));
  }
- function shareUrl(sermon,seconds){const url=new URL('/',location.href);url.searchParams.set('sermon',sermon.id);if(seconds>0)url.searchParams.set('t',Math.floor(seconds));return url.href;}
+ function shareUrl(sermon,seconds){const url=new URL('https://www.hinsonchurch.org/sermon-secret-project');url.searchParams.set('sermon',sermon.id);if(seconds>0)url.searchParams.set('t',Math.floor(seconds));return url.href;}
  function copyHidden(text){
   const field=document.createElement('textarea'),focused=document.activeElement;
   field.value=text;field.readOnly=true;field.setAttribute('aria-hidden','true');field.setAttribute('tabindex','-1');
