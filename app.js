@@ -115,3 +115,12 @@ if(window.parent!==window){
  if(document.fonts)document.fonts.ready.then(queueEmbedHeight);
  queueEmbedHeight();
 }
+
+// Accept a shared sermon after the parent page's embed has loaded.
+let parentShareReceived=false;
+window.addEventListener('message',event=>{
+ if(parentShareReceived||event.source!==window.parent||!['https://www.hinsonchurch.org','https://hinsonchurch.org'].includes(event.origin))return;
+ const share=event.data;if(share?.type!=='hinson-sermon-archive:share'||typeof share.sermon!=='string'||! /^[a-zA-Z0-9_-]+$/.test(share.sermon))return;
+ parentShareReceived=true;params.set('sermon',share.sermon);params.delete('t');if(Number.isFinite(share.t)&&share.t>0)params.set('t',String(Math.floor(share.t)));
+ for(const id of controls)$(id).value=id==='sort'?'newest':'';transcriptHits={};transcriptQuery='';limit=30;render();
+});

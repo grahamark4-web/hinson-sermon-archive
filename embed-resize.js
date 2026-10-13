@@ -14,6 +14,7 @@
   var origin = 'https://hinson-sermon-archive.grahamark4.workers.dev', pending = false;
   frame.style.width = '100%';frame.style.border = '0';frame.style.display = 'block';frame.style.overflow = 'hidden';frame.style.height = '1100px';
   function reportViewport() {
+    if(sermon&&/^[a-zA-Z0-9_-]+$/.test(sermon))frame.contentWindow.postMessage({type:'hinson-sermon-archive:share',sermon:sermon,t:Number(shared.get('t'))||0},origin);
     pending = false;var rect = frame.getBoundingClientRect();
     frame.contentWindow.postMessage({type:'hinson-sermon-archive:viewport',top:Math.max(0,-rect.top),bottom:Math.min(rect.height,window.innerHeight-rect.top)},origin);
   }
