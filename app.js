@@ -16,7 +16,7 @@ const mobileSearch=matchMedia('(max-width:700px)');
 const desktopPlaceholder=$('query').placeholder;
 function updateSearchPlaceholder(){ $('query').placeholder=$('transcripts').checked?'Search Sermon Transcripts':mobileSearch.matches?'Search':desktopPlaceholder; }
 updateSearchPlaceholder();mobileSearch.addEventListener('change',()=>{updateSearchPlaceholder();render();});
-const params=new URLSearchParams(location.search);try{$('transcripts').checked=localStorage.getItem('hinson-search-transcripts')==='on';}catch{}if(params.has('transcripts'))$('transcripts').checked=params.get('transcripts')!=='0';if(params.get('embed')==='1')document.body.classList.add('embedded');if(matchMedia('(max-width:700px)').matches)document.querySelector('.filter-disclosure').open=false;for(const id of controls)if(params.has(id))$(id).value=params.get(id);
+const params=new URLSearchParams(location.search);try{$('transcripts').checked=localStorage.getItem('hinson-search-transcripts')==='on';}catch{}if(params.has('transcripts'))$('transcripts').checked=params.get('transcripts')!=='0';if(params.get('embed')==='1')document.body.classList.add('embedded');if(matchMedia('(max-width:700px)').matches)document.querySelector('.filter-disclosure').open=false;for(const id of controls)if(params.has(id))$(id).value=params.get(id);if(!['newest','oldest'].includes($('sort').value))$('sort').value='newest';
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
 function link(text,url){const a=el('a',text);a.href=url;a.target='_blank';a.rel='noopener';return a;}
 function smallIcon(kind){
@@ -51,7 +51,6 @@ function render(animateNew=false){
   const priority=SermonSearch.scripturePriority(a,selection.query)-SermonSearch.scripturePriority(b,selection.query);
   if(priority)return priority;
   if($('sort').value==='oldest')return a.date.localeCompare(b.date);
-  if($('sort').value==='title')return a.title.localeCompare(b.title);
   return b.date.localeCompare(a.date);
  });
  const fragment=document.createDocumentFragment();
