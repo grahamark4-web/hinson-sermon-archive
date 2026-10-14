@@ -1,12 +1,14 @@
 'use strict';
+// Temporarily disabled at the owner's request; retain implementation for restoration.
+const TRANSCRIPT_SEARCH_ENABLED=false;
 const $=id=>document.getElementById(id);let sermons=[],platformLinks={},limit=30,filtered=[];
 let visibleSermonIds=new Set();
 let transcriptHits={},transcriptQuery='',transcriptCoverage=0,transcriptTimer,transcriptRequest,transcriptGeneration=0;
-function searchMatches(sermon,q){return SermonSearch.matches(sermon,q)||($('transcripts').checked&&q.trim()===transcriptQuery&&transcriptHits[sermon.id]?.sourceAudio===sermon.audio);}
+function searchMatches(sermon,q){return SermonSearch.matches(sermon,q)||(TRANSCRIPT_SEARCH_ENABLED&&$('transcripts').checked&&q.trim()===transcriptQuery&&transcriptHits[sermon.id]?.sourceAudio===sermon.audio);}
 async function requestTranscripts(){
  const q=$('query').value.trim(),generation=++transcriptGeneration;transcriptRequest?.abort();ArchiveUI.loading(false);
  transcriptHits={};transcriptQuery=q;
- if(!$('transcripts').checked||!q||SermonSearch.parse(q)){render();return;}
+ if(!TRANSCRIPT_SEARCH_ENABLED||!$('transcripts').checked||!q||SermonSearch.parse(q)){render();return;}
  transcriptRequest=new AbortController();ArchiveUI.loading(true);$('transcript-status').textContent='Searching sermon transcripts…';
  try{const r=await fetch('/api/transcript-search?q='+encodeURIComponent(q)+'&v=apostrophe-2',{signal:transcriptRequest.signal});if(!r.ok)throw Error('Search unavailable');const data=await r.json();if(generation!==transcriptGeneration)return;ArchiveUI.loading(false);transcriptHits=data.matches||{};transcriptCoverage=data.coverage||0;render(true);if(data.truncated)$('transcript-status').textContent+=mobileSearch.matches?' · Try a more specific phrase.':' · Try a more specific phrase for additional matches.';}
  catch(error){if(error.name!=='AbortError'&&generation===transcriptGeneration){ArchiveUI.loading(false);render();$('transcript-status').textContent=mobileSearch.matches?'Transcript search unavailable. Try again.':'Transcript search is temporarily unavailable. Title and Scripture search still work.';}}
@@ -16,7 +18,7 @@ const mobileSearch=matchMedia('(max-width:700px)');
 const desktopPlaceholder=$('query').placeholder;
 function updateSearchPlaceholder(){ $('query').placeholder=$('transcripts').checked?'Search Sermon Transcripts':mobileSearch.matches?'Search':desktopPlaceholder; }
 updateSearchPlaceholder();mobileSearch.addEventListener('change',()=>{updateSearchPlaceholder();render();});
-const params=new URLSearchParams(location.search);try{$('transcripts').checked=localStorage.getItem('hinson-search-transcripts')==='on';}catch{}if(params.has('transcripts'))$('transcripts').checked=params.get('transcripts')!=='0';if(params.get('embed')==='1')document.body.classList.add('embedded');if(matchMedia('(max-width:700px)').matches)document.querySelector('.filter-disclosure').open=false;for(const id of controls)if(params.has(id))$(id).value=params.get(id);if(!['newest','oldest'].includes($('sort').value))$('sort').value='newest';
+const params=new URLSearchParams(location.search);try{$('transcripts').checked=localStorage.getItem('hinson-search-transcripts')==='on';}catch{}if(params.has('transcripts'))$('transcripts').checked=params.get('transcripts')!=='0';if(!TRANSCRIPT_SEARCH_ENABLED){$('transcripts').checked=false;params.delete('transcripts');}if(params.get('embed')==='1')document.body.classList.add('embedded');if(matchMedia('(max-width:700px)').matches)document.querySelector('.filter-disclosure').open=false;for(const id of controls)if(params.has(id))$(id).value=params.get(id);if(!['newest','oldest'].includes($('sort').value))$('sort').value='newest';
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
 function link(text,url){const a=el('a',text);a.href=url;a.target='_blank';a.rel='noopener';return a;}
 function smallIcon(kind){
@@ -42,6 +44,7 @@ function updateFilterOptions(){
  }
 }
 function render(animateNew=false){
+ if(!TRANSCRIPT_SEARCH_ENABLED)$('transcripts').checked=false;
  updateSearchPlaceholder();
  $('transcript-status').textContent=!$('transcripts').checked?'Transcript search is off.':transcriptCoverage?(mobileSearch.matches?transcriptCoverage+' sermons transcribed.':'Searchable transcripts for '+transcriptCoverage+' sermons · Matches exact words and phrases.'):'Sermon transcription is in progress.';
  updateFilterOptions();
@@ -84,9 +87,10 @@ function render(animateNew=false){
  $('results').replaceChildren(fragment);ArchiveUI.update();
  if(!filtered.length)$('results').append(el('div','No sermons match these filters. Try another passage or clear the filters.','empty'));
  $('status').textContent=filtered.length.toLocaleString()+' sermon'+(filtered.length===1?'':'s')+' found'+(filtered.length>limit?' · showing '+limit:'');$('more').hidden=filtered.length<=limit;
- $('clear').hidden=!params.get('sermon')&&!controls.some(id=>id!=='sort'&&$(id).value);const next=new URL(location.href);if(!params.get('sermon')){next.searchParams.delete('sermon');next.searchParams.delete('t');}for(const id of controls){if($(id).value&&(id!=='sort'||$(id).value!=='newest'))next.searchParams.set(id,$(id).value);else next.searchParams.delete(id);}if(!$('transcripts').checked)next.searchParams.set('transcripts','0');else next.searchParams.delete('transcripts');history.replaceState(null,'',next);
+ $('clear').hidden=!params.get('sermon')&&!controls.some(id=>id!=='sort'&&$(id).value);const next=new URL(location.href);if(!params.get('sermon')){next.searchParams.delete('sermon');next.searchParams.delete('t');}for(const id of controls){if($(id).value&&(id!=='sort'||$(id).value!=='newest'))next.searchParams.set(id,$(id).value);else next.searchParams.delete(id);}if(!TRANSCRIPT_SEARCH_ENABLED)next.searchParams.delete('transcripts');else if(!$('transcripts').checked)next.searchParams.set('transcripts','0');else next.searchParams.delete('transcripts');history.replaceState(null,'',next);
 }
 $('transcripts').addEventListener('change',()=>{
+ if(!TRANSCRIPT_SEARCH_ENABLED){$('transcripts').checked=false;return;}
  clearTimeout(transcriptTimer);transcriptGeneration++;transcriptRequest?.abort();transcriptHits={};transcriptQuery='';ArchiveUI.loading(false);limit=30;
  try{localStorage.setItem('hinson-search-transcripts',$('transcripts').checked?'on':'off');}catch{}
  render();if($('transcripts').checked)requestTranscripts();
@@ -94,7 +98,7 @@ $('transcripts').addEventListener('change',()=>{
 for(const id of controls)$(id).addEventListener(id==='query'?'input':'change',()=>{params.delete('sermon');params.delete('t');limit=30;if(id==='query'){clearTimeout(transcriptTimer);transcriptGeneration++;transcriptRequest?.abort();transcriptHits={};transcriptQuery='';ArchiveUI.loading(false);render();transcriptTimer=setTimeout(requestTranscripts,350);}else render();});
 $('clear').addEventListener('click',()=>{params.delete('sermon');params.delete('t');clearTimeout(transcriptTimer);transcriptGeneration++;transcriptRequest?.abort();transcriptHits={};transcriptQuery='';ArchiveUI.loading(false);for(const id of controls)if(id!=='sort')$(id).value='';limit=30;render();$('query').focus();});
 $('more').addEventListener('click',()=>{limit+=30;render(true);});
-Promise.all([fetch('sermons.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Catalog unavailable');return r.json();}),fetch('podcast-links.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{links:{}}).catch(()=>({links:{}}))]).then(([data,platformData])=>{platformLinks=platformData.links||{};sermons=data.sermons;fetch('/transcript-search/manifest.json').then(r=>r.ok?r.json():null).then(m=>{if(m){transcriptCoverage=m.coverage;render();}}).catch(()=>{});for(const id of ['book','speaker','year','series']){if(params.has(id)){const o=el('option',params.get(id));o.value=params.get(id);$(id).append(o);$(id).value=params.get(id);}}$('updated').textContent='Catalog updated '+new Date(data.updatedAt).toLocaleDateString();render();if($('query').value.trim())requestTranscripts();}).catch(()=>{$('status').textContent='The archive could not load. Please refresh and try again.';});
+Promise.all([fetch('sermons.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Catalog unavailable');return r.json();}),fetch('podcast-links.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{links:{}}).catch(()=>({links:{}}))]).then(([data,platformData])=>{platformLinks=platformData.links||{};sermons=data.sermons;if(TRANSCRIPT_SEARCH_ENABLED)fetch('/transcript-search/manifest.json').then(r=>r.ok?r.json():null).then(m=>{if(m){transcriptCoverage=m.coverage;render();}}).catch(()=>{});for(const id of ['book','speaker','year','series']){if(params.has(id)){const o=el('option',params.get(id));o.value=params.get(id);$(id).append(o);$(id).value=params.get(id);}}$('updated').textContent='Catalog updated '+new Date(data.updatedAt).toLocaleDateString();render();if($('query').value.trim())requestTranscripts();}).catch(()=>{$('status').textContent='The archive could not load. Please refresh and try again.';});
 
 /* Fit the iframe to its content so the containing page owns scrolling. */
 if(window.parent!==window){
