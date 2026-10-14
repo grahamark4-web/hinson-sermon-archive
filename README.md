@@ -100,3 +100,7 @@ Validation: `node test_transcripts.cjs`, `node test_search.cjs`, `node test_work
 ### Publishing refreshed transcripts
 
 Catalog and transcript commits deploy through Cloudflare Workers Builds. A successful transcription workflow means the transcript is saved; verify the Cloudflare deployment and live `/transcript-search/manifest.json` before treating it as searchable in production.
+
+
+### Transcript search suspended (2026-10-14)
+Public transcript search is disabled until the owner requests restoration. The UI hides the controls, ignores saved transcript preferences and URL toggles, and sends no transcript searches. The worker returns a non-cacheable 503 for `/api/transcript-search`. Existing transcription data and timestamped audio links are retained. To restore, re-enable the app flag, reveal the search settings and checkbox, and restore the transcript endpoint handler from git history. `TEST_TRANSCRIPTS_DISABLED=1 node test_transcript_ui.cjs` verifies the disabled state; the default UI suite exercises the retained implementation.
