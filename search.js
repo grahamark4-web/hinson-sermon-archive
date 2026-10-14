@@ -42,7 +42,7 @@ function facets(sermons,selection,matcher=matches){
  const yearRows=searched.filter(s=>filterMatches(s,selection,'year'));
  const seriesRows=searched.filter(s=>filterMatches(s,selection,'series'));
  return {
- book:books.filter(b=>bookRows.some(s=>(s.books||[]).includes(b))).reverse(),
+ book:books.filter(b=>bookRows.some(s=>(s.books||[]).includes(b))),
  speaker:[...new Set(speakerRows.map(s=>s.speaker).filter(Boolean))].sort(),
  year:[...new Set(yearRows.map(s=>s.date.slice(0,4)))].sort().reverse(),
  series:[...new Set(seriesRows.flatMap(seriesValues))].sort((a,b)=>a.localeCompare(b))

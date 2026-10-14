@@ -27,7 +27,7 @@ assert.deepEqual(facets(rows,{speaker:'Bob',year:'2026'}).book,['John']);
 assert.deepEqual(facets(rows,{book:'Romans',speaker:'Bob'}).year,['2025']);
 assert.deepEqual(facets(rows,{book:'Romans',speaker:'Alice',year:'2026'}).year,['2026']);
 assert.deepEqual(facets(rows,{query:'Hope',book:'Romans'}).speaker,['Alice']);
-assert.deepEqual(facets(rows,{}).book,['Romans','John']);
+assert.deepEqual(facets(rows,{}).book,['John','Romans']);
 assert.deepEqual(facets(rows,{}).year,['2026','2025']);
 assert.deepEqual(facets(rows,{query:'No such sermon'}).speaker,[]);
 console.log('9 cross-filter checks passed');
