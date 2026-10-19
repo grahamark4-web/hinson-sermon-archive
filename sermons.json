@@ -1,7 +1,28 @@
 {
-  "updatedAt": "2026-10-18T10:39:40.862258+00:00",
+  "updatedAt": "2026-10-19T10:43:09.286618+00:00",
   "source": "https://www.hinsonchurch.org/sermonindex",
   "sermons": [
+    {
+      "id": "6ad56d42ea85235e98400085",
+      "title": "Hidden in Pain | Ruth 1-2",
+      "date": "2026-10-18",
+      "speaker": "Davey Walker",
+      "passages": [
+        {
+          "book": "Ruth",
+          "reference": "Ruth 1-2"
+        }
+      ],
+      "books": [
+        "Ruth"
+      ],
+      "series": [
+        "Ordinary Providence"
+      ],
+      "url": "https://www.hinsonchurch.org/oursermons/2026-09-27-c25ne-ecpbj-h8aj7",
+      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6ad56df65c34411e2ff849be/1792372306047/hsm20261018.mp3",
+      "legacyAudio": false
+    },
     {
       "id": "6acc112eb386e57b5c5e92e5",
       "title": "Transformation | Zechariah 14",
@@ -20,7 +41,7 @@
         "A Prophecy of Hope"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2026-09-27-c25ne-ecpbj",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6acc12ca2bc1cd316311fb98/1791759130261/hsm20261011.mp3",
+      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6acc12ca2bc1cd316311fb98/1792372034469/hsm20261011.mp3",
       "legacyAudio": false
     },
     {
