@@ -10,3 +10,7 @@ __pycache__/
 .git/
 .wrangler/
 node_modules/
+
+wrangler.staging.jsonc
+STAGING.md
+theme-report.json

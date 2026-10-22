@@ -24,7 +24,7 @@ function matches(sermon,q){
  if(!q.trim())return true;
  const query=parse(q);
  if(query)return (sermon.passages||[]).some(p=>{const r=parse(p.reference);return r&&r.book===query.book&&r.ranges.some(a=>query.ranges.some(b=>a[0]<=b[1]&&b[0]<=a[1]));});
- const hay=norm([sermon.title,sermon.speaker,...(sermon.series||[]),...(sermon.books||[]),...(sermon.passages||[]).map(p=>p.reference)].join(' '));
+ const hay=norm([...(sermon.themes||[]),...(sermon.themeTerms||[]),sermon.title,sermon.speaker,...(sermon.series||[]),...(sermon.books||[]),...(sermon.passages||[]).map(p=>p.reference)].join(' '));
  return norm(q).split(' ').every(word=>hay.includes(word));
 }
 const oneOff='Standalone (no series)';
