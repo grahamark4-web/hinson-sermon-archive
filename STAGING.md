@@ -22,4 +22,4 @@ Validation: `node test_search.cjs`, `node test_worker.cjs`, `node test_transcrip
 
 Run `python build_themes.py` after catalog/transcript changes, then `node test_themes.cjs`. `sermon-themes.json` stores automatic tags and aliases separately from the refreshed catalog. Matching transcripts are used only when their source audio agrees with the catalog. Coverage and Scripture-context fallback IDs are recorded for editorial review in `theme-report.json`. These are candidate thematic classifications, not human-reviewed summaries. Scripture-context fallbacks describe broad book themes and should be reviewed first. Public transcript search remains disabled.
 
-Do not publish staging's `robots.txt` to production; it intentionally disallows crawling of this test site.
+The worker serves robots.txt by hostname: staging disallows crawling, while production allows it. Keep /robots.txt in run_worker_first in both configurations.

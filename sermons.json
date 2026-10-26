@@ -1,7 +1,28 @@
 {
-  "updatedAt": "2026-10-20T10:42:18.724427+00:00",
+  "updatedAt": "2026-10-26T10:50:20.216150+00:00",
   "source": "https://www.hinsonchurch.org/sermonindex",
   "sermons": [
+    {
+      "id": "6adeb005026954191665190c",
+      "title": "Hidden in Redemption | Ruth 3-4",
+      "date": "2026-10-25",
+      "speaker": "Davey Walker",
+      "passages": [
+        {
+          "book": "Ruth",
+          "reference": "Ruth 3-4"
+        }
+      ],
+      "books": [
+        "Ruth"
+      ],
+      "series": [
+        "Ordinary Providence"
+      ],
+      "url": "https://www.hinsonchurch.org/oursermons/2026-09-27-c25ne-ecpbj-h8aj7-b2wxz",
+      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6adeb063bd3f6d30f4569a8b/1792979117644/hsm20261025.mp3",
+      "legacyAudio": false
+    },
     {
       "id": "6ad56d42ea85235e98400085",
       "title": "Hidden in Pain | Ruth 1-2",
@@ -20,7 +41,7 @@
         "Ordinary Providence"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2026-09-27-c25ne-ecpbj-h8aj7",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6ad56df65c34411e2ff849be/1792372306047/hsm20261018.mp3",
+      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6ad56df65c34411e2ff849be/1792978949323/hsm20261018.mp3",
       "legacyAudio": false
     },
     {

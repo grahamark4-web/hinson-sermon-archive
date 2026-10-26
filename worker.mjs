@@ -4,6 +4,7 @@ const allowed=new Map(Object.values(archive.byDate).map(e=>[new URL(e.url).pathn
 export default {
  async fetch(request,env){
   const url=new URL(request.url);
+  if(url.pathname==='/robots.txt')return new Response('User-agent: *\nDisallow: '+(url.hostname==='hinson-sermon-archive-staging.grahamark4.workers.dev' ? '/' : '')+'\n',{headers:{'Content-Type':'text/plain; charset=utf-8'}});
   if(url.pathname==='/api/transcript-search'){return Response.json({error:'Transcript search is temporarily disabled.'},{status:503,headers:{'Cache-Control':'no-store'}});}
   const download=url.pathname.startsWith('/download/');
   if(!download&&!url.pathname.startsWith('/archive-audio/'))return env.ASSETS.fetch(request);
