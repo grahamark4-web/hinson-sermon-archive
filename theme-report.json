@@ -1,8 +1,8 @@
 {
   "sermons": 840,
   "coverage": {
-    "metadata": 4,
-    "transcript": 832,
+    "transcript": 834,
+    "metadata": 2,
     "scripture-context": 4
   },
   "scriptureContextReview": [
@@ -12,10 +12,10 @@
     "5bbe8688e2c4834993f3acd0"
   ],
   "topicCounts": {
-    "Jesus Christ": 770,
+    "Jesus Christ": 771,
     "faith": 466,
     "sin and temptation": 396,
-    "love": 385,
+    "love": 387,
     "church": 276,
     "Scripture": 187,
     "prayer": 160,
@@ -26,12 +26,12 @@
     "suffering": 103,
     "worship": 97,
     "salvation": 97,
-    "parenting and family": 92,
-    "hope": 86,
-    "joy": 83,
+    "parenting and family": 94,
+    "hope": 87,
+    "joy": 84,
     "money and generosity": 78,
+    "marriage": 76,
     "service": 76,
-    "marriage": 74,
     "leadership": 73,
     "discipleship": 67,
     "wisdom": 62,
@@ -43,7 +43,7 @@
     "anger": 42,
     "grace": 38,
     "obedience": 37,
-    "perseverance": 35,
+    "perseverance": 36,
     "covenant": 32,
     "forgiveness": 32,
     "kingdom of God": 29,
@@ -51,7 +51,7 @@
     "Holy Spirit": 22,
     "holiness": 22,
     "resurrection": 20,
-    "God's sovereignty and providence": 17,
+    "God's sovereignty and providence": 16,
     "grief": 16,
     "baptism": 9,
     "anxiety": 8,
