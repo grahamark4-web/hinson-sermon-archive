@@ -43,4 +43,4 @@ jobs:
             git commit -m "Refresh sermon catalog"
             git push
           fi
-# Manual refresh requested 2026-11-02 — production catalog update
+# Manual refresh requested 2026-11-02 — recheck latest Apple and Spotify episode links
