@@ -1,27 +1,26 @@
 {
   "sermons": 841,
   "coverage": {
-    "scripture-context": 5,
-    "transcript": 834,
-    "metadata": 2
+    "transcript": 835,
+    "metadata": 2,
+    "scripture-context": 4
   },
   "scriptureContextReview": [
-    "6ae8cb88413aa518f672fe9b",
     "5bbaef7b4192025ef75054d7",
     "5bbaf859e5e5f0f20c69d81c",
     "5bbb025953450a0e43346653",
     "5bbe8688e2c4834993f3acd0"
   ],
   "topicCounts": {
-    "Jesus Christ": 771,
-    "faith": 466,
+    "Jesus Christ": 772,
+    "faith": 467,
     "sin and temptation": 396,
     "love": 387,
     "church": 277,
-    "Scripture": 187,
+    "Scripture": 188,
     "prayer": 160,
     "judgment": 144,
-    "work": 134,
+    "work": 135,
     "justice and mercy": 124,
     "eternal life and heaven": 107,
     "suffering": 103,
