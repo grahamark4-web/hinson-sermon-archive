@@ -1,7 +1,28 @@
 {
-  "updatedAt": "2026-11-08T16:40:23.335203+00:00",
+  "updatedAt": "2026-11-09T17:10:32.990045+00:00",
   "source": "https://www.hinsonchurch.org/sermonindex",
   "sermons": [
+    {
+      "id": "6af0fb95e27bf86ae7214561",
+      "title": "Serve One Another | 1 Timothy 5:3-6:2",
+      "date": "2026-11-08",
+      "speaker": "Michael Lawrence",
+      "passages": [
+        {
+          "book": "1 Timothy",
+          "reference": "1 Timothy 5:3-6:2"
+        }
+      ],
+      "books": [
+        "1 Timothy"
+      ],
+      "series": [
+        "Until I come"
+      ],
+      "url": "https://www.hinsonchurch.org/oursermons/2026-11-08",
+      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6af10275afaf0536ed9b50e1/1794179758178/hnsn20261108.mp3",
+      "legacyAudio": false
+    },
     {
       "id": "6ae8cb88413aa518f672fe9b",
       "title": "Feed The Flock | 1 Timothy 4:1-5:2",
@@ -20,7 +41,7 @@
         "Until I come"
       ],
       "url": "https://www.hinsonchurch.org/oursermons/2026-11-01",
-      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6ae8ce8dc224031e33f123e0/1793642194950/hnsn20261101.mp3",
+      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6af10086f29ba508b9b7711a/1794179287164/hnsn20261101.mp3",
       "legacyAudio": false
     },
     {
