@@ -1,7 +1,28 @@
 {
-  "updatedAt": "2026-11-22T17:50:13.641290+00:00",
+  "updatedAt": "2026-11-23T22:02:50.712030+00:00",
   "source": "https://www.hinsonchurch.org/sermonindex",
   "sermons": [
+    {
+      "id": "6b036e663774b002e7e95c8f",
+      "title": "Pursue Heavenly Rewards | 1 Timothy 6:3-21",
+      "date": "2026-11-22",
+      "speaker": "Michael Lawrence",
+      "passages": [
+        {
+          "book": "1 Timothy",
+          "reference": "1 Timothy 6:3-21"
+        }
+      ],
+      "books": [
+        "1 Timothy"
+      ],
+      "series": [
+        "Until I come"
+      ],
+      "url": "https://www.hinsonchurch.org/oursermons/2026-11-22",
+      "audio": "https://static1.squarespace.com/static/5a3989e82278e7f8d47f13a2/t/6b036e8272b5522d6b71ce40/1795387119382/hnsn20261122.mp3",
+      "legacyAudio": false
+    },
     {
       "id": "6afa21570076ee4754ff470c",
       "title": "The Generous Landowner | Matthew 20:1-16",

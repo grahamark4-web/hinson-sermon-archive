@@ -1,11 +1,12 @@
 {
-  "sermons": 843,
+  "sermons": 844,
   "coverage": {
+    "scripture-context": 5,
     "transcript": 837,
-    "metadata": 2,
-    "scripture-context": 4
+    "metadata": 2
   },
   "scriptureContextReview": [
+    "6b036e663774b002e7e95c8f",
     "5bbaef7b4192025ef75054d7",
     "5bbaf859e5e5f0f20c69d81c",
     "5bbb025953450a0e43346653",
@@ -16,7 +17,7 @@
     "faith": 467,
     "sin and temptation": 396,
     "love": 387,
-    "church": 279,
+    "church": 280,
     "Scripture": 188,
     "prayer": 160,
     "judgment": 145,
@@ -31,8 +32,8 @@
     "joy": 85,
     "money and generosity": 80,
     "service": 77,
+    "leadership": 76,
     "marriage": 76,
-    "leadership": 75,
     "discipleship": 67,
     "wisdom": 62,
     "creation": 60,
